@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    
+    <title>树莓派刷LEDE | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="树莓派">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.2.8">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/zip.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:2320813747@qq.com" title="2320813747@qq.com" class="mail">
+            
+              <span>2</span>
+            
+              <span>3</span>
+            
+              <span>2</span>
+            
+              <span>0</span>
+            
+              <span>8</span>
+            
+              <span>1</span>
+            
+              <span>3</span>
+            
+              <span>7</span>
+            
+              <span>4</span>
+            
+              <span>7</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/5213768713/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/album"  >
+                <i class="icon icon-lg icon-photo"></i>
+                ALBUM
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor/My-C-Learning" target="_blank" >
+                <i class="icon icon-lg icon-book"></i>
+                STUDY
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GITHUB
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>树莓派刷LEDE</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/lp30.png" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">树莓派刷LEDE</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-23T09:50:57.000Z" itemprop="datePublished" class="page-time">
+  2018-01-23
+</time>
+
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-树莓派刷LEDE"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">树莓派刷LEDE</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-23 17:50:57" datetime="2018-01-23T09:50:57.000Z"  itemprop="datePublished">2018-01-23</time>
+
+            
+
+
+            
+	<span id="/2018/01/23/树莓派刷LEDE/" class="leancloud_visitors" data-flag-title="树莓派刷LEDE" title="树莓派刷LEDE">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+            
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/01/23/树莓派刷LEDE/#comment">
+            <span class="valine-comment-count" data-xid="/2018/01/23/树莓派刷LEDE/"></span>
+        </a>
+    </span>
+
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <script src="/assets/js/APlayer.min.js"> </script><p>树莓派是一个卡片大小的微型电脑，价格在100~300以内，之前再小米商城看了看最新款的小米路由器和小米盒子（小米盒子和小米路由器确实不错）不过我手头有一个树莓派3B，最近闲来无事，就去OpenWrt上面看了看，好像还没有正式适配树莓派3B，不过它的衍生系统LEDE，于是乎就开始刷LEDE了。<br><a id="more"></a></p>
+<h1 id="Raspberry-pi-3B刷LEDE"><a href="#Raspberry-pi-3B刷LEDE" class="headerlink" title="Raspberry pi 3B刷LEDE"></a>Raspberry pi 3B刷LEDE</h1><h2 id="下载最新开源镜像"><a href="#下载最新开源镜像" class="headerlink" title="下载最新开源镜像"></a>下载最新开源镜像</h2><h3 id="LEDE项目官网"><a href="#LEDE项目官网" class="headerlink" title="LEDE项目官网"></a>LEDE项目官网</h3><p><a href="https://lede-project.org/zh/start" target="_blank" rel="noopener">https://lede-project.org/zh/start</a><br>你可以下载源码自己编译，也可以下载编译好的固件。LEDE也是有不少优点的：</p>
+<ul>
+<li>可扩展性</li>
+<li>高安全性</li>
+<li>高性能、高稳定性</li>
+<li>强大的社区支持</li>
+<li>开源/无额外支出<h3 id="支持的硬件"><a href="#支持的硬件" class="headerlink" title="支持的硬件"></a>支持的硬件</h3><a href="https://lede-project.org/toh/start" target="_blank" rel="noopener">https://lede-project.org/toh/start</a><br><img src="http://ozkg680jm.bkt.clouddn.com/Raspberry%20pi%203b%E5%88%B7LEDE-1.png" width="70%" height="30%"><br>目前小米路由器有三款可以刷LEDE，不过似乎没有必要，因为小米路由器的系统本身就是基于OpenWrt定制的，并且配合小米WIFI客户端使用体验还是非常棒的。树莓派目前所有的型号都支持LEDE，不过如果你真要用树莓派做路由器使用，建议你买几个USB网卡，不然这自带的无线网卡发射的信号可没那么强。    </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">0</th>
+<th style="text-align:center">型号</th>
+<th style="text-align:center">WiKi网址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Xiaomi mini</td>
+<td style="text-align:center"><a href="https://wiki.openwrt.org/toh/xiaomi/mini" target="_blank" rel="noopener">https://wiki.openwrt.org/toh/xiaomi/mini</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Xiaomi   MiWiFi Nano</td>
+<td style="text-align:center"><a href="https://wiki.openwrt.org/toh/xiaomi/nano" target="_blank" rel="noopener">https://wiki.openwrt.org/toh/xiaomi/nano</a></td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Xiaomi   MiWiFi 3G</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">Raspberry Pi A</td>
+<td style="text-align:center"><a href="https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi" target="_blank" rel="noopener">https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi</a></td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">Raspberry Pi B</td>
+<td style="text-align:center"><a href="https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi" target="_blank" rel="noopener">https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi</a></td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">Raspberry Pi 3B</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">Raspberry Pi B+</td>
+<td style="text-align:center"><a href="https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi" target="_blank" rel="noopener">https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi</a></td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">Raspberry Pi 2B</td>
+<td style="text-align:center"><a href="https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi" target="_blank" rel="noopener">https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi</a></td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">Raspberry Pi Zero W</td>
+<td style="text-align:center"><a href="https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi" target="_blank" rel="noopener">https://wiki.openwrt.org/toh/raspberry_pi_foundation/raspberry_pi</a></td>
+</tr>
+</tbody>
+</table>
+<p>LEDE支持的设备的固件都可以在这里下载：<a href="https://lede-project.org/toh/views/toh_fwdownload" target="_blank" rel="noopener">https://lede-project.org/toh/views/toh_fwdownload</a><br>由于我用的是树莓派3B，所以这里提供最新（20180123）的固件：<a href="https://downloads.lede-project.org/releases/17.01.4/targets/brcm2708/bcm2710/lede-17.01.4-brcm2708-bcm2710-rpi-3-ext4-sdcard.img.gz" target="_blank" rel="noopener">https://downloads.lede-project.org/releases/17.01.4/targets/brcm2708/bcm2710/lede-17.01.4-brcm2708-bcm2710-rpi-3-ext4-sdcard.img.gz</a><br>这个固件大小为8.5m，在macOS中双击打开会得到一个大小为297.8m后缀名为img的镜像文件；在Windows下面用RAR解压打开也是如此<br><img src="http://ozkg680jm.bkt.clouddn.com/Raspberry%20pi%203b%E5%88%B7LEDE-2.png" width="70%" height="30%"></p>
+<h2 id="烧写镜像到SD卡"><a href="#烧写镜像到SD卡" class="headerlink" title="烧写镜像到SD卡"></a>烧写镜像到SD卡</h2><h3 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h3><p>Windows下面可以用诸如软碟通,Refuse等软件一键烧写，方法比较简单，这里就不详细介绍了。提供几个优质软件的官方网站：<br>Refuse（Windows，Ubuntu）：<a href="http://rufus.akeo.ie" target="_blank" rel="noopener">http://rufus.akeo.ie</a><br>Etcher（Windows，Linux，macOS）：<a href="https://etcher.io" target="_blank" rel="noopener">https://etcher.io</a></p>
+<h3 id="Linux-macOS平台"><a href="#Linux-macOS平台" class="headerlink" title="Linux,macOS平台"></a>Linux,macOS平台</h3><h4 id="dd命令烧写镜像"><a href="#dd命令烧写镜像" class="headerlink" title="dd命令烧写镜像"></a>dd命令烧写镜像</h4><p>在Linux/macOS中打开Terminal（终端），下面以macOS为例，在Dock中找到启动台-其他-终端。<br>步骤：1,卸载SD卡<br>     2,烧写镜像<br>在终端中输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil list  <span class="comment">#列出当前系统挂载的存储设备</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://ozkg680jm.bkt.clouddn.com/Raspberry%20pi%203b%E5%88%B7LEDE-3.png" width="70%" height="30%"><br>卸载SD卡的所有分区：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil unmountDisk diskx   <span class="comment">#diskx是系统挂载SD卡的路径</span></span><br></pre></td></tr></table></figure>
+<p>烧写镜像，任何情况下你都可以将文件直接拖到Terminal中，Terminal将会输出文件的绝对路径 ，例如我将文件放在桌面，将它拖进终端，那么它显示的路径就会是       </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/zip/Desktop/lede-17.01.4-brcm2708-bcm2710-rpi-3-ext4-sdcard.img</span><br></pre></td></tr></table></figure>
+<p>dd命令用法：Ubuntu和macOS中在更改系统设置时要加sudo，回车后需要输入用户密码，这样即使没有超级用户的权限，你也可以执行一些或者全部的权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=&lt;...&gt; of=&lt;...&gt; bs=1m</span><br></pre></td></tr></table></figure>
+<ul>
+<li>if（input file）=输入文件、设备的绝对路径；</li>
+<li>of（output file）=输出文件、设备的绝对路径；</li>
+<li>bs（block size）=1m 一个操作周期的大小；</li>
+</ul>
+<p>我输入的命令是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=/Users/zip/Desktop/lede-17.01.4-brcm2708-bcm2710-rpi-3-ext4-sdcard.img of=/dev/disk4 bs=1m</span><br></pre></td></tr></table></figure>
+<p><img src="http://ozkg680jm.bkt.clouddn.com/Raspberry%20pi%203b%E5%88%B7LEDE-4.png" width="70%" height="30%"><br>回车输入管理员密码，回车确认就开始烧写，在烧写过程中系统不会有任何提示。<br><img src="http://ozkg680jm.bkt.clouddn.com/Raspberry%20pi%203b%E5%88%B7LEDE-5.png" width="70%" height="30%"><br>看到上面提示说明烧写完成了。</p>
+<h2 id="使用开源软件Etcher"><a href="#使用开源软件Etcher" class="headerlink" title="使用开源软件Etcher"></a>使用开源软件Etcher</h2><p>如果你觉得上面的命令比较麻烦，这里倒是有一些软件可以帮你一键刷写磁盘镜像，优点就是简洁、安全、美观和快捷，缺点就是效率比较低，而且只能烧写整个磁盘。<br>Etcher官网：<a href="https://etcher.io" target="_blank" rel="noopener">https://etcher.io</a><br>Etcher支持主流PC平台<br><img src="http://ozkg680jm.bkt.clouddn.com/Etcher.png" width="70%" height="30%"><br>左边选择镜像，右边点击就可以烧写镜像了。</p>
+<h2 id="设置树莓派"><a href="#设置树莓派" class="headerlink" title="设置树莓派"></a>设置树莓派</h2><p>由于LEDE默认不开启WiFi，这时候我们可以用网线将树莓派和电脑连接。</p>
+<ul>
+<li>step1<br>确保电脑与树莓派通过网线连接好，打开<code>浏览器</code>在地址栏输入<code>192.168.1.1</code>进入路由器的web管理界面，默认root用户是没有密码的，直接登录，登录后会要求你设置密码，等你设置完密码后，你就可以通过ssh登录树莓派了。</li>
+<li>step2<br>打开WiFi</li>
+<li>step3<br>安装中文语言包</li>
+</ul>
+<h2 id="关于树莓派（Raspberry-pi）"><a href="#关于树莓派（Raspberry-pi）" class="headerlink" title="关于树莓派（Raspberry pi）"></a>关于树莓派（Raspberry pi）</h2><p>Raspberry Pi是一款针对电脑业余爱好者、教师、小学生以及小型企业等用户的迷你电脑，预装Linux系统，体积仅信用卡大小，搭载ARM架构处理器，运算性能和智能手机相仿。<br>在接口方面，Raspberry Pi提供了可供键鼠使用的USB接口，此外还有快速以太网接口、SD卡扩展接口以及1个HDMI高清视频输出接口，可与显示器或者TV相连</p>
+<p>我的是Raspberry 3b。<br><img src="http://ozkg680jm.bkt.clouddn.com/%E6%A0%91%E8%8E%93%E6%B4%BE1.jpg" width="70%" height="30%"><br><img src="http://ozkg680jm.bkt.clouddn.com/%E6%A0%91%E8%8E%93%E6%B4%BE2.jpg" width="70%" height="30%"><br><img src="http://ozkg680jm.bkt.clouddn.com/%E6%A0%91%E8%8E%93%E6%B4%BE3.jpg" width="70%" height="30%"></p>
+<h2 id="关于OpenWrt"><a href="#关于OpenWrt" class="headerlink" title="关于OpenWrt"></a>关于OpenWrt</h2><p>鉴于开源软件在国内的发展态势，目前国内有基于OpenWRT改进而来的OpenWRT-DreamBox。<br>开发Dreambox的lintel之后开发了基于Barrier Breaker的PandoraBox。<br>这个版本的OpenWRT集成了很多常用功能（包括脱机下载等），使用了改进过的较为稳定的硬件驱动，通过这个版本的OpenWRT可以把路由器的功能发挥得淋漓尽致，同时也保证路由器的稳定运行。</p>
+<h2 id="更多系统支持"><a href="#更多系统支持" class="headerlink" title="更多系统支持"></a>更多系统支持</h2><p>树莓派除了可以当路由器来用，还可以当盒子（影音中心）、计算机来用<br>官网也提供了不少系统下载<br>Raspberry pi官网：<a href="https://www.raspberrypi.org" target="_blank" rel="noopener">https://www.raspberrypi.org</a></p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-04-08T14:35:16.000Z" itemprop="dateUpdated">2018-04-08 22:35:16</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/2018/01/23/树莓派刷LEDE/" target="_blank" rel="external">http://ourfor.top/2018/01/23/树莓派刷LEDE/</a>
+        
+    </div>
+    <footer>
+        <a href="http://ourfor.top">
+            <img src="/img/zip.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树莓派/">树莓派</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ourfor.top/2018/01/23/树莓派刷LEDE/&title=《树莓派刷LEDE》 — Zip的小窝&pic=http://ourfor.top/img/zip.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ourfor.top/2018/01/23/树莓派刷LEDE/&title=《树莓派刷LEDE》 — Zip的小窝&source=树莓派是一个卡片大小的微型电脑，价格在100~300以内，之前再小米商城看了看最新款的小米路由器和小米盒子（小米盒子和小米路由器确实不错）不过我手头有一个..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ourfor.top/2018/01/23/树莓派刷LEDE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《树莓派刷LEDE》 — Zip的小窝&url=http://ourfor.top/2018/01/23/树莓派刷LEDE/&via=http://ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ourfor.top/2018/01/23/树莓派刷LEDE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+    <div id="comment"></div>
+
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/02/07/树莓派系统整理/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">树莓派系统整理</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2018/01/13/个性化clover启动项/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">个性化clover启动项</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Raspberry-pi-3B刷LEDE"><span class="post-toc-number">1.</span> <span class="post-toc-text">Raspberry pi 3B刷LEDE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载最新开源镜像"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">下载最新开源镜像</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LEDE项目官网"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">LEDE项目官网</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#支持的硬件"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">支持的硬件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#烧写镜像到SD卡"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">烧写镜像到SD卡</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Windows平台"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Windows平台</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux-macOS平台"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Linux,macOS平台</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#dd命令烧写镜像"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">dd命令烧写镜像</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用开源软件Etcher"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">使用开源软件Etcher</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置树莓派"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">设置树莓派</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于树莓派（Raspberry-pi）"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">关于树莓派（Raspberry pi）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于OpenWrt"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">关于OpenWrt</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更多系统支持"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">更多系统支持</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        我们一起来让这个世界有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+</div>
+
+        <footer class="footer">
+    
+    <div class="top">
+        
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="https://ourfor.top" target="_blank">home</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://blog.daliansky.net" target="_blank">daliansky</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://github.com" target="_blank">github</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Zip &copy; 2015 - 2018
+            </span>
+        		
+           	
+            
+            
+            
+            
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ourfor.top/2018/01/23/树莓派刷LEDE/&title=《树莓派刷LEDE》 — Zip的小窝&pic=http://ourfor.top/img/zip.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ourfor.top/2018/01/23/树莓派刷LEDE/&title=《树莓派刷LEDE》 — Zip的小窝&source=树莓派是一个卡片大小的微型电脑，价格在100~300以内，之前再小米商城看了看最新款的小米路由器和小米盒子（小米盒子和小米路由器确实不错）不过我手头有一个..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ourfor.top/2018/01/23/树莓派刷LEDE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《树莓派刷LEDE》 — Zip的小窝&url=http://ourfor.top/2018/01/23/树莓派刷LEDE/&via=http://ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ourfor.top/2018/01/23/树莓派刷LEDE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACO0lEQVR42u3awXKDMAxF0fz/T9OZrrponPskkonlyypDKeawEJKsxwMf1+/x7Mz151jfgfzX+j6tQ4YMGdsyruWxvmb9oJy9/k1WlyFDxgkMvvCzJcnC6QsizyZDhgwZPBGsXUPSRxkyZMjoMGppIgnQMmTIkFErYmtFJmmofbQWlyFDxoaMdGPgk7/fuL8hQ4aMTRhXePCNSbLWbU8lQ4aM0Yy06V/bSOCjG2nRi96TDBkyNmfwxhm/vhaOW8miDBkyjmHwsFhr63eSzhehXIYMGQcw+HhErSVHQnBrvEyGDBmjGZ0EMQ3EtYwueBIZMmQMZfTTsjSA9kcoXnw3ZMiQMY6RNv37jbPaaEW6RSFDhoxJDBL4eKCsBdDavmswMyJDhozNGf22WpCulSpsHtZlyJBxAqPWjk8f6N7iVoYMGecw1jfiRSlZjLwUcuaRLiNDhoxtGXwz8t2bB2mp/GILU4YMGUMZHQBP+HgYDbJaGTJkjGak25Y81NYacJ2CWYYMGVMZJFymQxK83VYrlWXIkCGDt97IlTxMp4No/3wxZMiQMZTBhy34xgBPBzsjYsWxMBkyZGzIuMKjk/zV7hN/N2TIkDGOkQY7PkjBx8IIiQ92yJAhYyqDB9lOK40kfKQkfvpXGTJkHMCoFa61R+RNutuGLWTIkHEMIx2eqJ3hxWox4MqQIeMwBh/XSAc10lAuQ4aMExi1IjYoMsO0L266yZAhYzSjVjryUbDaGfKabtjfkCFDxrczfgBiHWWrYO0dfQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.2.8"></script>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.2.8"></script>
+
+<!-- third-party -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2161b98935340910232ef42cf54305ee";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.2.8"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.2.8"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.2.8"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '死鬼去哪里了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+    
+</body>
+</html>

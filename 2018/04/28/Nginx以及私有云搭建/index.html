@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    
+    <title>Nginx以及私有云搭建 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Nginx,ownCloud">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.2.8">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/zip.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:2320813747@qq.com" title="2320813747@qq.com" class="mail">
+            
+              <span>2</span>
+            
+              <span>3</span>
+            
+              <span>2</span>
+            
+              <span>0</span>
+            
+              <span>8</span>
+            
+              <span>1</span>
+            
+              <span>3</span>
+            
+              <span>7</span>
+            
+              <span>4</span>
+            
+              <span>7</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/5213768713/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/album"  >
+                <i class="icon icon-lg icon-photo"></i>
+                ALBUM
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor/My-C-Learning" target="_blank" >
+                <i class="icon icon-lg icon-book"></i>
+                STUDY
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GITHUB
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>Nginx以及私有云搭建</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/lp30.png" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">Nginx以及私有云搭建</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-04-28T03:57:22.000Z" itemprop="datePublished" class="page-time">
+  2018-04-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/私有云/">私有云</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-Nginx以及私有云搭建"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">Nginx以及私有云搭建</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-04-28 11:57:22" datetime="2018-04-28T03:57:22.000Z"  itemprop="datePublished">2018-04-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/私有云/">私有云</a></li></ul>
+
+
+
+            
+	<span id="/2018/04/28/Nginx以及私有云搭建/" class="leancloud_visitors" data-flag-title="Nginx以及私有云搭建" title="Nginx以及私有云搭建">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+            
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/04/28/Nginx以及私有云搭建/#comment">
+            <span class="valine-comment-count" data-xid="/2018/04/28/Nginx以及私有云搭建/"></span>
+        </a>
+    </span>
+
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <script src="/assets/js/APlayer.min.js"> </script><p>平时没事经常去GitHub看看开源的项目，昨天看见一个下载<code>Youtube</code> 视频的项目，觉得很不错，国外网速快，4个G不到30s下好了，要是能VPS上面在线播放就好了，这不，Nginx就派上用场了，平时下载国外资源网速慢，可以先下载到服务器，再从服务器下载。回归正题，本文需要<code>LNMP</code> 环境。<br><a id="more"></a></p>
+<h2 id="一键安装LNMP"><a href="#一键安装LNMP" class="headerlink" title="一键安装LNMP"></a>一键安装LNMP</h2><p>所谓的<strong><em>LNMP</em></strong>是指：</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> Linux系统</li>
+<li style="list-style: none"><input type="checkbox" checked> Nginx</li>
+<li style="list-style: none"><input type="checkbox" checked> mysql(数据库)</li>
+<li style="list-style: none"><input type="checkbox" checked> Php</li>
+</ul>
+<p>下面使用一键安装脚本：<br>ssh连接VPS，使用<code>root</code> 登录主机：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://soft2.vpser.net/lnmp/lnmp1.4-full.tar.gz  <span class="comment">#下载lnmp完整包</span></span><br><span class="line">tar -xvf lnmp1.4-full.tar.gz      <span class="comment">#解压</span></span><br><span class="line"><span class="built_in">cd</span> lnmp1.4-full                   <span class="comment">#进入lnmp1.4-full文件夹</span></span><br><span class="line">chmod +x install.sh                        <span class="comment">#为安装脚本添加可执行权限，遇到确实执行权限，可以添加运行权限</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>安装<code>screen</code> （可选）<br>因为编译时间比较长，大概半个小时左右，如果不慎关闭终端，那么远程服务器的操作就会终止，这时候使用<code>screen</code> 来创建一个会话，这样即使断开本地终端与服务器的连接，安装操作也会继续进行，一般Linux预装了<strong><em>screen</em></strong><br>如果没有安装的话，可以通过<code>yum install screen</code> (centOS等),<code>apt-get install screen</code> (Ubuntu等)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">screen -S lnmp          <span class="comment">#创建名为lnmp的对话窗口</span></span><br><span class="line">bash install.sh         <span class="comment">#执行安装脚本</span></span><br></pre></td></tr></table></figure>
+<p>安装过程我就不细说了，按照提示操作就可以了。</p>
+<h2 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h2><ul>
+<li>通过源码编译安装Nginx<br>通过源码编译安装<code>Nginx</code> 是为了能够使用<code>Nginx</code> 的一些模块，这里为了美化Nginx的目录浏览，会安装<code>Fancy Index module</code> ,<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">Nginx源码</a>.下面我以<code>version=    1.14.0</code> 为例;</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wget http://nginx.org/download/nginx-1.14.0.tar.gz      <span class="comment">#你也可以选择使用curl下载</span></span><br><span class="line">gunzip -c nginx-1.14.0.tar.gz | tar -xvf -         <span class="comment">#解压源码压缩包到当前目录</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/aperezdc/ngx-fancyindex.git ngx-fancyindex   <span class="comment">#需要安装git</span></span><br><span class="line"><span class="built_in">cd</span> nginx-1.14.0              <span class="comment">#进入目标文件夹</span></span><br><span class="line">./configure --user=www --group=www --prefix=/usr/<span class="built_in">local</span>/nginx \      <span class="comment">#每条命令都要回车</span></span><br><span class="line">--with-http_stub_status_module \ </span><br><span class="line">--with-http_ssl_module \</span><br><span class="line">--with-http_v2_module \</span><br><span class="line">--with-http_gzip_static_module \ </span><br><span class="line">--with-ipv6 \ </span><br><span class="line">--with-http_sub_module \</span><br><span class="line">--add-module=../ngx-fancyindex              <span class="comment">#添加Fancy Index module</span></span><br><span class="line">make &amp;&amp; sudo make install                   <span class="comment">#编译并安装</span></span><br></pre></td></tr></table></figure>
+<p>安装好<code>Nginx</code> 之后我们需要简单设置一下来开启<code>目录浏览功能</code> 并启用<code>Fancy Index module</code> ,在<code>/usr/local/nginx/conf/nginx.conf</code> 中添加以下代码：</p>
+<p>service字段中添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  fancyindex on;              <span class="comment"># Enable fancy indexes.</span></span><br><span class="line">  fancyindex_exact_size off;  <span class="comment"># Output human-readable file sizes.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>http字段中添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">autoindex on;</span><br><span class="line">include fancyindex.conf;</span><br></pre></td></tr></table></figure></p>
+<p>接下来执行如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/TheInsomniac/Nginx-Fancyindex-Theme.git /usr/<span class="built_in">local</span>/nginx/fancyindex</span><br></pre></td></tr></table></figure></p>
+<p>效果预览：<a href="https://file.ourfor.top" target="_blank" rel="noopener">@-@</a></p>
+<p>主题项目地址：</p>
+<ul>
+<li><a href="https://github.com/TheInsomniac/Nginx-Fancyindex-Theme.git" target="_blank" rel="noopener">TheInsomniac</a></li>
+<li><a href="https://github.com/Naereen/Nginx-Fancyindex-Theme.git" target="_blank" rel="noopener">Naereen</a></li>
+</ul>
+<h2 id="安装Youtube-dl"><a href="#安装Youtube-dl" class="headerlink" title="安装Youtube-dl"></a>安装<code>Youtube-dl</code></h2><ul>
+<li><a href="https://github.com/rg3/youtube-dl" target="_blank" rel="noopener">youtube-dl</a></li>
+</ul>
+<p>GitHub上面有详细的使用教程；按照上面的介绍，你可以在<code>Terminal</code> 中键入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/<span class="built_in">local</span>/bin/youtube-dl</span><br><span class="line">sudo chmod a+rx /usr/<span class="built_in">local</span>/bin/youtube-dl</span><br></pre></td></tr></table></figure>
+<p>嗯，就这样就安装好了，接下来你就可以去油管找你想下载的视频了。我就不详细介绍命令的用法了。</p>
+<figure class="image-box">
+                <img src="http://p5culcl8r.bkt.clouddn.com/youtube-dl.png" alt="youtube-dl" title="" class="">
+                <p>youtube-dl</p>
+            </figure>
+<p>分辨率最高的视频是不包含音频的，所以还要下载音频，最后用<code>ffmpeg</code> 来将音频文件和视频文件合成新的视频文件。</p>
+<figure class="image-box">
+                <img src="http://p5culcl8r.bkt.clouddn.com/ffmpeg.png" alt="ffmpeg" title="" class="">
+                <p>ffmpeg</p>
+            </figure>
+<h2 id="ownCloud"><a href="#ownCloud" class="headerlink" title="ownCloud"></a>ownCloud</h2><ul>
+<li><a href="https://owncloud.org/" target="_blank" rel="noopener">ownCloud</a></li>
+</ul>
+<p>首先你得有一个域名，大部分域名还是很便宜的，像阿里云、腾讯云的新用户首年1元的域名还是很多的<br>添加一个虚拟主机目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lnmp vhost add</span><br><span class="line">cloud.ourfor.top             <span class="comment">#你的域名，同时将域名dns解析到服务器ip</span></span><br></pre></td></tr></table></figure></p>
+<p>进入网站更目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/wwwroot/cloud.ourfor.top</span><br><span class="line">curl -L https://download.owncloud.org/download/community/owncloud-latest.zip -o oc.zip   <span class="comment">#下载ownCloud源码，并重命名为oc.zip</span></span><br><span class="line">unzip oc.zip    <span class="comment">#解压源码压缩包</span></span><br><span class="line">cp -R owncloud/* .      <span class="comment">#递归拷贝文件到网站根目录</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意：ownCloud需要Php版本高于5.6.0，如果你的PHP版本比较低可以在lnmp文件夹下面执行<code>upgrade.sh</code> 脚本升级Php</p>
+</blockquote>
+<p>接下来打开你绑定的域名，设置一下就好了。</p>
+<p>（未完待续）</p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-05-04T08:32:41.000Z" itemprop="dateUpdated">2018-05-04 16:32:41</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/2018/04/28/Nginx以及私有云搭建/" target="_blank" rel="external">http://ourfor.top/2018/04/28/Nginx以及私有云搭建/</a>
+        
+    </div>
+    <footer>
+        <a href="http://ourfor.top">
+            <img src="/img/zip.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ownCloud/">ownCloud</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/&title=《Nginx以及私有云搭建》 — Zip的小窝&pic=http://ourfor.top/img/zip.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/&title=《Nginx以及私有云搭建》 — Zip的小窝&source=平时没事经常去GitHub看看开源的项目，昨天看见一个下载Youtube 视频的项目，觉得很不错，国外网速快，4个G不到30s下好了，要是能VPS上面在线..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Nginx以及私有云搭建》 — Zip的小窝&url=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/&via=http://ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+    <div id="comment"></div>
+
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/05/12/Android手机多系统教程/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android手机多系统教程</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2018/04/21/进制转化/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">进制转化</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一键安装LNMP"><span class="post-toc-number">1.</span> <span class="post-toc-text">一键安装LNMP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Nginx"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置Nginx</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Youtube-dl"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Youtube-dl</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ownCloud"><span class="post-toc-number">4.</span> <span class="post-toc-text">ownCloud</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        我们一起来让这个世界有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+</div>
+
+        <footer class="footer">
+    
+    <div class="top">
+        
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="https://ourfor.top" target="_blank">home</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://blog.daliansky.net" target="_blank">daliansky</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://github.com" target="_blank">github</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Zip &copy; 2015 - 2018
+            </span>
+        		
+           	
+            
+            
+            
+            
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/&title=《Nginx以及私有云搭建》 — Zip的小窝&pic=http://ourfor.top/img/zip.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/&title=《Nginx以及私有云搭建》 — Zip的小窝&source=平时没事经常去GitHub看看开源的项目，昨天看见一个下载Youtube 视频的项目，觉得很不错，国外网速快，4个G不到30s下好了，要是能VPS上面在线..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Nginx以及私有云搭建》 — Zip的小窝&url=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/&via=http://ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ourfor.top/2018/04/28/Nginx以及私有云搭建/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aQXLcMAwEwP3/pzcPcFaZAeRULdU8uVQWxfYBBgi8XvF6/1iffufTk5/vJj/fvDAwML6W8b5cydY5oGUkZ8PAwHgO4/pwnw46e359oOTPh4GBgTFL15IwnQdWDAwMjBnj+klbmrYpIwYGBkZSxCaXbvvrs1+vxTEwML6QMdv6//z8K/0NDAyMr2K8y5WkdHmDod3h484YGBhHMzafb8N0WyRfP//L/hgYGIcyZlf57cc2JWv0LgYGxgMYsxZj0ipIwJvBCwwMjCcw8obirBnQ7nND0omBgXEoY5bYbQJlu0PURsXAwDiUsRntyoNvXqy2qecrqa0xMDC+nHEdBNv0MSlWkxC8CcoYGBinMu5qWOaXdMOrtPa/BwYGxkGMTXrX3uptGG2DEwMD4wxG+/IsOLZFbFtmY2BgnM1oU67ZddgmNGNgYGC0R99c9LeBuEheMTAwHsNoC9TNu5va+h/TIhgYGMcx8vZkPn4xawDkXyy6HBgYGAcxhn2DURK5STeLUhYDA+NQRnKsNlwmQ2azRkLUyMTAwDiIkYfCu67P7ipfMTAwnsB4l+veYYtZmyHKbTEwMA5izArUTSK4b3DmYxwYGBgnMfIg246F3dUixcDAwMgTu6QonRW9bSmLgYGBkXxsNpDR7l+AMTAwMIKwmDc789QwmmjDwMB4DGNToLbJ3F0l8aoWx8DA+CrGqnQsA3TOWM2MYGBgnMP4Ayottz3LTq+mAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.2.8"></script>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.2.8"></script>
+
+<!-- third-party -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2161b98935340910232ef42cf54305ee";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.2.8"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.2.8"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.2.8"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '死鬼去哪里了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+    
+</body>
+</html>
