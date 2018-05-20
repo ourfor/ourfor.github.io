@@ -23,7 +23,7 @@
     <script type="text/javascript">
         window.lazyScripts=[];
     </script>
-<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+<script src="/assets/js/DPlayer.min.js"></script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"></head>
 
 
 <body>
@@ -289,8 +289,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dplayer options:</span><br><span class="line">    <span class="string">'autoplay'</span>, <span class="string">'loop'</span>, <span class="string">'screenshot'</span>, <span class="string">'hotkey'</span>, <span class="string">'mutex'</span>, <span class="string">'dmunlimited'</span> : bool options, use <span class="string">"yes"</span> <span class="string">"y"</span> <span class="string">"true"</span> <span class="string">"1"</span> <span class="string">"on"</span> or just without value to <span class="built_in">enable</span></span><br><span class="line">    <span class="string">'preload'</span>, <span class="string">'theme'</span>, <span class="string">'lang'</span>, <span class="string">'logo'</span>, <span class="string">'url'</span>, <span class="string">'pic'</span>, <span class="string">'thumbnails'</span>, <span class="string">'vidtype'</span>, <span class="string">'suburl'</span>, <span class="string">'subtype'</span>, <span class="string">'subbottom'</span>, <span class="string">'subcolor'</span>, <span class="string">'subcolor'</span>, <span class="string">'id'</span>, <span class="string">'api'</span>, <span class="string">'token'</span>, <span class="string">'addition'</span>, <span class="string">'dmuser'</span> : string arguments</span><br><span class="line">    <span class="string">'volume'</span>, <span class="string">'maximum'</span> : number arguments</span><br><span class="line">container options:</span><br><span class="line">    <span class="string">'width'</span>, <span class="string">'height'</span> : string, used <span class="keyword">in</span> container element style</span><br><span class="line">other:</span><br><span class="line">    <span class="string">'code'</span> : value of this key will be append to script tag</span><br></pre></td></tr></table></figure>
 <p>以及例子： </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% dplayer <span class="string">"url=http://devtest.qiniudn.com/若能绽放光芒.mp4"</span> <span class="string">"addition=https://dplayer.daoapp.io/bilibili?aid=4157142"</span> <span class="string">"api=http://dplayer.daoapp.io"</span> <span class="string">"pic=http://devtest.qiniudn.com/若能绽放光芒.png"</span> <span class="string">"id=9E2E3368B56CDBB4"</span> <span class="string">"loop=yes"</span> <span class="string">"theme=#FADFA3"</span> <span class="string">"autoplay=false"</span> <span class="string">"token=tokendemo"</span> %&#125;</span><br><span class="line">&#123;% dplayer <span class="string">"url=http://devtest.qiniudn.com/若能绽放光芒.mp4"</span> <span class="string">"addition=https://dplayer.daoapp.io/bilibili?aid=4157142"</span> <span class="string">"api=http://dplayer.donot.help/dplayerpy"</span> <span class="string">"pic=http://devtest.qiniudn.com/若能绽放光芒.png"</span> <span class="string">"id=2622668"</span> <span class="string">"loop=yes"</span> <span class="string">"theme=#FADFA3"</span> <span class="string">"autoplay=false"</span> <span class="string">"width=233px"</span> %&#125;</span><br><span class="line">&#123;% dplayer <span class="string">'url=some.mp4'</span> <span class="string">"id=someid"</span> <span class="string">"api=https://api.prprpr.me/dplayer/"</span> <span class="string">"addition=/some.json"</span> <span class="string">'code=player.on("loadstart",function()&#123;console.log("loadstart")&#125;)'</span> <span class="string">"autoplay"</span> %&#125;</span><br></pre></td></tr></table></figure>
-<div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"http://ozkg680jm.bkt.clouddn.com/T-ara%20-%20TIAMO.mp4","pic":"http://img0.c.yinyuetai.com/artist/fan/150810/0/-M-70f069427cca50778df6b121a8bf5a8a_0x0.jpg"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>   
-<div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"autoplay":true,"theme":"#FADFA3","loop":true,"video":{"url":"http://ozkg680jm.bkt.clouddn.com/T-ara%20-%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%20%E1%84%86%E1%85%B5%E1%84%8E%E1%85%A7%E1%86%BB%E1%84%82%E1%85%A6%20%28So%20Crazy%29.mp4","pic":"http://img0.c.yinyuetai.com/artist/fan/150810/0/-M-70f069427cca50778df6b121a8bf5a8a_0x0.jpg"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"http://ozkg680jm.bkt.clouddn.com/T-ara%20-%20TIAMO.mp4","pic":"http://img0.c.yinyuetai.com/artist/fan/150810/0/-M-70f069427cca50778df6b121a8bf5a8a_0x0.jpg"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>   
+<div id="dplayer2" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer2"),"autoplay":true,"theme":"#FADFA3","loop":true,"video":{"url":"http://ozkg680jm.bkt.clouddn.com/T-ara%20-%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%20%E1%84%86%E1%85%B5%E1%84%8E%E1%85%A7%E1%86%BB%E1%84%82%E1%85%A6%20%28So%20Crazy%29.mp4","pic":"http://img0.c.yinyuetai.com/artist/fan/150810/0/-M-70f069427cca50778df6b121a8bf5a8a_0x0.jpg"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 
         </div>
         
@@ -298,7 +298,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-22T03:54:24.000Z" itemprop="dateUpdated">2018-03-22 11:54:24</time>
+    最后更新时间：<time datetime="2018-03-22T03:54:24.000Z" itemprop="dateUpdated">2018-03-22 11:54:24</time>
 </span><br>
 
 
@@ -546,100 +546,7 @@
 
 
     
-    <!-- main-js -->
-<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.2.8"></script>
-
-<script type="text/javascript" src="https://cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-
-<script type="text/javascript" src="/js/method.js?v=1.2.8"></script>
-<script type="text/javascript" src="/js/blog.js?v=1.2.8"></script>
-
-<!-- third-party -->
-
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?2161b98935340910232ef42cf54305ee";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
-<script type="text/javascript" src="/js/plugins/local_search.js?v=1.2.8"></script>
-<script type="text/javascript">
-	var search_path = "search.xml";
-	if (search_path.length === 0) {
-		search_path = "search.xml";
-	}
-	var path = "/" + search_path;
-	searchFunc(path, "local-search-input", "local-search-result");
-</script>
-
-
-
     
-        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script type="text/javascript" src="/js/plugins/valine.js?v=1.2.8"></script>
-    
-    
-
-
-
-<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.2.8"></script>
-
-
-
-    <!-- mathjax config similar to math.stackexchange -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-            processEscapes: true,
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-
-
-
-    <script>
-    (function() {
-        var OriginTitile = document.title, titleTime;
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                document.title = '死鬼去哪里了！';
-                clearTimeout(titleTime);
-            } else {
-                document.title = '(つェ⊂)咦!又好了!';
-                titleTime = setTimeout(function() {
-                    document.title = OriginTitile;
-                },2000);
-            }
-        });
-    })();
-</script>
-
-
     
 </body>
 </html>
