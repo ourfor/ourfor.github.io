@@ -15,9 +15,9 @@
         // Data Center
         var DC = {
             reward:	true,
-            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
-            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
-            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}')
+            lv: JSON.parse('{"enable":"ture","app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":"ture","appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}')
         };
     </script>
     <script type="text/javascript">
@@ -304,6 +304,37 @@
 <li>密码错误，无法解密:此时只需要在TWRP自带的Terminal下面删除锁屏密码保存的文件即可，锁屏密码锁在路径，系统的相对路径(系统安装位置)假设为～，密码保存文件位于：<code>~/data/system/</code>，以主系统为例 <code>cd /data/system</code>,查看文件<code>ls</code>,其他后缀名为 <strong><em>key</em></strong>的就是要删除的文件,<code>rm *.key</code>同样的，因为密码错误无法进入系统也可以删除对应的密码保存文件。</li>
 </ul>
 <h3 id="刷机指南"><a href="#刷机指南" class="headerlink" title="刷机指南"></a>刷机指南</h3><h4 id="通过Recovery-卡刷"><a href="#通过Recovery-卡刷" class="headerlink" title="通过Recovery 卡刷"></a>通过<code>Recovery</code> 卡刷</h4><h4 id="通过Fastboot-线刷"><a href="#通过Fastboot-线刷" class="headerlink" title="通过Fastboot 线刷"></a>通过<code>Fastboot</code> 线刷</h4><p>（未完待续…）</p>
+<p><div id="app"></div><br><!-- 加载 cplayer 脚本 --></p>
+<script src="https://cdn.jsdelivr.net/gh/MoePlayer/cPlayer/dist/cplayer.js"></script>
+<script>
+  let player = new cplayer({
+    element: document.getElementById('app'),
+    autoplay: true,
+    showPlaylist: true,
+    playlist: [
+      {
+        src: 'http://ozkg680jm.bkt.clouddn.com/%E6%A3%AE%E6%B0%B8%E7%9C%9F%E7%94%B1%E7%BE%8E-Mermaid%20girl%20%28Extended%20RRver.%29.flac',
+        poster: 'http://ozkg680jm.bkt.clouddn.com/Mermaid%20girl%20%28Extended%20RRver.%29.jpg',
+        name: 'Mermaid girl (Extended RRver.)',
+        artist: '森永真由美'
+      },
+      {
+        src: 'http://ozkg680jm.bkt.clouddn.com/%E6%A3%AE%E6%B0%B8%E5%8D%83%E6%89%8D-%E3%83%9F%E3%83%81%E3%83%8E%E3%83%81%E3%83%A2%E3%82%B7%E3%83%BC%E3%82%AD%E3%83%9F%E3%83%8E%E3%82%AD%E3%83%A2%E3%83%81%20%28%E8%B7%AF%E4%B8%8A%E7%9A%84%E7%8C%AB%E5%B0%BE%E8%8D%89%20%E4%BD%A0%E7%9A%84%E5%BF%83%E6%83%85%29.mp3',
+        poster: 'http://ozkg680jm.bkt.clouddn.com/%E3%83%9F%E3%83%81%E3%83%8E%E3%83%81%E3%83%A2%E3%82%B7%E3%83%BC%E3%82%AD%E3%83%9F%E3%83%8E%E3%82%AD%E3%83%A2%E3%83%81%20%28%E8%B7%AF%E4%B8%8A%E7%9A%84%E7%8C%AB%E5%B0%BE%E8%8D%89%20%E4%BD%A0%E7%9A%84%E5%BF%83%E6%83%85%29.jpg',
+        name: '路上的猫尾草 你的心情',
+        artist: '森永千才'
+      },
+      {
+        src: 'http://ozkg680jm.bkt.clouddn.com/%E5%AD%99%E9%9C%B2-%E6%9B%BE%E7%BB%8F%E7%88%B1%E8%BF%87%E8%B0%81.flac',
+        poster: 'http://ozkg680jm.bkt.clouddn.com/%E6%9B%BE%E7%BB%8F%E7%88%B1%E8%BF%87%E8%B0%81.jpg',
+        name: '曾经爱过谁',
+        artist: '孙露'
+      }
+    ]
+  })
+</script>
+
+
 
         </div>
         
@@ -311,16 +342,16 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-05-17T07:59:44.000Z" itemprop="dateUpdated">2018-05-17 15:59:44</time>
+    Last updated: <time datetime="2018-05-21T03:41:26.286Z" itemprop="dateUpdated">2018-05-21 11:41:26</time>
 </span><br>
 
 
         
-        转载注明出处，原文地址：<a href="/2018/05/12/Android手机多系统教程/" target="_blank" rel="external">http://ourfor.top/2018/05/12/Android手机多系统教程/</a>
+        转载注明出处，原文地址：<a href="/2018/05/12/Android手机多系统教程/" target="_blank" rel="external">https://ourfor.top/2018/05/12/Android手机多系统教程/</a>
         
     </div>
     <footer>
-        <a href="http://ourfor.top">
+        <a href="https://ourfor.top">
             <img src="/img/zip.jpg" alt="Zip">
             Zip
         </a>
@@ -345,7 +376,7 @@
     <ul class="reset share-icons">
       
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ourfor.top/2018/05/12/Android手机多系统教程/&title=《Android手机多系统教程》 — Zip的小窝&pic=http://ourfor.top/img/zip.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ourfor.top/2018/05/12/Android手机多系统教程/&title=《Android手机多系统教程》 — Zip的小窝&pic=https://ourfor.top/img/zip.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -357,25 +388,25 @@
       </li>
       
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ourfor.top/2018/05/12/Android手机多系统教程/&title=《Android手机多系统教程》 — Zip的小窝&source=其实在小米4之前的每一代小米手机都可以安装双系统，这是由于MIUI的频繁更新而设置的一种保护机制,不过之后就取消了,目前Android手机多系统教程,是通..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ourfor.top/2018/05/12/Android手机多系统教程/&title=《Android手机多系统教程》 — Zip的小窝&source=其实在小米4之前的每一代小米手机都可以安装双系统，这是由于MIUI的频繁更新而设置的一种保护机制,不过之后就取消了,目前Android手机多系统教程,是通..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ourfor.top/2018/05/12/Android手机多系统教程/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ourfor.top/2018/05/12/Android手机多系统教程/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android手机多系统教程》 — Zip的小窝&url=http://ourfor.top/2018/05/12/Android手机多系统教程/&via=http://ourfor.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android手机多系统教程》 — Zip的小窝&url=https://ourfor.top/2018/05/12/Android手机多系统教程/&via=https://ourfor.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ourfor.top/2018/05/12/Android手机多系统教程/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ourfor.top/2018/05/12/Android手机多系统教程/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -505,7 +536,7 @@
     <ul class="reset share-icons">
       
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ourfor.top/2018/05/12/Android手机多系统教程/&title=《Android手机多系统教程》 — Zip的小窝&pic=http://ourfor.top/img/zip.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ourfor.top/2018/05/12/Android手机多系统教程/&title=《Android手机多系统教程》 — Zip的小窝&pic=https://ourfor.top/img/zip.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -517,25 +548,25 @@
       </li>
       
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ourfor.top/2018/05/12/Android手机多系统教程/&title=《Android手机多系统教程》 — Zip的小窝&source=其实在小米4之前的每一代小米手机都可以安装双系统，这是由于MIUI的频繁更新而设置的一种保护机制,不过之后就取消了,目前Android手机多系统教程,是通..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ourfor.top/2018/05/12/Android手机多系统教程/&title=《Android手机多系统教程》 — Zip的小窝&source=其实在小米4之前的每一代小米手机都可以安装双系统，这是由于MIUI的频繁更新而设置的一种保护机制,不过之后就取消了,目前Android手机多系统教程,是通..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ourfor.top/2018/05/12/Android手机多系统教程/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ourfor.top/2018/05/12/Android手机多系统教程/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android手机多系统教程》 — Zip的小窝&url=http://ourfor.top/2018/05/12/Android手机多系统教程/&via=http://ourfor.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android手机多系统教程》 — Zip的小窝&url=https://ourfor.top/2018/05/12/Android手机多系统教程/&via=https://ourfor.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ourfor.top/2018/05/12/Android手机多系统教程/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ourfor.top/2018/05/12/Android手机多系统教程/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -547,7 +578,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHUlEQVR42u3aQW7DMAwEwPz/0+m1RWF3l0oKRBqdgtR1NDoQpMjHI17Pb+v+matvfr8h+fzihYGB8bGM5+26f/UV7wpw9eQ96X5vGBgY5zDuA2iy0QSWbCg/PgwMDIyWcRU682/aQI+BgYGRh9H1JK8taDEwMM5kJK9OrtuSoJlf272lFsfAwPhARn7r/v+f39LfwMDA+CjGs1wrpen6r1/uCgMDY2vGrIW5cim20k744/0YGBgHMFa2OCssZ2H68hcxMDA2ZeRDD+3VWLvRWZMAAwPjNEbehlxvcBaNyeD4MDAwTmC0bcXZ/76xoMXAwNiaMSsm25QuP5oiHcTAwDiG0bYtZ5MPK7AoVcXAwNiakV+ftSE4v1xbD/oYGBh7M/LLrxVMfmR58MXAwDiH0Zays9Rt1rAcjnFgYGBsx2g33TYXZ1lq2xzFwMA4gbGSIL72miw/vh9PYmBgHMNYed3KiEZ+KFF/AwMDYzvG+rVaXgy3W2znKDAwME5mrCd2SdLZ/rUOuBgYGBsx8lSsHRRrU8+2wYmBgbE3Y9bznA115aNmMx4GBsZ+jGe5ilMpg/VSeoqBgbE1ox2haMe/EsywDTDDYGBgfCwjCbKzhkEbiNuAi4GBcRqjLVPzYDrD1A0DDAwMjCAQt03NPMQ/VnwYGBgHM5LGZBuChwAMDIxjGG34y5PFGbstcTEwMPZmvCooryeF62wMDIztGF//cf71tsfRZwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3aO3ICQQwFQO5/aZziKi88SThYTU9EsKynCWT9Ho/4PF9O8szVeX2y91dGBwMD47aM/A9fXSW57tUzyRve3w0DA+McxlUE6z2TXzf/sT7cGQMDA+PiQu8Tu95FMTAwMOaMJLBOSlMMDAyMSRGbpHdJydoL0F+rxTEwMG7ImATB//78L/MNDAyMWzGexfMe1ksfn+ODgYGxm5EHuB6s+s7edzEwMM5k5C/tlZ35CLOQLGJgYCxlVJv1vVZXNcnLi9tfGS4GBsZSRj7InA8g84BbLX0xMDB2M/KkLQ+dSeI4Cax/fMbAwFjNqK4+TArgSXFbrsgxMDAWMSaDxiSkJklnrxi+rMUxMDCWMvLwlxe6vVQvL6GjnREMDIwVjDwg5k2xvD3XSzqb/UIMDIzbMqqJXbWhX00K8/IVAwPjHEY+qsyXLXpt/SRZLCxbYGBgLGLkl/7uGLLXbvvwfwMDA+MARt7uz8NuAquuxn6owjEwMNYx8iFltYnfK2LzwB0VsRgYGIsYSXCslrLz1YpqGYyBgXEaIw/Bedjt/TSFnwwDA+MARpJlzVcu5iG7sDOCgYGxgvEsnt44obfeWvgWBgbGakYv2FUbZNWUcTIWxcDA2Mrohcje6HFe1mJgYJzM6I0Sq425ajOuXMpiYGBgDEJnb+WisI6GgYGBUSTNl8OqowsMDIwTGEkRWw27SUNt0uDDwMA4h1ENedXmfu+d1aEmBgbGUsYPenC8KmHPYC8AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
@@ -623,7 +654,7 @@ var _hmt = _hmt || [];
     });
 </script>
 
-<script type="text/javascript" src="/js/mathjax.js"></script>
+<script type="text/javascript" src="/js/mathjax"></script>
 
 
 
