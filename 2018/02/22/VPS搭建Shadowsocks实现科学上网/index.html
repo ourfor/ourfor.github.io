@@ -322,23 +322,35 @@
 <li><del><a href="https://www.letsgofree.net（需要注册，且每个月只有2G）" target="_blank" rel="noopener">https://www.letsgofree.net（需要注册，且每个月只有2G）</a></del></li>
 <li><del><a href="https://doub.bid/sszhfx/" target="_blank" rel="noopener">https://doub.bid/sszhfx/</a></del></li>
 </ul>
-<div id="aplayer3" class="aplayer" style="margin-bottom: 20px;"></div>
-		<script>
-			var ap = new APlayer({
-				element: document.getElementById("aplayer3"),
-				narrow: false,
-				autoplay: true,
-				showlrc: 0,
-				music: {
-					title: "没离开过",
-					author: "张韶涵",
-					url: "http://ozkg680jm.bkt.clouddn.com/%E5%BC%A0%E9%9F%B6%E6%B6%B5-%E6%B2%A1%E7%A6%BB%E5%BC%80%E8%BF%87.flac",
-					pic: "https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike272%2C5%2C5%2C272%2C90/sign=6ed5142a95510fb36c147fc5b85aa3f0/8326cffc1e178a8231192533fd03738da977e878.jpg",
-				}
-			});
-			window.aplayers || (window.aplayers = []);
-			window.aplayers.push(ap);
-		</script>
+<p><div id="app"></div><br><!-- 加载 cplayer 脚本 --></p>
+<script src="https://cdn.jsdelivr.net/gh/MoePlayer/cPlayer/dist/cplayer.js"></script>
+<script>
+  let player = new cplayer({
+    element: document.getElementById('app'),
+    autoplay: true,
+    showPlaylist: true,
+    playlist: [
+      {
+        src: 'http://ozkg680jm.bkt.clouddn.com/%E5%BC%A0%E9%9F%B6%E6%B6%B5-%E6%B2%A1%E7%A6%BB%E5%BC%80%E8%BF%87.flac',
+        poster: 'https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike272%2C5%2C5%2C272%2C90/sign=6ed5142a95510fb36c147fc5b85aa3f0/8326cffc1e178a8231192533fd03738da977e878.jpg',
+        name: '没离开过',
+        artist: '张韶涵'
+      }
+    ]
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
         
@@ -346,7 +358,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-04-08T04:18:29.000Z" itemprop="dateUpdated">2018-04-08 12:18:29</time>
+    Last updated: <time datetime="2018-05-23T04:25:42.302Z" itemprop="dateUpdated">2018-05-23 12:25:42</time>
 </span><br>
 
 
@@ -643,29 +655,6 @@ var _hmt = _hmt || [];
 <script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
 <script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.2.8"></script>
 
-
-
-    <!-- mathjax config similar to math.stackexchange -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-            processEscapes: true,
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="/js/mathjax"></script>
 
 
 
