@@ -292,23 +292,30 @@
 <p>升级<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull emby/embyserver:latest</span><br></pre></td></tr></table></figure></p>
 <p>当然你也可以使用第三方镜像</p>
 <p>安装完毕后，打开<code>http://localhost:8096</code>,这里的<code>localhost</code>是ip地址，VPS填写公网IP，树莓派填写局域网IP。</p>
-<div id="aplayer2" class="aplayer" style="margin-bottom: 20px;"></div>
-		<script>
-			var ap = new APlayer({
-				element: document.getElementById("aplayer2"),
-				narrow: false,
-				autoplay: true,
-				showlrc: 0,
-				music: {
-					title: "我的歌声里",
-					author: "曲婉婷",
-					url: "http://ozkg680jm.bkt.clouddn.com/%E6%9B%B2%E5%A9%89%E5%A9%B7-%E6%88%91%E7%9A%84%E6%AD%8C%E5%A3%B0%E9%87%8C.flac",
-					pic: "http://ozkg680jm.bkt.clouddn.com/%E6%88%91%E7%9A%84%E6%AD%8C%E5%A3%B0%E9%87%8C.jpg",
-				}
-			});
-			window.aplayers || (window.aplayers = []);
-			window.aplayers.push(ap);
-		</script>
+<p><div id="app"></div><br><!-- 加载 cplayer 脚本 --></p>
+<script src="https://cdn.jsdelivr.net/gh/MoePlayer/cPlayer/dist/cplayer.js"></script>
+<script>
+  let player = new cplayer({
+    element: document.getElementById('app'),
+    autoplay: true,
+    showPlaylist: true,
+    playlist: [
+      {
+        src: 'http://ozkg680jm.bkt.clouddn.com/%E6%9B%B2%E5%A9%89%E5%A9%B7-%E6%88%91%E7%9A%84%E6%AD%8C%E5%A3%B0%E9%87%8C.flac',
+        poster: 'http://ozkg680jm.bkt.clouddn.com/%E6%88%91%E7%9A%84%E6%AD%8C%E5%A3%B0%E9%87%8C.jpg',
+        name: '我的歌声里',
+        artist: '曲婉婷'
+      }
+    ]
+  })
+</script>
+
+
+
+
+
+
+
 
         </div>
         
@@ -316,7 +323,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-31T02:52:21.000Z" itemprop="dateUpdated">2018-03-31 10:52:21</time>
+    Last updated: <time datetime="2018-05-23T04:18:05.759Z" itemprop="dateUpdated">2018-05-23 12:18:05</time>
 </span><br>
 
 
