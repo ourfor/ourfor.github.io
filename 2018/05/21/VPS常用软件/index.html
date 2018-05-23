@@ -250,11 +250,11 @@
 <a id="more"></a>
 <p>以<code>CentOS</code>为例</p>
 <ul>
-<li><p>rclone 让你的VPS变成<strong><em>大盘鸡</em></strong></p>
+<li>rclone 让你的VPS变成<strong><em>大盘鸡</em></strong></li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://rclone.org/install.sh | sudo bash -s beta</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>youtube-dl 随时随地下载<strong><em>油管</em></strong>视频</p>
-</li>
+<ul>
+<li>youtube-dl 随时随地下载<strong><em>油管</em></strong>视频</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/<span class="built_in">local</span>/bin/youtube-dl</span><br><span class="line">sudo chmod a+rx /usr/<span class="built_in">local</span>/bin/youtube-dl</span><br></pre></td></tr></table></figure>
 <ul>
@@ -280,26 +280,17 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git</span><br><span class="line">./install_in_omz.sh</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vi .zshrc      <span class="comment">#编辑zsh配置文件，找到主题设置并修改为ZSH_THEME="powerline"</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>zsh-autosuggestions zsh的插件，命令联想</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">在Plugin里面添加zsh-autosuggestions</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>zsh-syntax-highlighting 命令高亮</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">在Plugin里面添加zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>neofetch 用了才知道😂😂</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/dylanaraps/neofetch.git&amp;&amp;make</span><br><span class="line">make install</span><br><span class="line">neofetch</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新gcc-自带gcc太旧无法满足大部分项目需要</p>
-</li>
+<li>zsh-autosuggestions zsh的插件，命令联想</li>
 </ul>
-<ol>
-<li>查询<code>brew</code>仓库默认gcc版本，<a href="http://formulae.brew.sh/" target="_blank" rel="noopener">查询</a>，在搜索🔍框里输入<code>gcc</code>,目前默认为<code>-version 7.3.0_1</code></li>
-<li>终端输入<code>brew install gcc</code></li>
-<li>终端安装完毕，编辑shell配置文件启用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vi .zshrc   <span class="comment">#我使用的是zsh，所以编辑这个文件</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>任意位置添加下面几条，为<code>gcc-7</code>设置别名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#gcc -version</span></span><br><span class="line"><span class="built_in">alias</span> gcc=<span class="string">"gcc-7"</span></span><br><span class="line"><span class="built_in">alias</span> g++=<span class="string">"g++-7"</span></span><br></pre></td></tr></table></figure></p>
-<p>输入<code>source .zshrc</code>使配置生效<br>查看是否生效<code>gcc -v</code>如果显示为<code>Homebrew</code>安装版本则配置正确✅</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">在Plugin里面添加zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+<ul>
+<li>zsh-syntax-highlighting 命令高亮</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">在Plugin里面添加zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+<ul>
+<li>neofetch 用了才知道😂😂</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/dylanaraps/neofetch.git&amp;&amp;make</span><br><span class="line">make install</span><br><span class="line">neofetch</span><br></pre></td></tr></table></figure>
 <ul>
 <li>安装<code>Airline</code>-Vim会更强</li>
 </ul>
@@ -313,7 +304,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-05-23T14:57:00.646Z" itemprop="dateUpdated">2018-05-23 22:57:00</time>
+    Last updated: <time datetime="2018-05-23T15:06:17.000Z" itemprop="dateUpdated">2018-05-23 23:06:17</time>
 </span><br>
 
 
