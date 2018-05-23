@@ -5,7 +5,7 @@
     <entry>
       <title>VPS常用软件</title>
       <link href="undefined2018/05/21/VPS%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>服务器上面一些常用的软件和设置。</p><a id="more"></a><ul><li>rclone 让你的VPS变成<a href="https://baidu.com" target="_blank" rel="noopener">大盘鸡</a></li><li>youtube-dl 随时随地下载<strong><em>油管</em></strong>视频</li><li>FFmpeg 强大且开源的<code>媒体</code></li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br></pre></td></tr></table></figure>]]></content>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>服务器上面一些常用的软件和设置。</p><a id="more"></a><ul><li>rclone 让你的VPS变成<strong><em>大盘鸡</em></strong></li><li>youtube-dl 随时随地下载<strong><em>油管</em></strong>视频</li><li>FFmpeg 强大且开源的<code>媒体处理工具</code></li></ul>]]></content>
       
       <categories>
           
