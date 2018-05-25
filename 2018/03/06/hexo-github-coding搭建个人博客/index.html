@@ -302,6 +302,53 @@
 <p>安装好<code>brew</code>后，键入以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install git         <span class="comment">#安装git</span></span><br><span class="line">brew install nodejs      <span class="comment">#安装Node.js</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g     <span class="comment">#安装Hexo</span></span><br><span class="line">hexo init blog              <span class="comment">#初始化博客</span></span><br><span class="line"><span class="built_in">cd</span> blog                     <span class="comment">#进入博客根目录</span></span><br><span class="line">npm install                 <span class="comment">#安装hexo到博客根目录</span></span><br></pre></td></tr></table></figure>
 <p>(未完待续)</p>
+<h1 id="高清重置"><a href="#高清重置" class="headerlink" title="高清重置"></a>高清重置</h1><p>由于学习和工作的需要，大部分同学使用的是<code>Windows</code> 操作系统，所以<code>Linux</code> 和 <code>macOS</code> 就先不写了，我在虚拟机里面安装了<code>Windows10</code> 所以下面以<code>Windows</code> 为例，来安装<code>hexo</code> 搭建博客。</p>
+<ul>
+<li><a href="https://file.ourfor.top/tools/node-v10.2.0-x64.msi" target="_blank" rel="noopener">Node.js</a></li>
+<li><a href="https://file.ourfor.top/tools/Git-2.17.0-64-bit.exe" target="_blank" rel="noopener">git</a></li>
+</ul>
+<p>你可以到官网下载，不过可能由于<code>GFW</code> 的原因下载比较慢，所以我下载到了服务器，放在了<code>tools</code>这个目录里面。<a href="https://file.ourfor.top" target="_blank" rel="noopener">🔧Here</a>.下载好这两个软件，安装的时候保存默认就好。</p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装<code>hexo</code></h3><p>在<code>Windows10</code> 的搜索框中查找<strong><em>Git bash</em></strong>,或者点击Windows徽键，在最近添加中打开，在<code>Git bush</code>键入如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span>                <span class="comment">#print working directory显示当前路径。</span></span><br><span class="line"><span class="built_in">cd</span> ~/Desktop       <span class="comment">#change directory,更改路径切换到桌面。如果提示找不到，那可能要把Desktop改成桌面</span></span><br><span class="line">mkdir blog         <span class="comment">#make directory 新建一个名为blog的文件夹，名字不一定叫blog可以根据你的喜好填写</span></span><br><span class="line">npm install hexo-cli -g   <span class="comment">#安装hexo</span></span><br><span class="line">hexo -v                <span class="comment">#检查是否成功安装hexo，并查看版本信息</span></span><br><span class="line">hexo init blog         <span class="comment">#初始化blog这个文件夹，这个文件夹就是第3条命令创建的文件夹，如果你使用的是其他名称，换成对应的名称即可。</span></span><br><span class="line"><span class="built_in">cd</span> blog                <span class="comment">#进入blog这个文件夹，和上面一样</span></span><br><span class="line">npm install            <span class="comment">#安装必要插件</span></span><br><span class="line">hexo generate          <span class="comment">#简写hexo g,即渲染并生成HTML页面。</span></span><br><span class="line">hexo server            <span class="comment">#本地计算机启动服务，如果此时出现nodejs提示的防火墙，允许即可</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>hexo -v</code>出现如下信息则说明<code>hexo</code>安装好了。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">hexo-cli: 1.1.0</span><br><span class="line">os: Windows_NT 10.0.16299 win32 x64</span><br><span class="line">http_parser: 2.8.0</span><br><span class="line">node: 10.2.0</span><br><span class="line">v8: 6.6.346.32-node.8</span><br><span class="line">uv: 1.20.3</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">ares: 1.14.0</span><br><span class="line">modules: 64</span><br><span class="line">nghttp2: 1.29.0</span><br><span class="line">napi: 3</span><br><span class="line">openssl: 1.1.0h</span><br><span class="line">icu: 61.1</span><br><span class="line">unicode: 10.0</span><br><span class="line">cldr: 33.0</span><br><span class="line">tz: 2018c</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>hexo s</code>输出信息</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br><span class="line">INFO  Catch you later</span><br></pre></td></tr></table></figure>
+<p><img src="http://p923bw9fi.bkt.clouddn.com/git_bash.PNG"><br>博客将会部署到本地，使用<code>4000</code> 的端口，在浏览器中打开<code>http://localhost:4000/</code> 就可以查看博客了。自此我们的hexo就安装好了。</p>
+<h3 id="远程部署"><a href="#远程部署" class="headerlink" title="远程部署"></a>远程部署</h3><p>你逗我的吧，<code>hexo</code>就弄好了？那我为什么外网访问不了呢？手机上面也打不开啊！<br>嗯，<strong><em>hexo</em></strong> 确实已经安装好了，博客也确实安装好了，那么我要怎样才能在外网中访问它呢，同时我又能不能用自己喜欢的域名来访问我的博客呢？</p>
+<ul>
+<li><p>[x] 什么是域名？<br>举个简单的例子：<br>当你在浏览器地址栏中输入<code>baidu.com</code>,你的浏览器就会自动打开百度官网，像<strong><em>baidu.com</em></strong>这一串就是一个顶级域名，比如我的域名<code>ourfor.top</code> 也是一个顶级域名，而<code>file.ourfor.top</code>则是一个二级域名，它是<code>ourfor.top</code>的子域名，加了个<code>file.</code>，可以这样说只有一个<code>dot</code>的就是顶级域名，两个点<code>.</code>的就是二级域名，顶级域名拥有对其子域名的管理权。再举个例子,如果你在浏览器中输入<code>m.baidu.com</code>,你的浏览器将会访问百度的手机版页面，现在<code>google</code>要求强制使用<code>HTTPS</code>的协议，当你输入<code>http:baidu.com</code>它会牵制跳转到<code>https</code>，所以目前大部分网站<code>https</code>和<code>http</code>没什么区别，所以你在浏览器地址栏中输入网址不需要加协议（https://或者http://）就能打开。</p>
+</li>
+<li><p>说了半天我还是不懂，🤣🤣，好吧其实科普一下就OK，那么这个域名是干什么用的呢？<br>一般情况下我通过<code>ip</code>地址来访问服务器，但是通过<code>ipv4</code>来访问网站这样太麻烦了，太难记忆了，极不方便，于是人们便想出通过一串字母（网址）来访问网站。同时<code>DNS</code>解析到服务器ip.</p>
+</li>
+</ul>
+<p>你可以按下<code>win + r(run)`,同时输入` cmd</code>来打开 <code>命令提示符</code>(原谅我Windows的命令懂得不多，Linux和macOS还行😅😅)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ping baidu.com       <span class="comment">#它会检测服务器的ip地址以及响应速度，按住Ctrl + c就可以停止</span></span><br><span class="line">ping ourfor.top      <span class="comment">#我用的是美国🇺🇸的服务器，服务器IP是144.202.15.107</span></span><br><span class="line">ping file.ourfor.top  <span class="comment">#这两个网站我放在同一个服务器上面的，所以IP地址是一样的。</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="更新文章"><a href="#更新文章" class="headerlink" title="更新文章"></a>更新文章</h3><p>博客安装好了，我要怎样写文章呢？<br>所以我们就有必要了解一下blog这个文件夹里面各个部分的作用了。</p>
+<figure class="image-box">
+                <img src="http://p923bw9fi.bkt.clouddn.com/blog.png" alt="blog文件夹🏠" title="" class="">
+                <p>blog文件夹🏠</p>
+            </figure>
+<figure class="image-box">
+                <img src="http://p923bw9fi.bkt.clouddn.com/source.png" alt="source文件夹📂" title="" class="">
+                <p>source文件夹📂</p>
+            </figure>
+<figure class="image-box">
+                <img src="http://p923bw9fi.bkt.clouddn.com/themes.png" alt="themes文件夹😝" title="" class="">
+                <p>themes文件夹😝</p>
+            </figure>
+<ul>
+<li><p>文章保存在<code>source/_posts</code>里面，是以<code>.md</code>结尾的文本文件，你可以用文本编辑器打开编辑它,不过我更推荐你用<a href="https://ourfor.top/2018/03/24/3/">Sublime Text 3</a>，这个文本文件使用的是<code>MarkDown</code>这种轻量级的标记语法，同时兼容<code>HTML</code> ，是<strong><em>纯文本的</em></strong>，不像<code>WordPress</code>和<code>PPT</code>那样，当然这是优点。</p>
+</li>
+<li><p>写第一篇文章<br>在<code>Git bash</code>(注意你得cd到博客根目录下面，即上文的blog文件夹下面) ，输入<code>hexo new 我的XX</code>(我的XX-是标题，自拟)<br>这时候你就可以在<code>blog/source/_posts</code>里面看到它，编辑这个文件就OK了。</p>
+</li>
+<li><p>博客部署到远程仓库</p>
+</li>
+<li>更换主题</li>
+<li>绑定个性化域名<br>(今晚继续写)</li>
+</ul>
 
         </div>
         
@@ -309,7 +356,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-04-08T04:53:55.000Z" itemprop="dateUpdated">2018-04-08 12:53:55</time>
+    最后更新时间：<time datetime="2018-05-25T06:07:22.569Z" itemprop="dateUpdated">2018-05-25 14:07:22</time>
 </span><br>
 
 
@@ -424,7 +471,7 @@
         <aside class="post-widget">
             <nav class="post-toc-wrap" id="post-toc">
                 <strong>目录</strong>
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#胡说八道"><span class="post-toc-number">1.</span> <span class="post-toc-text">胡说八道</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#必备组件"><span class="post-toc-number">2.</span> <span class="post-toc-text">必备组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux下安装git和Node-js"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Linux下安装git和Node.js</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#git、Node-js下载"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">git、Node.js下载</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#macOS通过brew安装"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">macOS通过brew安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Hexo</span></a></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#胡说八道"><span class="post-toc-number">1.</span> <span class="post-toc-text">胡说八道</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#必备组件"><span class="post-toc-number">2.</span> <span class="post-toc-text">必备组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux下安装git和Node-js"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Linux下安装git和Node.js</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#git、Node-js下载"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">git、Node.js下载</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#macOS通过brew安装"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">macOS通过brew安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Hexo</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#高清重置"><span class="post-toc-number"></span> <span class="post-toc-text">高清重置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装hexo"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装hexo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#远程部署"><span class="post-toc-number">2.</span> <span class="post-toc-text">远程部署</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新文章"><span class="post-toc-number">3.</span> <span class="post-toc-text">更新文章</span></a></li></ol>
             </nav>
             <div class="toc-bar"><div>
         </aside>
