@@ -346,9 +346,57 @@
 </li>
 <li><p>博客部署到远程仓库</p>
 </li>
-<li>更换主题</li>
-<li>绑定个性化域名<br>(今晚继续写)</li>
 </ul>
+<p>如何从外网访问博客呢？其实我们打开的<code>http://localhost:4000/</code>这个网址它的网站根目录是在<code>blog/public</code>下面，你可以打开public这个文件夹看看，里面就是网站页面的源码，你可以打开这个<code>index.html</code>文件，是不是就是你的博客的主页。只是没有图片而已，所以我们只需要将这个文件夹里面的东西放到一个外网可以访问的地方就行了，好在<code>hexo</code>的配置文件里面已经有相关的设置了，我们只需要稍作更改就行了。</p>
+<p>首先我们先去<code>github</code>或者<code>coding</code>注册一个账号。</p>
+<ul>
+<li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+<li><a href="https://coding.net/" target="_blank" rel="noopener">Coding</a></li>
+</ul>
+<p>由于<code>Github</code>主机在美国，访问速度可能有点慢，所以你也可以部署到<code>Coding</code>，下面以全球最大的开源社区<code>GitHub</code>为例(今年是GitHub十周年)。</p>
+<h4 id="1-打开GitHub官网-点击右上角的Sign-up注册一个账号。"><a href="#1-打开GitHub官网-点击右上角的Sign-up注册一个账号。" class="headerlink" title="1.打开GitHub官网,点击右上角的Sign up注册一个账号。"></a>1.打开<a href="https://github.com/" target="_blank" rel="noopener">GitHub官网</a>,点击右上角的<code>Sign up</code>注册一个账号。</h4><figure class="image-box">
+                <img src="http://p923bw9fi.bkt.clouddn.com/sing_up.png" alt="Sign up" title="" class="">
+                <p>Sign up</p>
+            </figure>
+<ul>
+<li><p><code>Username</code>填一个简单一点的英文名，因为以后你的博客就通过<code>Username.github.io</code>来访问的，所以起一个好点的、不太长的名字就很有必要了，比如我的这个<code>Username</code>是<code>ourfor</code>,很短也很好记。</p>
+</li>
+<li><p><code>Email address</code>填个QQ邮箱📮也是OK的啦</p>
+</li>
+<li><p><code>Password</code>这个你懂得😳😳</p>
+</li>
+<li><p><code>step2和step3</code>这个由于我注册过了，我就没打开看了，你看着填吧。</p>
+</li>
+</ul>
+<h4 id="2-新建一个Repository，点击页面上面的New-repository"><a href="#2-新建一个Repository，点击页面上面的New-repository" class="headerlink" title="2.新建一个Repository，点击页面上面的New repository"></a>2.新建一个<code>Repository</code>，点击页面上面的<code>New repository</code></h4><figure class="image-box">
+                <img src="http://p923bw9fi.bkt.clouddn.com/new_repository.png" alt="New repository" title="" class="">
+                <p>New repository</p>
+            </figure>
+<ul>
+<li>这个<code>Repository name</code>填<code>username.github.io</code>,比如我的就填<code>ourfor.github.io</code>.你的根据你的<code>username</code>填。</li>
+<li><code>Public</code>就是这个，点击<code>Create repository</code>就可以完成创建。</li>
+<li><code>Description</code>可选，建议勾选☑️<code>Initialize this repository with a README</code></li>
+</ul>
+<p>这时候就会打开仓库主页，依次点击页面右侧的<code>Clone or download</code>、<code>Use SSH</code>复制框中的<code>Repo</code>地址，待会要用。</p>
+<h4 id="3-修改配置文件-config-yml"><a href="#3-修改配置文件-config-yml" class="headerlink" title="3.修改配置文件_config.yml"></a>3.修改配置文件<code>_config.yml</code></h4><p>用<code>Sublime Text 3</code>或者其他文本编辑器打开博客根目录下面的<code>_config.yml</code>文件，在文件末尾，找到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>:</span><br></pre></td></tr></table></figure></p>
+<p>改成：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: </span><br><span class="line">       github: git@github.com:ourfor/ourfor.github.io.git,master</span><br><span class="line">       <span class="comment">#coding: git@git.coding.net:ourfor/ourfor.git,master</span></span><br><span class="line">  branch: master     </span><br><span class="line">  message: blog update</span><br></pre></td></tr></table></figure></p>
+<p>上面这个<code>git@github.com:ourfor/ourfor.github.io.git</code>是我的仓库的地址,你改成刚才复制的那个就行了，如果你用的是<code>coding</code>你可以把<code>github</code>这一行用<code>#</code>注释掉，去掉<code>coding</code>前面的<code>#</code>。最后保存更改。</p>
+<h4 id="4-添加部署密钥"><a href="#4-添加部署密钥" class="headerlink" title="4.添加部署密钥."></a>4.添加部署密钥.</h4><p>打开<code>Git bash</code>，输入<code>ssh-keygen -t rsa -C &quot;2320813747@qq.com&quot;</code>,这个邮箱地址换成你的。连续四次回车就生成了一对密钥。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved <span class="keyword">in</span> /c/Users/zip/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /c/Users/zip/.ssh/id_rsa.pub.</span><br></pre></td></tr></table></figure></p>
+<p>它会告诉你密钥生成在那个文件夹,上面是我的密钥生成路径，下面要相应替换成你的，使用<code>cat</code>来查看公钥内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /c/Users/zip/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p>复制输出的内容，打开<code>GitHub</code>，点击页面右侧头像旁边的倒三角，打开<code>Settings</code>，在页面左侧的<code>Personal settings</code>下面定位到<code>SSH and GPG keys</code>这一栏,点击右侧的<code>New SSH key</code>来添加一个密钥，其中<code>Title</code>随意,<code>Key</code>填写上一步<code>Git bash</code>里面生成的那个。最后<code>Add SSH key</code>就行了。</p>
+<blockquote>
+<p>当你写好文章之后,首先得使用<code>hexo g</code>来生成，而<code>hexo s</code>可以在本地查看实际效果，<code>hexo d</code>会自动<code>push</code>到远程仓库，你就可以在浏览器地址栏中输入<code>username.github.io</code>来访问你的博客<code>username</code>是你的<strong><em>GitHub</em></strong>用户名。</p>
+</blockquote>
+<ul>
+<li><p>更换主题<br>是不是觉得默认的<code>landscope</code>太单调简洁了？不会前端设计？没关系，GitHub上面有很多开发者为<code>hexo</code>设计了许多精美的主题。诸如<code>Next</code>、<code>mellow</code>等等。</p>
+</li>
+<li><p>绑定个性化域名</p>
+</li>
+</ul>
+<p>(今晚继续写)</p>
+<blockquote>
+<p>梦想是注定孤独的旅行<br>路上少不了质疑和嘲笑<br>但那又怎样<br>哪怕遍体鳞伤<br>也要活得漂亮<br>———陈欧</p>
+</blockquote>
 
         </div>
         
@@ -356,7 +404,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2018-05-25T06:28:27.174Z" itemprop="dateUpdated">2018-05-25 14:28:27</time>
+    Last updated: <time datetime="2018-05-25T09:26:44.931Z" itemprop="dateUpdated">2018-05-25 17:26:44</time>
 </span><br>
 
 
@@ -471,7 +519,7 @@
         <aside class="post-widget">
             <nav class="post-toc-wrap" id="post-toc">
                 <strong>目录</strong>
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#胡说八道"><span class="post-toc-number">1.</span> <span class="post-toc-text">胡说八道</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#必备组件"><span class="post-toc-number">2.</span> <span class="post-toc-text">必备组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux下安装git和Node-js"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Linux下安装git和Node.js</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#git、Node-js下载"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">git、Node.js下载</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#macOS通过brew安装"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">macOS通过brew安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Hexo</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#高清重置"><span class="post-toc-number"></span> <span class="post-toc-text">高清重置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装hexo"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装hexo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#远程部署"><span class="post-toc-number">2.</span> <span class="post-toc-text">远程部署</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新文章"><span class="post-toc-number">3.</span> <span class="post-toc-text">更新文章</span></a></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#胡说八道"><span class="post-toc-number">1.</span> <span class="post-toc-text">胡说八道</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#必备组件"><span class="post-toc-number">2.</span> <span class="post-toc-text">必备组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux下安装git和Node-js"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Linux下安装git和Node.js</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#git、Node-js下载"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">git、Node.js下载</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#macOS通过brew安装"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">macOS通过brew安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Hexo</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#高清重置"><span class="post-toc-number"></span> <span class="post-toc-text">高清重置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装hexo"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装hexo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#远程部署"><span class="post-toc-number">2.</span> <span class="post-toc-text">远程部署</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新文章"><span class="post-toc-number">3.</span> <span class="post-toc-text">更新文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-打开GitHub官网-点击右上角的Sign-up注册一个账号。"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1.打开GitHub官网,点击右上角的Sign up注册一个账号。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-新建一个Repository，点击页面上面的New-repository"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.新建一个Repository，点击页面上面的New repository</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-修改配置文件-config-yml"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.修改配置文件_config.yml</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-添加部署密钥"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4.添加部署密钥.</span></a></li></ol></li></ol>
             </nav>
             <div class="toc-bar"><div>
         </aside>
