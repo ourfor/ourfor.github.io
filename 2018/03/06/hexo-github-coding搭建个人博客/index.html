@@ -320,9 +320,9 @@
 <p><img src="http://p923bw9fi.bkt.clouddn.com/git_bash.PNG"><br>博客将会部署到本地，使用<code>4000</code> 的端口，在浏览器中打开<code>http://localhost:4000/</code> 就可以查看博客了。自此我们的hexo就安装好了。</p>
 <h3 id="远程部署"><a href="#远程部署" class="headerlink" title="远程部署"></a>远程部署</h3><p>你逗我的吧，<code>hexo</code>就弄好了？那我为什么外网访问不了呢？手机上面也打不开啊！<br>嗯，<strong><em>hexo</em></strong> 确实已经安装好了，博客也确实安装好了，那么我要怎样才能在外网中访问它呢，同时我又能不能用自己喜欢的域名来访问我的博客呢？</p>
 <ul>
-<li><p>[x] 什么是域名？<br>举个简单的例子：<br>当你在浏览器地址栏中输入<code>baidu.com</code>,你的浏览器就会自动打开百度官网，像<strong><em>baidu.com</em></strong>这一串就是一个顶级域名，比如我的域名<code>ourfor.top</code> 也是一个顶级域名，而<code>file.ourfor.top</code>则是一个二级域名，它是<code>ourfor.top</code>的子域名，加了个<code>file.</code>，可以这样说只有一个<code>dot</code>的就是顶级域名，两个点<code>.</code>的就是二级域名，顶级域名拥有对其子域名的管理权。再举个例子,如果你在浏览器中输入<code>m.baidu.com</code>,你的浏览器将会访问百度的手机版页面，现在<code>google</code>要求强制使用<code>HTTPS</code>的协议，当你输入<code>http:baidu.com</code>它会牵制跳转到<code>https</code>，所以目前大部分网站<code>https</code>和<code>http</code>没什么区别，所以你在浏览器地址栏中输入网址不需要加协议（https://或者http://）就能打开。</p>
+<li><p>什么是域名？<br>举个简单的例子：<br>当你在浏览器地址栏中输入<code>baidu.com</code>,你的浏览器就会自动打开百度官网，像<strong><em>baidu.com</em></strong>这一串就是一个顶级域名，比如我的域名<code>ourfor.top</code> 也是一个顶级域名，而<code>file.ourfor.top</code>则是一个二级域名，它是<code>ourfor.top</code>的子域名，加了个<code>file.</code>，可以这样说只有一个<code>dot</code>的就是顶级域名，两个点<code>.</code>的就是二级域名，顶级域名拥有对其子域名的管理权。再举个例子,如果你在浏览器中输入<code>m.baidu.com</code>,你的浏览器将会访问百度的手机版页面，现在<code>google</code>要求强制使用<code>HTTPS</code>的协议，当你输入<code>http//:baidu.com</code>它会强制跳转到<code>https</code>，所以目前大部分网站<code>https</code>和<code>http</code>没什么区别，所以你在浏览器地址栏中输入网址不需要加协议（https://或者http://）就能打开。</p>
 </li>
-<li><p>说了半天我还是不懂，🤣🤣，好吧其实科普一下就OK，那么这个域名是干什么用的呢？<br>一般情况下我通过<code>ip</code>地址来访问服务器，但是通过<code>ipv4</code>来访问网站这样太麻烦了，太难记忆了，极不方便，于是人们便想出通过一串字母（网址）来访问网站。同时<code>DNS</code>解析到服务器ip.</p>
+<li><p>说了半天我还是不懂，🤣🤣，好吧其实科普一下就OK，那么这个域名是干什么用的呢？<br>一般情况下计算机通过<code>ip</code>地址来访问服务器，但是通过<code>ipv4</code>来访问网站这样太麻烦了，太难记忆了，极不方便，于是人们便想出通过一串字母（网址）来访问网站。同时使用<code>DNS</code>解析到服务器ip，这样当你输入网址后计算机就会访问域名解析的<code>ip</code>地址。</p>
 </li>
 </ul>
 <p>你可以按下<code>win + r(run)`,同时输入` cmd</code>来打开 <code>命令提示符</code>(原谅我Windows的命令懂得不多，Linux和macOS还行😅😅)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ping baidu.com       <span class="comment">#它会检测服务器的ip地址以及响应速度，按住Ctrl + c就可以停止</span></span><br><span class="line">ping ourfor.top      <span class="comment">#我用的是美国🇺🇸的服务器，服务器IP是144.202.15.107</span></span><br><span class="line">ping file.ourfor.top  <span class="comment">#这两个网站我放在同一个服务器上面的，所以IP地址是一样的。</span></span><br></pre></td></tr></table></figure></p>
@@ -388,15 +388,38 @@
 <p>当你写好文章之后,首先得使用<code>hexo g</code>来生成，而<code>hexo s</code>可以在本地查看实际效果，<code>hexo d</code>会自动<code>push</code>到远程仓库，你就可以在浏览器地址栏中输入<code>username.github.io</code>来访问你的博客<code>username</code>是你的<strong><em>GitHub</em></strong>用户名。</p>
 </blockquote>
 <ul>
-<li><p>更换主题<br>是不是觉得默认的<code>landscape</code>太单调简洁了？不会前端设计？没关系，GitHub上面有很多开发者为<code>hexo</code>设计了许多精美的主题。诸如<code>Next</code>、<code>mellow</code>等等。</p>
-</li>
-<li><p>绑定个性化域名<br>是不是觉得<code>username.github.io</code>这个难记而且那个(😝你懂的)</p>
-</li>
+<li>更换主题<br>是不是觉得默认的<code>landscape</code>太单调简洁了？不会前端设计？没关系，GitHub上面有很多开发者为<code>hexo</code>设计了许多精美的主题。诸如<code>Next</code>、<code>mellow</code>等等。<br>我个人比较喜欢这两个主题：</li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next</a> </li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://github.com/codefine/hexo-theme-mellow/wiki" target="_blank" rel="noopener">Mellow</a><br>上面都有详细的帮助文档，如果看不太懂😭，我们可以一起讨论交流。</li>
 </ul>
+<ul>
+<li>绑定个性化域名<br>是不是觉得<code>username.github.io</code>这个难记而且那个(😝你懂的)，那么我要怎样获取我喜欢的域名呢？</li>
+</ul>
+<p>获取免费域名: <a href="http://www.freenom.com/" target="_blank" rel="noopener">freenom</a>这个网站提供免费的顶级域名包括解析，只不过大多以<code>tk</code>结尾。</p>
+<p>收费域名: 国内的阿里云、腾讯云啊都有域名服务，有一些域名首年只要<code>￥1</code>,每年续费好像是7到8元的样子。</p>
 <details><summary>千万别看</summary><br><figure class="image-box">
                 <img src="http://p923bw9fi.bkt.clouddn.com/lp23.png" alt="😳😳" title="" class="">
                 <p>😳😳</p>
-            </figure><br></details>
+            </figure><br><br></details>
+
+<p>附上我这篇博客文章的源码，了解一下该怎样写<a href="https://file.ourfor.top/ebook/hexo-github-coding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.md" target="_blank" rel="noopener">Click Here</a></p>
+<p><div id="app"></div><br><!-- 加载 cplayer 脚本 --></p>
+<script src="https://cdn.jsdelivr.net/gh/MoePlayer/cPlayer/dist/cplayer.js"></script>
+<script>
+  let player = new cplayer({
+    element: document.getElementById('app'),
+    autoplay: true,
+    showPlaylist: true,
+    playlist: [
+      {
+        src: 'http://p923bw9fi.bkt.clouddn.com/%E5%91%A8%E4%BA%8C%E7%8F%82%20-%20%E5%91%8A%E7%99%BD%E6%B0%94%E7%90%83.wav',
+        poster: 'http://p923bw9fi.bkt.clouddn.com/%E5%91%A8%E4%BA%8C%E7%8F%82.jpg',
+        name: '告白气球(翻唱)',
+        artist: '周二珂'
+      }
+    ]
+  })
+</script>
 
 <p>(今晚继续写)</p>
 <blockquote>
@@ -409,7 +432,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-05-25T10:04:28.813Z" itemprop="dateUpdated">2018-05-25 18:04:28</time>
+    Last updated: <time datetime="2018-05-26T03:12:24.894Z" itemprop="dateUpdated">2018-05-26 11:12:24</time>
 </span><br>
 
 
