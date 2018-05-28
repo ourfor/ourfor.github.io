@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    
+    <title>运算符重载 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="读书笔记,C++,运算符重载">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.2.8">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":"ture","app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":"ture","appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/zip.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:2320813747@qq.com" title="2320813747@qq.com" class="mail">
+            
+              <span>2</span>
+            
+              <span>3</span>
+            
+              <span>2</span>
+            
+              <span>0</span>
+            
+              <span>8</span>
+            
+              <span>1</span>
+            
+              <span>3</span>
+            
+              <span>7</span>
+            
+              <span>4</span>
+            
+              <span>7</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/5213768713/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/album"  >
+                <i class="icon icon-lg icon-photo"></i>
+                ALBUM
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor/My-C-Learning" target="_blank" >
+                <i class="icon icon-lg icon-book"></i>
+                STUDY
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GITHUB
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>运算符重载</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/lp30.png" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">运算符重载</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-05-28T15:00:01.000Z" itemprop="datePublished" class="page-time">
+  2018-05-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-运算符重载"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">运算符重载</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-05-28 23:00:01" datetime="2018-05-28T15:00:01.000Z"  itemprop="datePublished">2018-05-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
+
+
+
+            
+	<span id="/2018/05/28/运算符重载/" class="leancloud_visitors" data-flag-title="运算符重载" title="运算符重载">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+            
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/05/28/运算符重载/#comment">
+            <span class="valine-comment-count" data-xid="/2018/05/28/运算符重载/"></span>
+        </a>
+    </span>
+
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <script src="/assets/js/APlayer.min.js"> </script><p>今天5月28日，老师说大概还有一个月就会搞那个上机考试，回顾我这半年来的学习，感觉没能坚持每天敲代码成了唯一的遗憾，是啊，还有一个月，我还是每天练练手感吧，这不，<code>C++</code>也快学完了，把作业里面的代码写一写。前几天重写了<a href="https://ourfor.top/2018/03/06/hexo-github-coding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">博客的搭建教程</a>,我觉得还算详细吧。有兴趣可以看看👀。</p>
+<a id="more"></a>
+<h2 id="C-运算符重载"><a href="#C-运算符重载" class="headerlink" title="C++ 运算符重载"></a>C++ 运算符重载</h2><ul>
+<li><p>在<code>C++</code>中<code>分数</code>不是<em>预先定义的</em>，需要建立一个<strong><em>分数类</em></strong>，使之具有下述功能：能防止分母为<em>0</em>,当分数不是最简形式时进行约分以及避免分母为<code>负数</code>，用重载运算符完成加法、减法、乘法以及除法等四则运算。</p>
+</li>
+<li><p>在第一问的基础上，用重载关系符<code>==</code>判断两个分数是否相等。</p>
+</li>
+</ul>
+<p>写一个交换的函数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void Swap(int &amp;Num_u,int &amp;Num_d)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(Num_u&gt;Num_d)                 //确保Num_d&gt;=Num_u</span><br><span class="line">	&#123;</span><br><span class="line">		int temp=Num_u;</span><br><span class="line">		Num_u=Num_d;</span><br><span class="line">		Num_d=temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>首先，定义下分数类。</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 在类中重载操作符时，为了使运算符函数能够访问类中的私有成员，那么运算符函数就必须重载为<code>非静态成员函数</code>或者<code>友元函数</code></li>
+<li style="list-style: none"><input type="checkbox" checked> 由于类成员函数<code>this指针</code>的缘故，运算符函数重载为类的成员函数时，所需的参数个数总比它的操作数少<em>1</em>.<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">//分数类的定义</span><br><span class="line">class fraction</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	int MaxNum(int a,int b);</span><br><span class="line">	fraction(int u_,int d_)&#123;num_u=u_;num_d=d_;&#125;</span><br><span class="line">	<span class="function"><span class="title">fraction</span></span>()&#123;num_u=0;num_d=0;&#125;</span><br><span class="line">	void Display();</span><br><span class="line">	void Sample();</span><br><span class="line"></span><br><span class="line">	//运算符重载</span><br><span class="line">	int operator == (fraction a1);</span><br><span class="line">	friend fraction operator + (fraction a1,fraction a2);</span><br><span class="line">	friend fraction operator - (fraction a1,fraction a2);</span><br><span class="line">	friend fraction operator * (fraction a1,fraction a2);</span><br><span class="line">	friend fraction operator / (fraction a1,fraction a2);</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int num_u;                 //分子</span><br><span class="line">	int num_d;				   //分母</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int fraction::MaxNum(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">	Swap(a,b);</span><br><span class="line">	<span class="keyword">if</span>(a==0) <span class="built_in">return</span> b;</span><br><span class="line">	<span class="built_in">return</span> MaxNum(b<span class="_">-a</span>,a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void fraction::Display()</span><br><span class="line">&#123;</span><br><span class="line">	Sample();</span><br><span class="line">	<span class="keyword">if</span>(num_u==0) cout &lt;&lt; <span class="string">"0"</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(num_d==1&amp;&amp;num_u!=0) cout &lt;&lt; num_u &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">else</span> cout &lt;&lt; num_u &lt;&lt; <span class="string">"/"</span> &lt;&lt; num_d &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void fraction::Sample()</span><br><span class="line">&#123;</span><br><span class="line">	int b=MaxNum(num_u,num_d);</span><br><span class="line">	num_u=num_u / b;</span><br><span class="line">	num_d=num_d /b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int fraction::operator == (fraction a1)</span><br><span class="line">&#123;</span><br><span class="line">	int d;</span><br><span class="line">	d=MaxNum(num_d,num_u);</span><br><span class="line">	num_u=num_u / d;</span><br><span class="line">	num_d=num_d / d;</span><br><span class="line">	d=MaxNum(a1.num_d,a1.num_u);</span><br><span class="line">	a1.num_u=a1.num_u / d;</span><br><span class="line">	a1.num_d=a1.num_d / d;</span><br><span class="line">	<span class="keyword">if</span>(a1.num_u==num_u&amp;&amp;a1.num_d==num_d) <span class="built_in">return</span> 1;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fraction operator + (fraction a1,fraction a2)</span><br><span class="line">&#123;</span><br><span class="line">	fraction c;</span><br><span class="line">	c.num_d=a1.num_d * a2.num_d;</span><br><span class="line">	c.num_u=a1.num_u * a2.num_d + a2.num_u *a1.num_d;</span><br><span class="line">	<span class="built_in">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fraction operator - (fraction a1,fraction a2)</span><br><span class="line">&#123;</span><br><span class="line">	fraction c;</span><br><span class="line">	c.num_d=a1.num_d * a2.num_d;</span><br><span class="line">	c.num_u=a1.num_u * a2.num_d - a2.num_u *a1.num_d;</span><br><span class="line">	<span class="built_in">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fraction operator * (fraction a1,fraction a2)</span><br><span class="line">&#123;</span><br><span class="line">	fraction c;</span><br><span class="line">	c.num_d=a1.num_d * a2.num_d;</span><br><span class="line">	c.num_u=a1.num_u * a2.num_u;</span><br><span class="line">	<span class="built_in">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fraction operator / (fraction a1,fraction a2)</span><br><span class="line">&#123;</span><br><span class="line">	fraction c;</span><br><span class="line">	c.num_d=a1.num_d * a2.num_u;</span><br><span class="line">	c.num_u=a1.num_u * a2.num_d;</span><br><span class="line">	<span class="built_in">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	fraction c(12,72);</span><br><span class="line">	c.Display();</span><br><span class="line">	int d=c.MaxNum(12,72);</span><br><span class="line">	cout &lt;&lt; d &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	fraction m(1,6);</span><br><span class="line">	<span class="keyword">if</span>(m==c) cout &lt;&lt; <span class="string">"相等\n"</span>;</span><br><span class="line"></span><br><span class="line">	fraction e;</span><br><span class="line">	e=m + c;</span><br><span class="line">	e.Display();</span><br><span class="line">	e=m - c;</span><br><span class="line">	e.Display();</span><br><span class="line">	e=m * c;</span><br><span class="line">	e.Display();</span><br><span class="line">	e=m / c;</span><br><span class="line">	e.Display();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://github.com/ourfor/My-C-Learning/blob/master/homework/fraction.cpp" target="_blank" rel="noopener">完整代码</a></p>
+<p>11点了，今天太晚了，立个目标，下次继续复习。</p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-05-28T15:33:40.972Z" itemprop="dateUpdated">2018-05-28 23:33:40</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/2018/05/28/运算符重载/" target="_blank" rel="external">https://ourfor.top/2018/05/28/运算符重载/</a>
+        
+    </div>
+    <footer>
+        <a href="https://ourfor.top">
+            <img src="/img/zip.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/运算符重载/">运算符重载</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ourfor.top/2018/05/28/运算符重载/&title=《运算符重载》 — Zip的小窝&pic=https://ourfor.top/img/zip.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ourfor.top/2018/05/28/运算符重载/&title=《运算符重载》 — Zip的小窝&source=今天5月28日，老师说大概还有一个月就会搞那个上机考试，回顾我这半年来的学习，感觉没能坚持每天敲代码成了唯一的遗憾，是啊，还有一个月，我还是每天练练手感吧..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ourfor.top/2018/05/28/运算符重载/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《运算符重载》 — Zip的小窝&url=https://ourfor.top/2018/05/28/运算符重载/&via=https://ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ourfor.top/2018/05/28/运算符重载/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+    <div id="comment"></div>
+
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="next">
+      <a href="/2018/05/21/VPS常用软件/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">VPS常用软件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#C-运算符重载"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++ 运算符重载</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        我们一起来让这个世界有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+</div>
+
+        <footer class="footer">
+    
+    <div class="top">
+        
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="https://ourfor.top" target="_blank">home</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://blog.daliansky.net" target="_blank">daliansky</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://github.com" target="_blank">github</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Zip &copy; 2015 - 2018
+            </span>
+        		
+           	
+            
+            
+            
+            
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ourfor.top/2018/05/28/运算符重载/&title=《运算符重载》 — Zip的小窝&pic=https://ourfor.top/img/zip.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ourfor.top/2018/05/28/运算符重载/&title=《运算符重载》 — Zip的小窝&source=今天5月28日，老师说大概还有一个月就会搞那个上机考试，回顾我这半年来的学习，感觉没能坚持每天敲代码成了唯一的遗憾，是啊，还有一个月，我还是每天练练手感吧..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ourfor.top/2018/05/28/运算符重载/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《运算符重载》 — Zip的小窝&url=https://ourfor.top/2018/05/28/运算符重载/&via=https://ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ourfor.top/2018/05/28/运算符重载/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQY6kMAwFUO5/6WppViO1gP+TYjQkL6sSRVO8LNx27OOI1+fP+n3l7+vXn8/uP1vHEwsDA+O1jORxY697ducjVAwMjA0Y10H2+p42XCYbkb8bBgYGxtkPXJPGkj8MDAyMJwJu+2MzxTAGBgZGUoLmIfjs2zzFfLAWx8DAeCGjbQz8y88P9jcwMDBewvgMrbGS9TopnFkYGBhrM/KjtJkCtS1926M3DAyMtRntmMVYSte2NusWAgYGxtKMNlAmqV5+pR3LuPkWAwNjUcbMCGkCS0Y32nL39P8GBgbGoow8FLYjYjPth5nNwsDAWI/xRBGbJI7zpe/jtTgGBsZ/xvhucGypY+0EDAyMPRl5wM0PxdqitC16jzzqY2BgvJwxE/LGkr+xzboJuBgYGEsz2pe7Dq/J9bbxcPMcDAyMpRltadqGy5l+Rf58DAyMPRnt0Xw7cjHWeMjbBhgYGDswZh7dImdGyo58tzAwMJZgPFGatglfMqgajYhhYGAsx8iHw4p52CCJbAF1/Y2BgbEoY6xMzUvTmYGwm9QQAwNjaUZbxH63tZmH77qUxcDAWILxKVdyrJYH2fyvMDAwdmbka6zpOJYC5mNh9cLAwHgtYybI5sf38wH3ZiMwMDA2YMwE2fbQrT1iiw7sMDAwMILCtQ3KefqYbBAGBgZGnqiN3TkDxsDA2IfxrbGwPHSOHathYGDsyWgbA2NhNLkz2aB2RAMDA+PljB9poNsZgdJvegAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="/js/jquery.min.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.2.8"></script>
+
+<script type="text/javascript" src="/js/waves.min.js?v=1.2.8"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.2.8"></script>
+
+<!-- third-party -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2161b98935340910232ef42cf54305ee";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.2.8"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.2.8"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.2.8"></script>
+
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '死鬼去哪里了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+    
+</body>
+</html>
