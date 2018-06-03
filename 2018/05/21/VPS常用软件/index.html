@@ -9,7 +9,7 @@
     
     <meta name="keywords" content="VPS,rclone">
     <link rel="shortcut icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css?v=1.2.8">
+    <link rel="stylesheet" href="/css/style.css?v=1.3.1">
     
     <script type="text/javascript">
         // Data Center
@@ -17,12 +17,16 @@
             reward:	true,
             lv: JSON.parse('{"enable":"ture","app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
             v: JSON.parse('{"enable":"ture","appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
-            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}')
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":"eaecd64e"}')
         };
     </script>
     <script type="text/javascript">
         window.lazyScripts=[];
     </script>
+    
+        <script type="text/javascript" src="/js/plugins/daovoice.js?v=1.3.1"></script>
+    
 </head>
 
 
@@ -298,7 +302,6 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~     <span class="comment">#进入用户目录</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim    <span class="comment">#安装Vundle插件管理工具</span></span><br><span class="line">vi .vimrc</span><br></pre></td></tr></table></figure>
 <p>编辑vim配置文件，添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> nocompatible              <span class="string">" be iMproved, required</span></span><br><span class="line"><span class="string">filetype off                  "</span> required</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line"></span><br><span class="line">call vundle<span class="comment">#begin()</span></span><br><span class="line"></span><br><span class="line">Plugin <span class="string">'VundleVim/Vundle.vim'</span></span><br><span class="line"></span><br><span class="line">Plugin <span class="string">'vim-airline/vim-airline'</span></span><br><span class="line"></span><br><span class="line">Plugin <span class="string">'vim-airline/vim-airline-themes'</span></span><br><span class="line"></span><br><span class="line">call vundle<span class="comment">#end()            " required</span></span><br><span class="line"></span><br><span class="line">filetype plugin indent on    <span class="string">" required</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">set nu            "</span> 显示行号</span><br></pre></td></tr></table></figure></p>
 <p>Terminal下输入<code>vim</code><br>在非插入状态下输入<code>:PluginInstall</code>安装插件。</p>
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0" width="1600" height="900"><br><param name="movie" value="video-filename.swf"><br><param name="quality" value="high"><br><param name="play" value="true"><br><param name="LOOP" value="false"><br><param name="allowFullScreen" value="true"><br><embed src="https://file.ourfor.top/tools/%E6%8B%B3%E7%9A%87.swf" width="1600" height="900" play="true" loop="false" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><br><br></object> 
 
         </div>
         
@@ -306,7 +309,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-05-26T10:54:06.592Z" itemprop="dateUpdated">2018-05-26 18:54:06</time>
+    Last updated: <time datetime="2018-06-03T01:36:02.357Z" itemprop="dateUpdated">2018-06-03 09:36:02</time>
 </span><br>
 
 
@@ -547,13 +550,13 @@
 
     
     <!-- main-js -->
-<script type="text/javascript" src="/js/jquery.min.js?v=1.2.8"></script>
-<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/jquery.min.js?v=1.3.1"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.3.1"></script>
 
-<script type="text/javascript" src="/js/waves.min.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/waves.min.js?v=1.3.1"></script>
 
-<script type="text/javascript" src="/js/method.js?v=1.2.8"></script>
-<script type="text/javascript" src="/js/blog.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/method.js?v=1.3.1"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.3.1"></script>
 
 <!-- third-party -->
 
@@ -571,7 +574,7 @@ var _hmt = _hmt || [];
 
 
 
-<script type="text/javascript" src="/js/plugins/local_search.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.3.1"></script>
 <script type="text/javascript">
 	var search_path = "search.xml";
 	if (search_path.length === 0) {
@@ -586,36 +589,27 @@ var _hmt = _hmt || [];
     
         <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script type="text/javascript" src="/js/plugins/valine.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.3.1"></script>
     
     
 
 
 
 <script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.3.1"></script>
 
 
 
 
 
-    <script>
-    (function() {
-        var OriginTitile = document.title, titleTime;
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                document.title = '死鬼去哪里了！';
-                clearTimeout(titleTime);
-            } else {
-                document.title = '(つェ⊂)咦!又好了!';
-                titleTime = setTimeout(function() {
-                    document.title = OriginTitile;
-                },2000);
-            }
-        });
-    })();
+
+
+    <script type="text/javascript">
+  daovoice('init', {
+    app_id: "eaecd64e"
+  });
+  daovoice('update');
 </script>
-
 
     
 </body>
