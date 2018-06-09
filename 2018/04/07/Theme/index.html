@@ -264,10 +264,48 @@
             </figure>
 <h3 id="时间居中"><a href="#时间居中" class="headerlink" title="时间居中"></a>时间居中</h3><p>状态栏时间居中是在解锁System后使用<code>MiUI Statusbar Pro</code>设置的，当然你也可以反编译<code>system/priv-app/miuisystemui</code>里的<code>miuisystemui.apk</code>,这同样需要<em>root</em>权限。</p>
 <p>相关教程<a href="http://p5culcl8r.bkt.clouddn.com/%E7%8A%B6%E6%80%81%E6%A0%8F%E5%B8%83%E5%B1%80%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%EF%BC%88%E4%BF%AE%E8%AE%A2%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">下载</a></p>
-<h3 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h3><p><a href="http://p5culcl8r.bkt.clouddn.com/H2OS.mtz" target="_blank" rel="noopener">主题下载_v1.0</a>(仅限自用，请勿上传到主题商店)<br><a href="http://p5culcl8r.bkt.clouddn.com/H2OS_2.0.mtz" target="_blank" rel="noopener">v2.0</a></p>
+<h3 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h3><p>下载地址：<br><a href="http://p5culcl8r.bkt.clouddn.com/H2OS.mtz" target="_blank" rel="noopener">v1.0</a>(仅限自用，请勿上传到主题商店)<br><a href="http://p5culcl8r.bkt.clouddn.com/H2OS_2.0.mtz" target="_blank" rel="noopener">v2.0</a></p>
 <p><a href="http://p5culcl8r.bkt.clouddn.com/com.mixapplications.miuithemeeditor.apk" target="_blank" rel="noopener">MIUI Theme Editor</a></p>
 <p>我使用的是星空的官改rom，由于这手机平时用得着，所以就退出体验版内测了，估计大部分人用的是官方的开发版或者稳定版，没更新过系统的话，用<code>MIUI Theme Editor</code>（不需要root）注入主题，就可以在主题里面应用，只不过这个软件第一次使用需要下载大概60m的数据文件，需要翻墙下载。</p>
-<div id="dplayer2" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer2"),"theme":"#FADFA3","loop":true,"video":{"url":"http://file.ourfor.top/youtube/Army1.mp4","pic":"http://img0.c.yinyuetai.com/artist/fan/150810/0/-M-70f069427cca50778df6b121a8bf5a8a_0x0.jpg"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<h1 id="免破解个性化状态栏"><a href="#免破解个性化状态栏" class="headerlink" title="免破解个性化状态栏"></a>免破解个性化状态栏</h1><p>首先，请确保您已经完成下述工作：</p>
+<ul>
+<li>获取<code>root</code> 权限</li>
+<li>解锁<code>system</code> 分区,推荐使用<a href="http://p923bw9fi.bkt.clouddn.com/com.lerist.syslock.apk" target="_blank" rel="noopener">syslock</a>,改软件可在酷安下载。</li>
+<li>安装<code>RE文件管理器</code>(其他具有相同功能的软件也行,当然终端也是可以的)</li>
+</ul>
+<h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>下载你喜欢的主题包,在此分享一个简单的方法:1.在<code>MIUI主题商店</code>免费试用主题 2.在主题商店没有下载完成主题包之前,打开系统自带<code>下载管理</code>,暂停当前下载主题的任务. 3.点击查看之前暂停的下载任务详细，复制下载地址，删除暂停下载的主题包，新建一个下载任务。</p>
+<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>找到下载好的主题包<code>mtz</code>文件，将后缀名改为<code>zip</code>。<br><figure class="image-box">
+                <img src="http://p923bw9fi.bkt.clouddn.com/theme_unzip.png" alt="theme_unzip" title="" class="">
+                <p>theme_unzip</p>
+            </figure><br>接下来找到<code>com.android.systemui</code>,添加后缀<code>zip</code>,同样解压。主题资源文件在<code>res</code>下面。</p>
+<p>相关文件夹说明：</p>
+<ul>
+<li>raw-xxhdpi:电池变化的状态和图标保存在这里</li>
+<li>drawable-xxhdpi:状态栏的<code>网速、WiFi等</code>图标以及<code>通知栏背景</code>存放在该文件夹下面</li>
+</ul>
+<p>进入<code>drawable-xxhdpi</code>文件夹删除所有后缀名为<code>.9.png</code>的文件，可以自行删除,也可以在终端中用命令<code>rm -rf *.9.png</code>。</p>
+<h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>打开手机上面的<code>RE文件管理器</code>(需要root权限),提取复制该路径下面的<code>/system/priv-app/MiuiSystemUI/</code>的<strong><em>MiuiSystemUI.apk</em></strong>文件(注意备份该文件),发送到电脑,在<code>Windows</code>下右键该apk文件，使用<code>RAR</code>打开查看:(可以先改后缀名apk为zip,记得最后改回来;也可以在打开方式里面找到RAR的安装位置打开)</p>
+<ul>
+<li>将<code>step 2中res/drawable-xxhdpi/</code>下面的所有文件复制,然后粘贴到 <code>MiuiSystemUI.apk\res\drawable-xxhdpi-v4\</code>,在<code>RAR</code>的查看界面按下<code>Ctrl + v</code>点击确认即可。</li>
+<li>将<code>step 2中res/raw-xxhdpi/</code>按下<code>Ctrl + c</code>复制,在RAR中定位到<code>MiuiSystemUI.apk\res\raw-xxhdpi-v4\</code>，按下<code>Ctrl + v</code>替换即可。<figure class="image-box">
+                <img src="http://p923bw9fi.bkt.clouddn.com/rar.png" alt="查看,不需要解压" title="" class="">
+                <p>查看,不需要解压</p>
+            </figure>
+</li>
+</ul>
+<p>(注意保证文件名为<code>MiuiSystemUI.apk</code>)</p>
+<h2 id="Step-4"><a href="#Step-4" class="headerlink" title="Step 4"></a>Step 4</h2><p>将修改后的状态栏文件替换原来的文件,同时修复权限为:<code>rw-r--r--</code><br><figure class="image-box">
+                <img src="http://p923bw9fi.bkt.clouddn.com/%E6%9D%83%E9%99%90.png" alt="权限" title="" class="">
+                <p>权限</p>
+            </figure><br><figure class="image-box">
+                <img src="http://p923bw9fi.bkt.clouddn.com/%E4%BF%AE%E5%A4%8D%E6%9D%83%E9%99%90.png" alt="修复权限" title="" class="">
+                <p>修复权限</p>
+            </figure></p>
+<h2 id="懒人版"><a href="#懒人版" class="headerlink" title="懒人版"></a>懒人版</h2><ul>
+<li>删除点9文件的主题资源<a href="http://p923bw9fi.bkt.clouddn.com/res.zip" target="_blank" rel="noopener">res</a></li>
+<li>miui 10.8.6.6已修改<a href="http://p923bw9fi.bkt.clouddn.com/MiuiSystemUI.apk" target="_blank" rel="noopener">MiuiSystemUI.apk</a><br>(note:OTA升级前确保<code>System</code>分区上锁,否则增量包升级会翻车)</li>
+</ul>
+<div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"http://file.ourfor.top/youtube/Army1.mp4","pic":"http://img0.c.yinyuetai.com/artist/fan/150810/0/-M-70f069427cca50778df6b121a8bf5a8a_0x0.jpg"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 
         </div>
         
@@ -275,7 +313,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-05-06T01:58:48.000Z" itemprop="dateUpdated">2018-05-06 09:58:48</time>
+    Last updated: <time datetime="2018-06-09T10:42:17.501Z" itemprop="dateUpdated">2018-06-09 18:42:17</time>
 </span><br>
 
 
@@ -390,7 +428,7 @@
         <aside class="post-widget">
             <nav class="post-toc-wrap" id="post-toc">
                 <strong>目录</strong>
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#效果预览"><span class="post-toc-number">1.</span> <span class="post-toc-text">效果预览</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#时间居中"><span class="post-toc-number">2.</span> <span class="post-toc-text">时间居中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用主题"><span class="post-toc-number">3.</span> <span class="post-toc-text">应用主题</span></a></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#效果预览"><span class="post-toc-number">1.</span> <span class="post-toc-text">效果预览</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#时间居中"><span class="post-toc-number">2.</span> <span class="post-toc-text">时间居中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用主题"><span class="post-toc-number">3.</span> <span class="post-toc-text">应用主题</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#免破解个性化状态栏"><span class="post-toc-number"></span> <span class="post-toc-text">免破解个性化状态栏</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-1"><span class="post-toc-number"></span> <span class="post-toc-text">Step 1</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-2"><span class="post-toc-number"></span> <span class="post-toc-text">Step 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-3"><span class="post-toc-number"></span> <span class="post-toc-text">Step 3</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-4"><span class="post-toc-number"></span> <span class="post-toc-text">Step 4</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#懒人版"><span class="post-toc-number"></span> <span class="post-toc-text">懒人版</span></a>
             </nav>
             <div class="toc-bar"><div>
         </aside>
