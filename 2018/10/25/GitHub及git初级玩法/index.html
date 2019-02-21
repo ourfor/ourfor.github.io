@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    
+    <title>GitHub及git初级玩法 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="GitHub,Git">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	false,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="//ws1.sinaimg.cn/large/005GQrpLly1fynknlwq0jj30q40u04qp.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class>
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/about">
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://github.com/ourfor/My-C-Learning">
+                <i class="icon icon-lg icon-calendar-check-o"></i>
+                STUDY
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://github.com/ourfor" target="_blank">
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://play.ourfor.top">
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/links">
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>GitHub及git初级玩法</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="//ws1.sinaimg.cn/large/005GQrpLly1fynjusqrjqj31hc0duqo9.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">GitHub及git初级玩法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-25T10:57:47.000Z" itemprop="datePublished" class="page-time">
+  2018-10-25
+</time>
+
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left">
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-GitHub及git初级玩法" class="post-article article-type-post" itemprop="blogPost">
+      <div class="post-card">
+          <h1 class="post-card-title">GitHub及git初级玩法</h1>
+          <div class="post-meta">
+              <time class="post-time" title="2018-10-25 10:57:47" datetime="2018-10-25T10:57:47.000Z" itemprop="datePublished">2018-10-25</time>
+
+              
+
+
+              
+	<span id="/2018/10/25/GitHub及git初级玩法/" class="leancloud_visitors" data-flag-title="GitHub及git初级玩法" title="GitHub及git初级玩法">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+              
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/10/25/GitHub及git初级玩法/#comment">
+            <span class="valine-comment-count" data-xid="/2018/10/25/GitHub及git初级玩法/"></span>
+        </a>
+    </span>
+
+
+
+              
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+              
+              <!--//i.loli.net/2018/10/25/5bd140854d6b6.jpg--> 
+<p>使用<a href="https://github.com" target="_blank" rel="noopener">Github</a>一年又余了，感觉<strong><em>GitHub</em></strong>还是非常好用的，在这个平台上不仅能学到很多东西，还能认识一些有意思的人。最近同学对GitHub很感兴趣，不知道该如何入门，顺手记录一下。这是一篇5000字+的多图长文(<strong>持续更新ING</strong>)。<br><a id="more"></a></p>
+<h1 id="GitHub是做什么的？"><a href="#GitHub是做什么的？" class="headerlink" title="GitHub是做什么的？"></a><code>GitHub</code>是做什么的？</h1><ul>
+<li>GitHub是全球最大的同性社交平台，业界人称<code>GayHub</code>, 今年微软喜提全球最大的社交平台<strong><em>GitHub</em></strong>. 好吧，上面是来搞笑的😄, <strong><em>GitHub</em></strong>是一个代码托管的平台，类似于这样的平台还有<code>GitLab</code>、<code>Coding</code>、<code>Bitbucket</code>等等；之所以叫GitHub是因为它只支持<code>Git</code>这一种版本控制工具。GitHub这个单词拆分开来就是<code>Git</code>和<code>Hub</code>,用过<code>Usb Hub</code>的人都知道hub是一个类似集线器的东西。</li>
+</ul>
+<p><strong><a href="https://github.com/ten#" target="_blank" rel="noopener">Thank you for 10 years</a></strong></p>
+<div id="dplayer7" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer7"),"theme":"#FADFA3","loop":true,"preload":"none","video":{"url":"https://file.ourfor.top/movie/Thank%20you%20for%2010%20years%20of%20code-hQXV70Z4cFI.mp4","pic":"https://file.ourfor.top/source/ourfor/github_ten.png"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<h1 id="开始使用GitHub"><a href="#开始使用GitHub" class="headerlink" title="开始使用GitHub"></a>开始使用GitHub</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> 注册GitHub账号</li>
+<li style="list-style: none"><input type="checkbox" checked> 建立Repo, 添加<code>ssh key</code></li>
+<li style="list-style: none"><input type="checkbox" checked> git的简单使用以及一些GUI的GitHub客户端</li>
+<li style="list-style: none"><input type="checkbox" checked> Commit History 以及 issue</li>
+<li style="list-style: none"><input type="checkbox" checked> 如何编写README文件</li>
+<li style="list-style: none"><input type="checkbox" checked> 如何贡献代码– Pull request</li>
+<li style="list-style: none"><input type="checkbox" checked> 如何为项目添加开源协议</li>
+<li style="list-style: none"><input type="checkbox" checked> 如何在GitHub上面写日记</li>
+<li style="list-style: none"><input type="checkbox" checked> 为项目添加web文档</li>
+<li style="list-style: none"><input type="checkbox" checked> 编译、部署以及添加贴纸</li>
+</ul>
+<p>先准备写这些吧。<br><strong>多图警告</strong>⚠️, 本博客文章配有大量图片, 请注意流量。</p>
+<hr>
+<p>下面以全球最大的开源社区<code>GitHub</code>为例(今年是GitHub十周年)。</p>
+<h3 id="注册GitHub账号"><a href="#注册GitHub账号" class="headerlink" title="注册GitHub账号"></a>注册GitHub账号</h3><p>首先，在浏览器中打开<a href="https://github.com" target="_blank" rel="noopener">GitHub</a>, 映入眼帘的是一只黑色章鱼🐙猫🐱，是不是和我的衣服上的标志差不多😝。<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/10/25/5bd139d1c1fc5.png" title="GitHub" data-fancybox="images"><img src="https://i.loli.net/2018/10/25/5bd139d1c1fc5.png" alt="GitHub" title class></a>
+                <p>GitHub</p>
+            </figure></p>
+<ul>
+<li><code>Sign in</code>就是登陆啦，如果你注册了一个账号就直接登陆就是喽</li>
+<li><code>Sign up</code>注册一个新的账号</li>
+</ul>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/12/08/5c0be71ce6be4.png" title="Sign up" data-fancybox="images"><img src="https://i.loli.net/2018/12/08/5c0be71ce6be4.png" alt="Sign up" title class></a>
+                <p>Sign up</p>
+            </figure>
+<ul>
+<li><p><code>Username</code>填一个简单一点的英文名，因为以后你的博客可以通过<code>Username.github.io</code>来访问的，所以起一个好点的、不太长的名字就很有必要了，比如我的这个<code>Username</code>是<code>ourfor</code>,很短也很好记。</p>
+</li>
+<li><p><code>Email address</code>填个QQ邮箱📮也是OK的啦</p>
+</li>
+<li><p><code>Password</code>这个你懂得😳😳</p>
+</li>
+<li><p><code>step2和step3</code>这个由于我注册过了，我就没打开看了，你看着填吧。</p>
+</li>
+</ul>
+<blockquote>
+<p>这个B的英语我也是服了。</p>
+</blockquote>
+<!--这个B是指彭伏军-->
+<div id="dplayer8" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer8"),"theme":"#FADFA3","loop":true,"preload":"none","video":{"url":"https://file.ourfor.top/study/GitHub-Learning-Guide/Introduction%20to%20GitHub/What%20is%20GitHub-w3jLJU7DT5E.mp4","pic":"https://file.ourfor.top/source/other/github.png"},"danmaku":{"id":"9E2E3368B56CDBB4","api":"http://dplayer.daoapp.io"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<p>注册完登陆我们就来到了这样的一个界面：<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/10/25/5bd13b2126bbb.png" title="Home Page" data-fancybox="images"><img src="https://i.loli.net/2018/10/25/5bd13b2126bbb.png" alt="Home Page" title class></a>
+                <p>Home Page</p>
+            </figure><br>我们打开页面右上角的<code>Setting</code>, 打开<code>Your Profile</code>, 就会跳转到我们的个人主页：<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/10/25/5bd13c3caae63.png" title="不要盗我的图，再盗就全绿了😆" data-fancybox="images"><img src="https://i.loli.net/2018/10/25/5bd13c3caae63.png" alt="不要盗我的图，再盗就全绿了😆" title class></a>
+                <p>不要盗我的图，再盗就全绿了😆</p>
+            </figure></p>
+<h4 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载<code>git</code></h4><p>这里我们的主角登场了，就是<a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>, 对于<strong><em>Unix-Like</em></strong>的操作系统, 就不用下载了, 直接从源安装就好了。对于<code>Windows</code>操作系统, 下载最新的<a href="https://github.com/git-for-windows/git/releases/download/v2.19.1.windows.1/Git-2.19.1-64-bit.exe" target="_blank" rel="noopener">Git</a>。</p>
+<p>以Windows上面为例：<br>安装完我们的Git之后, 我们需要生成一对<code>SSH Key</code>, 打开安装的<code>Git bash</code>。</p>
+<p>在<code>Windows10</code> 的搜索框中查找<strong><em>Git bash</em></strong>,或者点击Windows徽键，在最近添加中打开，在<code>Git bash</code>键入如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span>                <span class="comment">#print working directory显示当前路径。</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="创建Repo"><a href="#创建Repo" class="headerlink" title="创建Repo"></a>创建Repo</h4><p>新建一个<code>Repository</code>(以下简称<code>Repo/repo</code>)，点击页面上面的<code>New repository</code><br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/12/08/5c0be7100ebc6.png" title="New repository" data-fancybox="images"><img src="https://i.loli.net/2018/12/08/5c0be7100ebc6.png" alt="New repository" title class></a>
+                <p>New repository</p>
+            </figure></p>
+<ul>
+<li>这个<code>Repository name</code>,你随意,不过并不建议用中文名.</li>
+<li><code>Public</code>在你没有付费或者使用学生包的时候，我们只能创建<code>public</code>类型的repo，其实已经够用了。然后点击<code>Create repository</code>就可以完成创建。</li>
+<li><code>Description</code>可选。建议勾选☑️<code>Initialize this repository with a README</code></li>
+</ul>
+<p>这时候就会打开仓库主页，依次点击页面右侧的<code>Clone or download</code>、<code>Use SSH</code>复制框中的<code>Repo</code>地址，待会要用。</p>
+<h4 id="添加部署密钥"><a href="#添加部署密钥" class="headerlink" title="添加部署密钥."></a>添加部署密钥.</h4><p>打开<code>Git bash</code>，输入<code>ssh-keygen -t rsa -C &quot;2320813747@qq.com&quot;</code>,这个邮箱地址换成你的。连续四次回车就生成了一对密钥。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved <span class="keyword">in</span> /c/Users/zip/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /c/Users/zip/.ssh/id_rsa.pub.</span><br></pre></td></tr></table></figure></p>
+<p>它会告诉你密钥生成在哪个文件夹,上面是我的密钥生成路径，下面要相应替换成你的，使用<code>cat</code>来查看公钥内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /c/Users/zip/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p>复制输出的内容，打开<code>GitHub</code>，点击页面右侧头像旁边的倒三角，打开<code>Settings</code>，在页面左侧的<code>Personal settings</code>下面定位到<code>SSH and GPG keys</code>这一栏,点击右侧的<code>New SSH key</code>来添加一个密钥，其中<code>Title</code>随意,<code>Key</code>填写上一步<code>Git bash</code>里面生成的那个。最后<code>Add SSH key</code>就行了。</p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/10/25/5bd15a0c89c96.png" title="Add SSH keys" data-fancybox="images"><img src="https://i.loli.net/2018/10/25/5bd15a0c89c96.png" alt="Add SSH keys" title class></a>
+                <p>Add SSH keys</p>
+            </figure>
+<h3 id="git的简单使用"><a href="#git的简单使用" class="headerlink" title="git的简单使用"></a>git的简单使用</h3><h4 id="git命令"><a href="#git命令" class="headerlink" title="git命令"></a>git命令</h4><p>下面命令均在<code>Git bash</code>或<code>Terminal</code>中执行。<br>打开我们的项目仓库页面, 复制仓库地址。将远程仓库克隆到本地计算机：<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/10/25/5bd188e2f1e3c.png" title="Repo Address" data-fancybox="images"><img src="https://i.loli.net/2018/10/25/5bd188e2f1e3c.png" alt="Repo Address" title class></a>
+                <p>Repo Address</p>
+            </figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:ourfor/Java_note.git <span class="comment"># 使用ssh方式clone, 那么你必须在该仓库中添加你的ssh key, 所以对于别人项目你只能使用https的方式clone。</span></span><br><span class="line">或</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ourfor/Java_note.git</span><br></pre></td></tr></table></figure>
+<p>接下来我们为Repo添加文件, 这里我使用数据流重定向来创建一个文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">"hello world"</span> &gt; firstfile.c <span class="comment"># 你没必要这么骚吧, 直接在文件管理器里面移个文件进去不就好了</span></span><br></pre></td></tr></table></figure></p>
+<p>是不是这样我们放在项目目录下的文件就变成我们的项目文件了呢？肯定不是啊, 那我不是随便放个文件都能改变你的项目文件了, 再者, 版本控制肯定是会有版本记录的啊！这时候我们就需要手动添加文件到我们的项目文件了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add firstfile.c <span class="comment"># 添加firstfile.c到项目</span></span><br></pre></td></tr></table></figure>
+<p>如果每次这样添加不麻烦吗？有时候我都不知道生成了什么文件, 更简易的方法是每次添加项目目录里面的所有文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add . <span class="comment"># 或者git add -A A就是all的缩写</span></span><br></pre></td></tr></table></figure>
+<p>接下来为我们的更改添加注释信息:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"first commit"</span>  <span class="comment">#其中引号里面的内容就是我们添加的提交记录</span></span><br></pre></td></tr></table></figure>
+<p>添加完提交记录后我们还可以将更改推送到远程仓库:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master   <span class="comment">#将本地更改push到分支master</span></span><br></pre></td></tr></table></figure>
+<p>有时版本冲突，可以使用强制推送:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin master  <span class="comment">#参数f就是force的意思</span></span><br></pre></td></tr></table></figure>
+<p>对应的如果远程仓库的版本比较新, 我们可以将远程仓库的内容同步到本地计算机：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master    <span class="comment">#将分支master的内容pull到本地计算机</span></span><br></pre></td></tr></table></figure>
+<p>有时我们开发软件，不同的开发阶段我们的软件有不同的开发版本，比如<code>alpha</code>、<code>beta</code>和<code>gamma</code>. 我们希望一个仓库同时存在多个不同的版本，我们可以充分利用<code>branch</code>的功能。</p>
+<ul>
+<li>创建一个新分支</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b alpha</span><br></pre></td></tr></table></figure>
+<ul>
+<li>切换分支</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout alpha</span><br></pre></td></tr></table></figure>
+<p>当我们在git中切换分支以后，在文件浏览器里面就看不到其他分支的文件，是不是很方便？</p>
+<p>举个栗子🌰<br><code>骑士飞行棋</code>与<code>坦克大战</code>并存, <a href="https://github.com/ourfor/Game_java" target="_blank" rel="noopener">Game_java</a></p>
+<h6 id="一般该怎么用git？"><a href="#一般该怎么用git？" class="headerlink" title="一般该怎么用git？"></a>一般该怎么用git？</h6><p>在添加好ssh公钥后，我们先在本地创建一个目录，以<code>RepoLocal</code>做目录名为例:</p>
+<ul>
+<li>初始化<code>RepoLocal</code>目录，使之能够被git管理(设置一次就好了)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init RepoLocal  <span class="comment"># 在RepoLocal上级目录执行，如果在目录RepoLocal中则执行git init</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>关联远程git仓库(一次)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin RepoRemoteAddress <span class="comment"># RepoRemoteAddress 就是你的远程仓库地址</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置提交人信息(每次提交都会显示某某某提交，信息就是在这里设置,一次性设置)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"ourfor"</span>    <span class="comment">#不太记得是不是这条命令了，反正到时候会有英文提示的，看看提示就好了</span></span><br><span class="line">git config --global user.email <span class="string">"ourfor@foxmail.com"</span>  <span class="comment">#用户名和邮箱用于标识和查找头像，如果不介意，随意喽</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li>添加更改文件到repo</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .  <span class="comment"># 添加当前目录所有文件及目录  git add -A</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>为更改添加注释说明信息</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"some information to tell others why you change the file or code"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>推送到远程仓库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master   <span class="comment">#这里推送到主分支，可以推送到其他分支，第一次推送要加参数u，git push -u origin master</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果远程仓库版本比本地仓库版本新，本地就需要pull</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<h4 id="GUI的GitHub客户端"><a href="#GUI的GitHub客户端" class="headerlink" title="GUI的GitHub客户端"></a>GUI的GitHub客户端</h4><p>对于GitHub的GUI客户端我是比较推荐<a href="https://www.gitkraken.com/" target="_blank" rel="noopener">GitKraken</a>尽管它在我的电脑里面已经打入冷宫很长一段时间了, 不过它确实比Web端的美观一点, 对各个平台的支持都比较好。还是比较习惯用git的命令来管理.</p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/10/25/5bd15c3865a22.png" title="GitKraken" data-fancybox="images"><img src="https://i.loli.net/2018/10/25/5bd15c3865a22.png" alt="GitKraken" title class></a>
+                <p>GitKraken</p>
+            </figure>
+<p>我们下载安装的git也是有gui的界面的，使用指令<code>gitk</code>来打开gui界面</p>
+<h3 id="如何编写README文件"><a href="#如何编写README文件" class="headerlink" title="如何编写README文件"></a>如何编写README文件</h3><p>READMD文件作为我们项目的一个说明文件, 我们如何编辑README文件,才能让它美观简洁呢？README文件以后缀.md结尾，它支持markdown语法，同时支持部分html语法，在每个repo中，它会自动解析README.md这个文件.</p>
+<p>由于经常使用markdown写笔记和文章,都已经形成自己的风格了,所以下面的语法介绍是我经常使用的, 有很多等价的语法，不再此处一一列举<br>Markdown语法：<br>一级标题: #<br>二级标题: ##<br>等等…</p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/10/29/5bd6a51959c0f.png" title data-fancybox="images"><img src="https://i.loli.net/2018/10/29/5bd6a51959c0f.png" alt title class></a>
+                <p></p>
+            </figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 算法概述</span></span><br><span class="line"><span class="section">## 递归与分治策略</span></span><br></pre></td></tr></table></figure>
+<p>加粗: <strong>第一个认识的人就是你</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**第一个认识的人就是你**</span></span><br></pre></td></tr></table></figure></p>
+<p>倾斜: <em>很高兴</em><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*很高兴*</span></span><br></pre></td></tr></table></figure></p>
+<p>加粗并倾斜: <strong><em>nice</em></strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">***nice**</span>*</span><br></pre></td></tr></table></figure></p>
+<p>插入代码：</p>
+<ul>
+<li>插入c语言代码：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello world\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```c</span></span><br><span class="line"><span class="code">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="code">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="code">int main()&#123;</span></span><br><span class="line"><span class="code">    printf("Hello world\n");</span></span><br><span class="line"><span class="code">    return 0;</span></span><br><span class="line"><span class="code">&#125;</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>插入shell命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install git -y</span><br><span class="line">sudo dnf update -y</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```bash</span></span><br><span class="line"><span class="code">sudo dnf install git -y</span></span><br><span class="line"><span class="code">sudo dnf update -y</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
+<p>规则就是三个反引号+需要<code>语法高亮</code>的<strong>语言类型</strong></p>
+<p>引用书中的话或名人名言:</p>
+<blockquote class="normal">书籍是人类进步的阶梯 —- 高尔基</blockquote>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 书籍是人类进步的阶梯 ---- 高尔基</span></span><br></pre></td></tr></table></figure>
+<p>小黑点:</p>
+<ul>
+<li>你还是这么好看</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>你还是这么好看</span><br></pre></td></tr></table></figure>
+<p>任务列表(有x显示为勾选，留空表示不勾选):</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 高等数学</li>
+<li style="list-style: none"><input type="checkbox"> 线性代数</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>[x] 高等数学</span><br><span class="line"><span class="bullet">- </span>[ ] 线性代数</span><br></pre></td></tr></table></figure>
+<p>反白:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">` root `</span> 在Unix/Linux操作系统中是指具有最高权限的用户</span><br></pre></td></tr></table></figure>
+<p><code>root</code> 在Unix/Linux操作系统中是指具有最高权限的用户</p>
+<p>删除线:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~浮生若梦, 为欢几何.~~</span><br></pre></td></tr></table></figure>
+<p><del>浮生若梦, 为欢几何.</del></p>
+<p>文章分割线:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr>
+<p>插入图片:<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">life</span>](<span class="link">https://i.loli.net/2018/10/06/5bb815d8e14fd.jpg</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/10/06/5bb815d8e14fd.jpg" title="life" data-fancybox="images"><img src="https://i.loli.net/2018/10/06/5bb815d8e14fd.jpg" alt="life" title class></a>
+                <p>life</p>
+            </figure>
+<ul>
+<li>方括号内部是对图片的描述，在github是不会显示出来的,也就是html中的alt</li>
+<li>圆括号里面的网址可以是图片的绝对路径地址也可以是相对路径</li>
+</ul>
+<p>添加超链接:<br><a href="https://github.com" target="_blank" rel="noopener">GitHub</a><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">GitHub</span>](<span class="link">https://github.com</span>)</span><br></pre></td></tr></table></figure></p>
+<p>表格:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|这是表头|A|B|</span><br><span class="line">|:-|-:|:-:|</span><br><span class="line">|h|a|b|</span><br></pre></td></tr></table></figure>
+<p>实际效果:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">这是表头</th>
+<th style="text-align:right">A</th>
+<th style="text-align:center">B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">h</td>
+<td style="text-align:right">a</td>
+<td style="text-align:center">b</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>:-</code> 这是左对齐</li>
+<li><code>-:</code> 这是右对齐</li>
+<li><code>:-:</code> 这是居中对齐</li>
+</ul>
+<p>显然这种表格是很简单的, 对于更加复杂的表格, markdown就有点心有余而力不足了, 还好兼容html, 我们就可以用html的方式插入表格:</p>
+<table><th>  </th><td align="center">星期一</td>  <td align="center">星期二</td>  <td align="center">星期三</td>  <td align="center">星期四</td>  <td align="center">星期五</td>    <tr>  <td>第一节</td>  <td align="center" rowspan="2">高等数学A(理化214)</td>  <td align="center" rowspan="2">线性代数(理化327)</td>  <td align="center" rowspan="4">软件综合(一)(机房)</td>  <td align="center" rowspan="2">程序设计基础(理化327)</td>  <td align="center" rowspan="4">软件综合(一)(机房)</td>  </tr>  <tr>  <td>第二节</td>  </tr>  <tr>  <td>第三节</td>  <td align="center" rowspan="2">程序设计基础(理化327)</td>  <td align="center" rowspan="2">大学英语(至105)</td>  <td align="center" rowspan="2">大学体育(体育馆)</td>  </tr>  <tr>  <td>第四节</td>  </tr>  <tr>  <td align="center">午安</td>  <td align="center" colspan="5">我的课表居然这么满🍎🍏🍐🍑🍒🍓🥝🍅</td>  </tr>  <tr>  <td>第五节</td>  <td align="center" rowspan="4">程序设计基础(机房)</td>  <td align="center" rowspan="3">面向对象软件方法学(至308)</td>  <td align="center" rowspan="3">算法分析与设计(至308)</td>  <td></td>  <td align="center" rowspan="3">操作系统(至116)</td>  </tr>  <tr>  <td>第六节</td>  <td></td>  </tr>  <tr>  <td>第七节</td>  <td></td>  </tr>  <tr>  <td>第八节</td>  <td></td>  <td></td>  <td></td>  <td></td>  </tr>  <tr>  <td align="center">傍晚</td>  <td align="center" colspan="5">认识你真好🍇🍈🍉🍊🍋🍌🍍</td>  </tr>  <tr>  <td>第一节</td>  <td align="center" rowspan="3">Java校选课(至502)</td>  <td></td>  <td></td>  <td></td>  <td align="center" rowspan="3">概率论与数理统计(至117)</td>  </tr>  <tr>  <td>第二节</td>  <td></td>  <td></td>  <td></td>  </tr>  <tr>  <td>第三节</td>  <td></td>  <td></td>  <td></td>  </tr></table>
+
+<details><summary><strong>HTML代码</strong></summary><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span>星期一<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span>星期二<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span>星期三<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span>星期四<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span>星期五<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第一节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">2</span>&gt;</span>高等数学A(理化214)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">2</span>&gt;</span>线性代数(理化327)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">4</span>&gt;</span>软件综合(一)(机房)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">2</span>&gt;</span>程序设计基础(理化327)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">4</span>&gt;</span>软件综合(一)(机房)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第二节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第三节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">2</span>&gt;</span>程序设计基础(理化327)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">2</span>&gt;</span>大学英语(至105)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">2</span>&gt;</span>大学体育(体育馆)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第四节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span>午安<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">colspan</span>=<span class="string">5</span>&gt;</span>我的课表居然这么满🍎🍏🍐🍑🍒🍓🥝🍅<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第五节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">4</span>&gt;</span>程序设计基础(机房)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">3</span>&gt;</span>面向对象软件方法学(至308)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">3</span>&gt;</span>算法分析与设计(至308)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">3</span>&gt;</span>操作系统(至116)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第六节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第七节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第八节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span>&gt;</span>傍晚<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">colspan</span>=<span class="string">5</span>&gt;</span>认识你真好🍇🍈🍉🍊🍋🍌🍍<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第一节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">3</span>&gt;</span>Java校选课(至502)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">center</span> <span class="attr">rowspan</span>=<span class="string">3</span>&gt;</span>概率论与数理统计(至117)<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第二节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>第三节<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br></details>
+
+<p>数学公式:</p>
+<blockquote class="normal">数学是科学的语言, 学习笔记里面怎么可以没有数学公式呢？</blockquote>
+
+<ul>
+<li><code>\\(a + b\\)</code><br>\(a + b\) </li>
+<li><code>$$a + b$$</code><br>$$a + b$$ </li>
+<li><code>$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$</code><br>$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$</li>
+<li><code>$$\mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$$</code><br>$$\mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$$ </li>
+</ul>
+<p>markdown编辑的时候最好用<code>$</code>符号括起来。否则就需要转义字符<br>比如一个<code>$</code>就是是这样:<code>$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$</code>:</p>
+<p>$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$</p>
+<p><code>$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$</code><br>$$\sum_{i=0}^n i = \frac{n+1}{2}$$</p>
+<p>原本语法中两个<code>\\</code>, 你还需要加一个<code>\</code>来转义:</p>
+<p>$$<br>    \begin{pmatrix}<br>    1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\<br>    1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\<br>    \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\<br>    1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n<br>    \end{pmatrix}<br>$$</p>
+<p>我不是学<strong>数学</strong>的所以我很少用数学公式，如果你对数学公式的用法感兴趣你可以看看<a href="https://www.mathjax.org/" target="_blank" rel="noopener">Mathjax官网</a>的说明。一般的markdown编辑器和解析器都支持<code>Mathjax</code></p>
+<p>$$<br>    \begin{pmatrix}<br>    🍇 &amp; 🍈 &amp; 🍉 &amp; 🍊 \\<br>    🍋 &amp; 🍌 &amp; 🍍 &amp; 🍎 \\<br>    🍏 &amp; 🍐 &amp; 🍑 &amp; 🍒 \\<br>    🍓 &amp; 🥝 &amp; 🍅 &amp; 😳<br>    \end{pmatrix}<br>$$</p>
+<h3 id="Commit-History-以及-issue"><a href="#Commit-History-以及-issue" class="headerlink" title="Commit History 以及 issue"></a>Commit History 以及 issue</h3><h4 id="Commit-History使用场景"><a href="#Commit-History使用场景" class="headerlink" title="Commit History使用场景"></a>Commit History使用场景</h4><h5 id="情景一"><a href="#情景一" class="headerlink" title="情景一"></a>情景一</h5><p>旺仔是一名大二计算机专业的学生，这个学期学校开了一门<code>操作系统</code>的课程，</p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/16/5beee24e5c8b2.png" title="你渴望力量吗？你想更深入了解计算机吗？" data-fancybox="images"><img src="https://i.loli.net/2018/11/16/5beee24e5c8b2.png" alt="你渴望力量吗？你想更深入了解计算机吗？" title class></a>
+                <p>你渴望力量吗？你想更深入了解计算机吗？</p>
+            </figure>
+<p>操作系统向来都是他的最爱，上操作系统的副教授使用的教材是国外经典操作系统教材，这个教材各方面都不错，唯一得缺点就是实体书太贵，完整的pdf电子书📚又得收费。每章都是免费的，在线网站<a href="http://pages.cs.wisc.edu/~remzi/OSTEP" target="_blank" rel="noopener">OSTEP</a><br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/16/5beee24e72c14.png" title="Three Easy Pieces" data-fancybox="images"><img src="https://i.loli.net/2018/11/16/5beee24e72c14.png" alt="Three Easy Pieces" title class></a>
+                <p>Three Easy Pieces</p>
+            </figure><br>在他Google一圈以后，他累了，在他快要放弃的时候，他想到了<a href="https://github.com" target="_blank" rel="noopener">GitHub</a>—-这个全球最大的开源社区，打开GitHub主页，键入<code>ostep</code>, 得到了以下结果：</p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/16/5beee24da73e7.png" title="检索结果" data-fancybox="images"><img src="https://i.loli.net/2018/11/16/5beee24da73e7.png" alt="检索结果" title class></a>
+                <p>检索结果</p>
+            </figure>
+<p>忽略前面两项搜索🔍结果，之前他找书的时候在<code>Commits</code>里面并没有这两项提交，他发现了这一项提交<code>Delete Operating Systems - Three Easy Pieces.pdf</code>, 他点进去了,<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/16/5beee24d7e67c.png" title="ostep，点击右侧的view就可以下载了" data-fancybox="images"><img src="https://i.loli.net/2018/11/16/5beee24d7e67c.png" alt="ostep，点击右侧的view就可以下载了" title class></a>
+                <p>ostep，点击右侧的view就可以下载了</p>
+            </figure></p>
+<p>由此我们推测在这一项记录📝提交前，这个仓库里面肯定是有<code>Operating Systems - Three Easy Pieces.pdf</code>这个文件的, 并且这个文件位于目录<code>Computer_Science</code>于是我们进入仓库的主界面，点击上方的<code>Commits</code>, 定位到 <code>Delete Operating Systems - Three Easy Pieces.pdf</code>, 我们选择比这一项提交更早的一次提交，点击右侧的 <code>&lt;&gt;</code>,即<strong><em>Browse the repository at this point in the history</em></strong>(回到那时的仓库), 这里我选择de是这一项提交<code>Added bitcoin books</code>. 找到这个文件并下载。</p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/16/5beee24e5d874.png" title="ostep" data-fancybox="images"><img src="https://i.loli.net/2018/11/16/5beee24e5d874.png" alt="ostep" title class></a>
+                <p>ostep</p>
+            </figure>
+<p>当然，要下载这本教程的完整的电子书📚，我们可以直接在GitHub的检索结果中下载更好的。这仅仅是其中一个应用场景，从这里我们可以知道，GitHub会将你每个版本的代码都保存下来，充分利用<code>Commits</code>，才能更好更舒服的开发。</p>
+<h5 id="情景二"><a href="#情景二" class="headerlink" title="情景二"></a>情景二</h5><p>曾哥是一名大一软件专业的学生，他觉得前端的东西很炫酷，并且具备一定的前端基础，于是他用GitHub和coding提供的<code>pages</code>,搭了一个基于hexo的静态博客网站，他看上了一个开源的主题<a href="https://github.com/codefine/hexo-theme-mellow" target="_blank" rel="noopener">Mellow</a>,在使用Mellow这款主题的时候，他发现使用<code>html</code>的<code>&lt;table&gt;</code> 标记插入表格的时候，表格离上一段文字总是莫名其妙的出现大段空白，他在经过排查得出这不是主题的bug，于是他在主题作者的仓库提了一个<code>issue</code>(这个B，真是令人匪夷所思，都不是主题的bug还提，md，你总不能让我去hexo官网提交bug吧，我得等多久，还有我也认识主题作者很久了😒)，主题作者<a href="https://github.com/codefine" target="_blank" rel="noopener">Michael.Lu</a>很热心，很快就解决了这个<code>hexo引擎解析的bug</code>，然而我们的曾哥不满足一个网站，于是他又搭了一个<a href="https://diary.ourfor.top" target="_blank" rel="noopener">diary</a>,这回他并没有使用<code>Mellow</code>这个主题，他又遇到了这个表格的问题，于是他想到了之前修复这个bug的<code>mellow</code>仓库，查看<a href="https://github.com/codefine/hexo-theme-mellow/commits/master" target="_blank" rel="noopener">commits</a>,他找到了<a href="https://github.com/codefine/hexo-theme-mellow/commit/1cabd6466e21a8cf527e783cf7ac3338705db11e" target="_blank" rel="noopener">fixed table display in the index-card</a></p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/16/5beee24d9ffaf.png" title="commits" data-fancybox="images"><img src="https://i.loli.net/2018/11/16/5beee24d9ffaf.png" alt="commits" title class></a>
+                <p>commits</p>
+            </figure>
+<p>点击这段文字的超链接或者右侧的7位奇妙字串😳，我们可以清楚的看到在哪个位置改动了那些代码，当然这段代码不能直接粘贴复制，但是却给我提供了修复的思路。所以很快我就将另一个主题的<code>&lt;table&gt;</code>修复好了。</p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/16/5beee24da60c2.png" title="fix table" data-fancybox="images"><img src="https://i.loli.net/2018/11/16/5beee24da60c2.png" alt="fix table" title class></a>
+                <p>fix table</p>
+            </figure>
+<h4 id="issue"><a href="#issue" class="headerlink" title="issue"></a>issue</h4><p>你在使用的时候遇到任何问题，都可以通过点击仓库主页上方的<code>Issues</code>，和作者以及其他人讨论。支持<em>MarkDown</em>语法哦😯。</p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/16/5beee24d7e2f8.png" title="issues" data-fancybox="images"><img src="https://i.loli.net/2018/11/16/5beee24d7e2f8.png" alt="issues" title class></a>
+                <p>issues</p>
+            </figure>
+<h3 id="添加开源协议-License"><a href="#添加开源协议-License" class="headerlink" title="添加开源协议(License)"></a>添加开源协议(License)</h3><p>当我们的项目达到了一定的规模，贡献者的人数达到了一定的数量，我们就需要为项目添加开源协议. </p>
+<ul>
+<li>为什么要添加开源协议？<br>简言之，随着你的代码越写越多，你难免会用到一些其他人的优秀代码，或者是一小段，即使是开源的，也并意味着可以为所欲为，你浏览博客和开源项目的时候也应该能看到一些声明，诸如<code>遵守国际禁止演绎3.0许可</code>、<code>请遵循BSD开源协议许可</code>等等，算了不扯了，我语言文字功底太差，重点是如何添加，协议的具体内容，在添加时都是可以查看的。</li>
+</ul>
+<blockquote>
+<p>为项目添加开源协议</p>
+<ul>
+<li>创建repo时选择</li>
+<li>创建repo后添加</li>
+</ul>
+</blockquote>
+<h5 id="创建reop时选择"><a href="#创建reop时选择" class="headerlink" title="创建reop时选择"></a>创建reop时选择</h5><p>这个你在创建的时候选择一个开源协议就好了，没什么大的问题。</p>
+<h5 id="创建repo后添加"><a href="#创建repo后添加" class="headerlink" title="创建repo后添加"></a>创建repo后添加</h5><h6 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h6><p>打开我们的仓库主页(<code>注意最好在项目的根目录添加</code>)，在目录浏览的上方有个<code>Create new file</code>。<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0da29d3b22.png" title="Create new file" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0da29d3b22.png" alt="Create new file" title class></a>
+                <p>Create new file</p>
+            </figure></p>
+<p>点进来，我们只需要输入<code>License</code>，输入完后，右侧就会出现<code>Choose a license template</code>, 选择一个合适的模板<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0da7158af8.png" title="Choose a license template" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0da7158af8.png" alt="Choose a license template" title class></a>
+                <p>Choose a license template</p>
+            </figure></p>
+<h6 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h6><p><code>Review and submit</code>-&gt;<code>Commit new file</code>-&gt;<code>Create pull request</code>.我们就创建了一个pull的请求(什么意思自己领会😁)。<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0de7084d85.png" title="Review and submit" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0de7084d85.png" alt="Review and submit" title class></a>
+                <p>Review and submit</p>
+            </figure><br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0defccfb70.png" title="Commit new file" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0defccfb70.png" alt="Commit new file" title class></a>
+                <p>Commit new file</p>
+            </figure><br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0df1a2a6eb.png" title="Create pull request" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0df1a2a6eb.png" alt="Create pull request" title class></a>
+                <p>Create pull request</p>
+            </figure></p>
+<p>依次点击<code>Merge pull request</code>-&gt;<code>Confirm merge</code>, 它会提示你<code>Pull request successfully merged and closed</code>, 至此我们的开源协议就添加好了</p>
+<h3 id="如何贡献代码–-Pull-request"><a href="#如何贡献代码–-Pull-request" class="headerlink" title="如何贡献代码– Pull request"></a>如何贡献代码– Pull request</h3><p>正如物理学泰斗牛顿所言:<code>如果说我看得比别人更远些，那是因为我站在巨人的肩膀上</code>(暂且不讨论这句话的其他含义)，同样我们打算创建一个新的project的时候并不一定得从头开始，我们可以找找目前已有的项目，<code>fork</code>过来，有时发现了bug，修复之后还可以issue一个 <code>Pull require</code>，作者认为你的修改很好，就会合并你的请求，这样你就成为了这个项目的<code>Contributor</code>，当以后项目的<strong><em>Star</em></strong>和<strong><em>fork</em></strong>多了，这还能成为求职的一个加分项，下图就是我在<code>Mellow</code>这个主题贡献的代码.<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0e2af938d1.png" title="添加fancybox" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0e2af938d1.png" alt="添加fancybox" title class></a>
+                <p>添加fancybox</p>
+            </figure></p>
+<blockquote>
+<p>问题来了，具体要怎么做呢?</p>
+</blockquote>
+<p>首先，你得<code>fork</code>一个repo，你自己原创的repo就不存在这种情况。你的repo名下面就会有<code>fork from xxx</code>，同时你做了一些更改以后，就可以通过页面上方的<code>New pull request</code></p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0e39a567ab.png" title data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0e39a567ab.png" alt title class></a>
+                <p></p>
+            </figure>
+<h3 id="为项目添加web文档"><a href="#为项目添加web文档" class="headerlink" title="为项目添加web文档"></a>为项目添加web文档</h3><p>在我们的项目，完成到一定的程度以后，<code>README</code>的局限性就很大了，我们可以考虑添加<code>Web文档</code>,其实也不难，README文件就可以作为文档页面.在我们repo上方的setting选项卡里面能找到<code>GitHub Pages</code>这一个选项卡。<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0e66a009a2.png" title="GitHub Pages" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0e66a009a2.png" alt="GitHub Pages" title class></a>
+                <p>GitHub Pages</p>
+            </figure></p>
+<ul>
+<li><code>source</code> 也就是我们文档的位置，位于哪个分支，哪个文件，这个你自己规划好，你可以放在任意一个分支的根目录或者子目录<code>doc</code>，其实也是可以创建一个专门用来放web文档的分支: <code>doc</code>、<code>web</code>之类的名字都是比较见文知义的。</li>
+<li><code>theme</code> 一些现成的主题可供选择，如果你对主题中的一些样式不太满意，充分利用<code>Chrome</code>的开发者模式修改元素，就能得到你预期的结果。</li>
+<li><code>custom domain</code> 绑定自己的域名，可选。</li>
+</ul>
+<p>可以直接将README里面的内容拷贝一份，添加到主页的<code>index.md</code>(文档首页),或者你熟悉<code>html</code>，也可以自己写<code>index.htm</code></p>
+<blockquote>
+<p>本博客网站就是部署在<code>GitHub</code>和<code>Coding</code>上面的一个静态网站。搭建方法见<a href="https://blog.ourfor.top/2018/03/06/hexo-github-coding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo个人博客</a></p>
+</blockquote>
+<h3 id="写日记"><a href="#写日记" class="headerlink" title="写日记"></a>写日记</h3><p>GitHub上面的每次更改都会有一个时间记录📝，如果你懂<code>MarkDown</code>语法，那自然写起来得心应手，除了GitHub以外，<a href="https://gist.github.com/ourfor" target="_blank" rel="noopener">Gist</a>也是一个不错的选择，只不过需要科学上网或者ipv6才能访问。Gist是GitHub专门提供的一个写<code>gist</code>的网站，你想写什么就写什么</p>
+<h3 id="编译、部署以及添加贴纸"><a href="#编译、部署以及添加贴纸" class="headerlink" title="编译、部署以及添加贴纸"></a>编译、部署以及添加贴纸</h3><p>自动编译是使用我们的<a href="https://travis-ci.org/" target="_blank" rel="noopener">travis-ci</a>,我们只要在项目更目录下面创建一个<code>.travis.yml</code>,里面填写一些编译的指令以及依赖。具体写哪些，不同的语言写法不同，根据官方提供的文档写就是了。但是一般都需要声明编程语言、操作系统这些。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">language: sh</span><br><span class="line"></span><br><span class="line">os:</span><br><span class="line">  - linux</span><br><span class="line">  - osx</span><br></pre></td></tr></table></figure></p>
+<p>可以参考别人写的<code>.travis.yml</code></p>
+<h5 id="添加贴纸"><a href="#添加贴纸" class="headerlink" title="添加贴纸"></a>添加贴纸</h5><p>GitHub官方提供的贴纸图标:<a href="https://shields.io/#/" target="_blank" rel="noopener">Shields.io</a></p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0f13a56aa9.png" title data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0f13a56aa9.png" alt title class></a>
+                <p></p>
+            </figure>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0f13c42029.png" title data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0f13c42029.png" alt title class></a>
+                <p></p>
+            </figure>
+<p>在<code>search/project URL</code>中填入你repo的address(https形式不带git后缀),它就会自动生成一些<code>icon</code>,因为是<code>svg</code>的矢量图，是可以动态更新的。<br><figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0f48c7b6dd.png" title="动态更新" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0f48c7b6dd.png" alt="动态更新" title class></a>
+                <p>动态更新</p>
+            </figure><br>你html排好版之后写进README就好了。<code>Your Badge</code>和<code>Styles</code>是一些可以自定义的<code>icon</code>,其实就和<code>printf</code>的格式化输出字串差不多。它都有英文说明的。</p>
+<hr>
+<p>不过像这样盲目的贴是不可取的.</p>
+<figure class="image-box">
+                <a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0f3c462896.png" title="file.ourfor.top" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0f3c462896.png" alt="file.ourfor.top" title class></a>
+                <p>file.ourfor.top</p>
+            </figure>
+<p>又要开始我的折腾了。<br><a rel="GitHub及git初级玩法" href="https://i.loli.net/2018/11/18/5bf0fa3109c01.png" title="Raspberry pi 3B" data-fancybox="images"><img src="https://i.loli.net/2018/11/18/5bf0fa3109c01.png" alt="Raspberry pi 3B"></a></p>
+
+          </div>
+          
+<blockquote class="post-copyright" style="border-left: 3px solid #ff1700;">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-02-21T06:40:00.006Z" itemprop="dateUpdated">2019-02-21 06:40:00</time>
+</span><br>
+
+
+        <p style="margin:unset"><strong>本文作者: </strong><a href="https://ourfor.top">ourfor</a></p>
+        <p style="margin:unset"><strong>版权声明: </strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+        
+        <strong>转载注明出处：</strong><a href="/2018/10/25/GitHub及git初级玩法/" target="_blank" rel="external">https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/</a>
+        
+    </div>
+    <footer>
+        <a href="https://blog.ourfor.top">
+            <img src="/img/sagit.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+          
+          <div class="post-footer">
+              
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li></ul>
+
+              <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/&title=《GitHub及git初级玩法》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/&title=《GitHub及git初级玩法》 — Zip的小窝&source= 
+使用Github一年又余了，感觉GitHub还是非常好用的，在这个平台上不仅能学到很多东西，还能认识一些有意思的人。最近同学对GitHub很感兴趣，不..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《GitHub及git初级玩法》 — Zip的小窝&url=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+          </div>
+          
+              
+    <div id="comment"></div>
+
+
+
+          
+      </div>
+      
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/11/15/读书笔记|编程/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">读书笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2018/10/23/大学规划/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">大学规划</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+      
+      
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#GitHub是做什么的？"><span class="post-toc-number">1.</span> <span class="post-toc-text">GitHub是做什么的？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开始使用GitHub"><span class="post-toc-number">2.</span> <span class="post-toc-text">开始使用GitHub</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注册GitHub账号"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">注册GitHub账号</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下载git"><span class="post-toc-number">2.0.1.1.</span> <span class="post-toc-text">下载git</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建Repo"><span class="post-toc-number">2.0.1.2.</span> <span class="post-toc-text">创建Repo</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加部署密钥"><span class="post-toc-number">2.0.1.3.</span> <span class="post-toc-text">添加部署密钥.</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git的简单使用"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">git的简单使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#git命令"><span class="post-toc-number">2.0.2.1.</span> <span class="post-toc-text">git命令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GUI的GitHub客户端"><span class="post-toc-number">2.0.2.2.</span> <span class="post-toc-text">GUI的GitHub客户端</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何编写README文件"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">如何编写README文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Commit-History-以及-issue"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">Commit History 以及 issue</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Commit-History使用场景"><span class="post-toc-number">2.0.4.1.</span> <span class="post-toc-text">Commit History使用场景</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#issue"><span class="post-toc-number">2.0.4.2.</span> <span class="post-toc-text">issue</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加开源协议-License"><span class="post-toc-number">2.0.5.</span> <span class="post-toc-text">添加开源协议(License)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何贡献代码–-Pull-request"><span class="post-toc-number">2.0.6.</span> <span class="post-toc-text">如何贡献代码– Pull request</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为项目添加web文档"><span class="post-toc-number">2.0.7.</span> <span class="post-toc-text">为项目添加web文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写日记"><span class="post-toc-number">2.0.8.</span> <span class="post-toc-text">写日记</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编译、部署以及添加贴纸"><span class="post-toc-number">2.0.9.</span> <span class="post-toc-text">编译、部署以及添加贴纸</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </div></div></aside>
+    
+
+  </article>
+  
+  
+</div>
+
+        <footer class="footer">
+    
+    
+
+        
+    <div class="bottom">
+            <p>
+            
+            
+
+            <span>
+                Zip &copy; 2015 - 2019
+            </span>
+
+            
+
+            
+            </p><p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </p>
+    
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/&title=《GitHub及git初级玩法》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/&title=《GitHub及git初级玩法》 — Zip的小窝&source= 
+使用Github一年又余了，感觉GitHub还是非常好用的，在这个平台上不仅能学到很多东西，还能认识一些有意思的人。最近同学对GitHub很感兴趣，不..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《GitHub及git初级玩法》 — Zip的小窝&url=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/10/25/GitHub及git初级玩法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3awW7DQAhF0fz/T7tSV93Yvg+cSoY7q6hxnTmzQDDw+eB1/K6zv5x9+3eRN5PnW0uGDBmvZRyXizDO3kbA5H+v9yZDhow9jFooTPHXm+ZsGTJkyEiTP8JGQVOGDBkyvhBwyfNk02kqKUOGjJ0MkuTxHyCpJE8uH67FZciQ8UJG2hj4z89f7G/IkCHjJYwjXDxo1o6mtmTIkDGbUWtPkk10hjZqKakMGTKmMvhLnyo+08NCyaIMGTIWMPjQQ6cxUBvgQCMaMmTIGM3oDEmQUYxOWzS+jJMhQ8ZQxrNNyrTdyA/iJpTLkCFjDYP0BPkPpButXefJkCFjDyNtUvYbkKSIvabedGJlyJAxjtEZ3uKpZDp+wdNQGTJkbGCkKWAtfaxd96PnZciQMZqRbog3L3lhzNuiqIUpQ4aMoQwSzshYBtkQf0N/+EOGDBlTGZ0EsdPIrA1nyJAhYw+DJ4XpNVznCi9tf8qQIWM2gwfQtLDkBXDafpAhQ8YeRu3aq3aJ38lbg5JVhgwZQxmdlI4Uq7xALRbVMmTIGM3gG6qVmv3GZ7FwlSFDxiDGES4egkkS+di3MmTIGM2oBcc0gKYjGukxyZAhYwMjDbKcWmtDFkc0ZMiQsYCRNgPIQBi56Oex/+ZYZciQIQNslzcgyRGkiaYMGTJk1JqdQWIXlrWt1FCGDBmvZZCQh4YeQKOUbzpIKGXIkDGaUSsgeaOxM6JRC+gyZMgYxPgBQxfwLmUPn+IAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//view.ourfor.top/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>

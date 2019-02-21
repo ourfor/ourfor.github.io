@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    
+    <title>Termux安装Hexo静态博客 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="terminal">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	false,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="//ws1.sinaimg.cn/large/005GQrpLly1fynknlwq0jj30q40u04qp.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class>
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/about">
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://github.com/ourfor/My-C-Learning">
+                <i class="icon icon-lg icon-calendar-check-o"></i>
+                STUDY
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://github.com/ourfor" target="_blank">
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://play.ourfor.top">
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/links">
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>Termux安装Hexo静态博客</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="//ws1.sinaimg.cn/large/005GQrpLly1fynjusqrjqj31hc0duqo9.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">Termux安装Hexo静态博客</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-14T09:51:03.000Z" itemprop="datePublished" class="page-time">
+  2018-12-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Termux/">Termux</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left">
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-TermuxInstallHexo" class="post-article article-type-post" itemprop="blogPost">
+      <div class="post-card">
+          <h1 class="post-card-title">Termux安装Hexo静态博客</h1>
+          <div class="post-meta">
+              <time class="post-time" title="2018-12-14 09:51:03" datetime="2018-12-14T09:51:03.000Z" itemprop="datePublished">2018-12-14</time>
+
+              
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Termux/">Termux</a></li></ul>
+
+
+
+              
+	<span id="/2018/12/14/TermuxInstallHexo/" class="leancloud_visitors" data-flag-title="Termux安装Hexo静态博客" title="Termux安装Hexo静态博客">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+              
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/12/14/TermuxInstallHexo/#comment">
+            <span class="valine-comment-count" data-xid="/2018/12/14/TermuxInstallHexo/"></span>
+        </a>
+    </span>
+
+
+
+              
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+              
+              <p>在安卓平台的Linux仿真模拟器Termux上面安装nodejs，从而搭建hexo静态博客。<br><a id="more"></a></p>
+<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>个人感觉没有必要在手机上面写博客,原因有二:</p>
+<ul>
+<li>手机屏幕太小，看着费劲</li>
+<li>输入。。。不支持盲打，并且性能不够<br>但还是写一下，证明它确实可以搭建个人博客。</li>
+</ul>
+<h1 id="下载安装Termux"><a href="#下载安装Termux" class="headerlink" title="下载安装Termux"></a>下载安装Termux</h1><ul>
+<li><a href="https://termux.com/" target="_blank" rel="noopener">Termux</a>官网</li>
+</ul>
+<h1 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h1><p>如果你已经安装<strong><em>nodejs</em></strong>,先卸载它,因为我不确定会不会有问题。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg uninstall nodejs   <span class="comment">#卸载nodejs</span></span><br></pre></td></tr></table></figure>
+<p>打开<code>Termux</code>执行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install openssh openssl  <span class="comment">#安装ssh以及ssl</span></span><br><span class="line">pkg install nodejs       <span class="comment">#安装nodejs</span></span><br></pre></td></tr></table></figure></p>
+<figure class="image-box">
+                <a rel="Termux安装Hexo静态博客" href="https://i.loli.net/2018/12/14/5c133fcb67892.png" title="卸载安装nodejs" data-fancybox="images"><img src="https://i.loli.net/2018/12/14/5c133fcb67892.png" alt="卸载安装nodejs" title class></a>
+                <p>卸载安装nodejs</p>
+            </figure>
+<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g     <span class="comment">#安装hexo</span></span><br></pre></td></tr></table></figure>
+<p>ERROR:<br><figure class="image-box">
+                <a rel="Termux安装Hexo静态博客" href="https://i.loli.net/2018/12/14/5c137f7302e2f.png" title="length is undefine" data-fancybox="images"><img src="https://i.loli.net/2018/12/14/5c137f7302e2f.png" alt="length is undefine" title class></a>
+                <p>length is undefine</p>
+            </figure></p>
+<p>查看日志，发现是这个文件有错误</p>
+<figure class="image-box">
+                <a rel="Termux安装Hexo静态博客" href="https://i.loli.net/2018/12/14/5c137f69a2b4d.png" title="detail" data-fancybox="images"><img src="https://i.loli.net/2018/12/14/5c137f69a2b4d.png" alt="detail" title class></a>
+                <p>detail</p>
+            </figure>
+<p>输入<code>vim /data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js</code>并修改<code>maxConcurrentWorkers</code></p>
+<figure class="image-box">
+                <a rel="Termux安装Hexo静态博客" href="https://i.loli.net/2018/12/14/5c137f6a05de9.png" title="改为0" data-fancybox="images"><img src="https://i.loli.net/2018/12/14/5c137f6a05de9.png" alt="改为0" title class></a>
+                <p>改为0</p>
+            </figure>
+<blockquote>
+<p>重新安装<code>hexo-cli</code></p>
+</blockquote>
+<figure class="image-box">
+                <a rel="Termux安装Hexo静态博客" href="https://i.loli.net/2018/12/14/5c137f733d4b9.png" title="安装没问题了" data-fancybox="images"><img src="https://i.loli.net/2018/12/14/5c137f733d4b9.png" alt="安装没问题了" title class></a>
+                <p>安装没问题了</p>
+            </figure>
+<p>进入宿主目录，同时为我们的博客网站创建一个目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">mkdir blog</span><br></pre></td></tr></table></figure>
+<p>接下来我们初始化博客根目录，在博客上级目录执行<code>hexo init blog</code>(blog是你博客网站根目录的名字)<br><figure class="image-box">
+                <a rel="Termux安装Hexo静态博客" href="https://i.loli.net/2018/12/14/5c137f7412327.png" title="初始化博客根目录" data-fancybox="images"><img src="https://i.loli.net/2018/12/14/5c137f7412327.png" alt="初始化博客根目录" title class></a>
+                <p>初始化博客根目录</p>
+            </figure></p>
+<blockquote>
+<p>小结</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~       <span class="comment">#change directory,进入宿主目录</span></span><br><span class="line">mkdir blog         <span class="comment">#make directory 新建一个名为blog的文件夹，名字不一定叫blog可以根据你的喜好填写,这个目录就是博客网站的根目录</span></span><br><span class="line">npm install hexo-cli -g   <span class="comment">#安装hexo</span></span><br><span class="line">hexo init blog         <span class="comment">#初始化blog这个文件夹，这个文件夹就是第3条命令创建的文件夹，如果你使用的是其他名称，换成对应的名称即可。</span></span><br><span class="line"><span class="built_in">cd</span> blog                <span class="comment">#进入blog这个文件夹，就是上面的博客网站根目录</span></span><br><span class="line">npm install            <span class="comment">#安装必要插件</span></span><br></pre></td></tr></table></figure>
+<h1 id="添加ssh公钥"><a href="#添加ssh公钥" class="headerlink" title="添加ssh公钥"></a>添加ssh公钥</h1><p>打开<code>Termux</code>输入<code>ssh-keygen -t rsa -C &quot;2320813747@qq.com&quot;</code>,这个邮箱地址换成你的。连续四次回车就生成了一对密钥。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved <span class="keyword">in</span> /data/data/com.termux/files/home/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /data/data/com.termux/files/home/.ssh/id_rsa.pub.</span><br></pre></td></tr></table></figure>
+<p>它会告诉你密钥生成在那个文件夹,上面是我的密钥生成路径，下面要相应替换成你的，使用<code>cat</code>来查看公钥内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /data/data/com.termux/files/home/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p>复制输出的内容，打开<code>GitHub</code>，点击页面右侧头像旁边的倒三角，打开<code>Settings</code>，在页面左侧的<code>Personal settings</code>下面定位到<code>SSH and GPG keys</code>这一栏,点击右侧的<code>New SSH key</code>来添加一个密钥，其中<code>Title</code>随意,<code>Key</code>填写上一步<code>Git bash</code>里面生成的那个。最后<code>Add SSH key</code>就行了。</p>
+<figure class="image-box">
+                <a rel="Termux安装Hexo静态博客" href="https://i.loli.net/2018/12/14/5c137b75b3912.png" title="添加ssh公钥" data-fancybox="images"><img src="https://i.loli.net/2018/12/14/5c137b75b3912.png" alt="添加ssh公钥" title class></a>
+                <p>添加ssh公钥</p>
+            </figure>
+<blockquote>
+<p>当你写好文章之后,首先得使用<code>hexo g</code>来生成，而<code>hexo s</code>可以在本地查看实际效果，<code>hexo d</code>会自动<code>push</code>到远程仓库，你就可以在浏览器地址栏中输入<code>username.github.io</code>来访问你的博客<code>username</code>是你的<strong><em>GitHub</em></strong>用户名。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate          <span class="comment">#简写hexo g,即渲染并生成HTML页面。</span></span><br><span class="line">hexo server            <span class="comment">#简写hexo s,本地计算机启动服务，如果此时出现nodejs提示的防火墙，允许即可</span></span><br></pre></td></tr></table></figure>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><p>博客安装好了，我要怎样写文章呢？<br>所以我们就有必要了解一下blog这个文件夹里面各个部分的作用了。</p>
+<ul>
+<li><p>文章保存在<code>source/_posts</code>里面，是以<code>.md</code>结尾的文本文件，你可以用文本编辑器打开编辑它,不过我更推荐你用<a href="https://blog.ourfor.top/2018/03/24/3/">Sublime Text 3</a>，这个文本文件使用的是<code>MarkDown</code>这种轻量级的标记语法，同时兼容<code>HTML</code> ，是<strong><em>纯文本的</em></strong>，不像<code>WordPress</code>和<code>PPT</code>那样，当然这是优点。</p>
+</li>
+<li><p>写第一篇文章<br>打开<code>Termux</code>,输入<code>hexo new 我的XX</code>(我的XX-是标题，自拟)<br>这时候你就可以在<code>blog/source/_posts</code>里面看到它，编辑这个文件就OK了。</p>
+</li>
+<li><p>博客部署到远程仓库</p>
+</li>
+</ul>
+<p>如何从外网访问博客呢？其实我们打开的<code>http://localhost:4000/</code>这个网址它的网站根目录是在<code>blog/public</code>下面，你可以打开public这个文件夹看看，里面就是网站页面的源码，你可以打开这个<code>index.html</code>文件，是不是就是你的博客的主页。只是没有图片而已，所以我们只需要将这个文件夹里面的东西放到一个外网可以访问的地方就行了，好在<code>hexo</code>的配置文件里面已经有相关的设置了，我们只需要稍作更改就行了。</p>
+<h2 id="1-注册GitHub账号或者Coding账号"><a href="#1-注册GitHub账号或者Coding账号" class="headerlink" title="1.注册GitHub账号或者Coding账号"></a>1.注册GitHub账号或者Coding账号</h2><p>略</p>
+<h2 id="2-新建一个Repository，点击页面上面的New-repository"><a href="#2-新建一个Repository，点击页面上面的New-repository" class="headerlink" title="2.新建一个Repository，点击页面上面的New repository"></a>2.新建一个<code>Repository</code>，点击页面上面的<code>New repository</code></h2><figure class="image-box">
+                <a rel="Termux安装Hexo静态博客" href="https://i.loli.net/2018/12/08/5c0be7100ebc6.png" title="New repository" data-fancybox="images"><img src="https://i.loli.net/2018/12/08/5c0be7100ebc6.png" alt="New repository" title class></a>
+                <p>New repository</p>
+            </figure>
+<ul>
+<li>这个<code>Repository name</code>填<code>username.github.io</code>,比如我的就填<code>ourfor.github.io</code>.你的根据你的<code>username</code>填。</li>
+<li><code>Public</code>在没有付费或者使用学生包的情况下，我们只能创建该权限类型的仓库，点击<code>Create repository</code>就可以完成创建。</li>
+<li><code>Description</code>可选，建议勾选☑️<code>Initialize this repository with a README</code></li>
+</ul>
+<p>这时候就会打开仓库主页，依次点击页面右侧的<code>Clone or download</code>、<code>Use SSH</code>复制框中的<code>Repo</code>地址，待会要用。</p>
+<h2 id="3-修改配置文件-config-yml"><a href="#3-修改配置文件-config-yml" class="headerlink" title="3.修改配置文件_config.yml"></a>3.修改配置文件<code>_config.yml</code></h2><p>在博客网站根目录下面用<code>vim</code>(没安装vim就用vi)编辑<code>_config.yml</code>文件，在文件末尾，找到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>:</span><br></pre></td></tr></table></figure></p>
+<p>改成：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: </span><br><span class="line">       github: git@github.com:ourfor/ourfor.github.io.git,master</span><br><span class="line">       <span class="comment">#coding: git@git.coding.net:ourfor/ourfor.git,master</span></span><br><span class="line">  branch: master     </span><br><span class="line">  message: blog update</span><br></pre></td></tr></table></figure></p>
+<p>上面这个<code>git@github.com:ourfor/ourfor.github.io.git</code> 是我的仓库的SSH地址,你改成你的，如果你用的是<code>coding</code>你可以把<code>github</code>这一行用<code>#</code>注释掉，去掉<code>coding</code>前面的<code>#</code>。最后保存更改。</p>
+<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><p>首先，我们得安装部署插件，由于GitHub只支持<code>git</code>,wo们安装的插件名为<code>hexo-deployer-git</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save   <span class="comment">#在博客根目录下执行</span></span><br></pre></td></tr></table></figure>
+<p>详见<a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d <span class="comment">#渲染的同时部署到GitHub</span></span><br></pre></td></tr></table></figure>
+<h1 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h1><ul>
+<li><a href="https://blog.ourfor.top/2018/03/06/hexo-github-coding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo个人博客</a></li>
+<li><a href="https://blog.ourfor.top/2018/07/20/%E5%88%9D%E5%B0%9DTypecho/">初尝Typecho</a></li>
+<li><a href="https://blog.ourfor.top/2018/10/18/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEWordPress/">安装配置WordPress</a></li>
+<li><a href="https://blog.ourfor.top/2018/10/25/GitHub%E5%8F%8Agit%E5%88%9D%E7%BA%A7%E7%8E%A9%E6%B3%95/">GitHub和Git的初级玩法</a></li>
+</ul>
+
+          </div>
+          
+<blockquote class="post-copyright" style="border-left: 3px solid #ff1700;">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-02-21T06:40:00.010Z" itemprop="dateUpdated">2019-02-21 06:40:00</time>
+</span><br>
+
+
+        <p style="margin:unset"><strong>本文作者: </strong><a href="https://ourfor.top">ourfor</a></p>
+        <p style="margin:unset"><strong>版权声明: </strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+        
+        <strong>转载注明出处：</strong><a href="/2018/12/14/TermuxInstallHexo/" target="_blank" rel="external">https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/</a>
+        
+    </div>
+    <footer>
+        <a href="https://blog.ourfor.top">
+            <img src="/img/sagit.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+          
+          <div class="post-footer">
+              
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
+
+              <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/&title=《Termux安装Hexo静态博客》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/&title=《Termux安装Hexo静态博客》 — Zip的小窝&source=在安卓平台的Linux仿真模拟器Termux上面安装nodejs，从而搭建hexo静态博客。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Termux安装Hexo静态博客》 — Zip的小窝&url=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+          </div>
+          
+              
+    <div id="comment"></div>
+
+
+
+          
+      </div>
+      
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/12/19/MI6_Optimization/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">小米6个性化</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2018/11/23/VB-Net入坑日记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">VB.Net入坑日记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+      
+      
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#写在前面"><span class="post-toc-number">1.</span> <span class="post-toc-text">写在前面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载安装Termux"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载安装Termux</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Nodejs"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Nodejs</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装hexo"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装hexo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#添加ssh公钥"><span class="post-toc-number">5.</span> <span class="post-toc-text">添加ssh公钥</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hello-World"><span class="post-toc-number">6.</span> <span class="post-toc-text">Hello World</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-注册GitHub账号或者Coding账号"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1.注册GitHub账号或者Coding账号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-新建一个Repository，点击页面上面的New-repository"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2.新建一个Repository，点击页面上面的New repository</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-修改配置文件-config-yml"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">3.修改配置文件_config.yml</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#部署到GitHub"><span class="post-toc-number">6.3.1.</span> <span class="post-toc-text">部署到GitHub</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#相关阅读"><span class="post-toc-number">7.</span> <span class="post-toc-text">相关阅读</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </div></div></aside>
+    
+
+  </article>
+  
+  
+</div>
+
+        <footer class="footer">
+    
+    
+
+        
+    <div class="bottom">
+            <p>
+            
+            
+
+            <span>
+                Zip &copy; 2015 - 2019
+            </span>
+
+            
+
+            
+            </p><p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </p>
+    
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/&title=《Termux安装Hexo静态博客》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/&title=《Termux安装Hexo静态博客》 — Zip的小窝&source=在安卓平台的Linux仿真模拟器Termux上面安装nodejs，从而搭建hexo静态博客。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Termux安装Hexo静态博客》 — Zip的小窝&url=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/12/14/TermuxInstallHexo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3azXKDMAxF4bz/S9OZbgPmXIlmGvl4lWko5mOhWD+vF17H77r6vP72/T7v6+puDy8ZMmR8LeNYLrL9mk3+Ql7Tze4yZMjYgEGC7PpKcj3fi18vQ4YMGfw4uA6IB1gyZMiQ8SyD5JLpkXFNkiFDhgweBMkrSF9EmjzLkCFjN0a/MfB3nz/a35AhQ8a/ZBzhIndIm5FHe8mQIWM2gzwKT1Z5gsobBkGSLEOGjKEMXppPhyHSK3koP3kqGTJkjGbUiv79BLgTXm+OhjJkyBjK6IxWpEV/fmIttitkyJAxjsG3TB+aH/LSRBpNi8iQIWMcIx3Vqg1J8KSXY05ycRkyZGzAIONfBMYbA7XdT46GMmTIGMrgJa0a49mxDFQ1lCFDxjgGTzg7RbG0tRA3U2XIkDGaUSuo1YpoaYs0HraQIUPGUEbtWFbrlAbd1DQZliFDxmhGJ71MhyrI/9aCrwwZMmYz0kdMh8BIizRNdFG5TYYMGYMY6WwVgaW8TptThgwZOzD6bQBSVnuqkHf5smTIkLElgxT306CZHvviTqwMGTKGMsiNOiG1lqamLQoZMmTMZhzhIiE4Le7XUtmb3w0ZMmQMYvTjdGdsIg3lQVdWhgwZ4xi1IMsHLPg1PDTfdDZkyJAxlFELpp0CXJr6ohKbDBkytmfUUlDyba1gd3I0lCFDhoz22ESfcZPEypAhYzSjP0LBhzb6gx0yZMjYjfHAjAYurqUbPwaQIUPGtzJ+AF6S9Rv88ZimAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//view.ourfor.top/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>
