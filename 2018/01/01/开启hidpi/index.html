@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    
+    <title>开启hidpi | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="hidpi">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+
+    <!-- 添加图片替换脚本-->
+    <script>
+        let ImgReplace = ()=>{
+            let img = document.getElementsByTagName('img');
+            for(let i =0;i<img.length;i++){
+                let src = img[i].src;
+                src = src.replace("//index","/index");
+                img[i].src = src;
+            }
+            console.log("执行ImgReplace")
+        }
+
+        window.onload=ImgReplace;
+        
+        
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class>
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/about">
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/books">
+                <i class="icon icon-lg icon-bookmark"></i>
+                BOOK
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/movies">
+                <i class="icon icon-lg icon-video-camera"></i>
+                MOVIE
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/games">
+                <i class="icon icon-lg icon-gamepad"></i>
+                GAME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://github.com/ourfor" target="_blank">
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://play.ourfor.top">
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/links">
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>开启hidpi</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/headerBg.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">开启hidpi</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-01T15:27:01.000Z" itemprop="datePublished" class="page-time">
+  2018-01-01
+</time>
+
+
+            
+        </h5>
+        
+    </div>
+    
+
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left">
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-开启hidpi" class="post-article article-type-post" itemprop="blogPost">
+      <div class="post-card">
+          <h1 class="post-card-title">开启hidpi</h1>
+          <div class="post-meta">
+              <time class="post-time" title="2018-01-01 15:27:01" datetime="2018-01-01T15:27:01.000Z" itemprop="datePublished">2018-01-01</time>
+
+              
+
+
+              
+	<span id="/2018/01/01/开启hidpi/" class="leancloud_visitors" data-flag-title="开启hidpi" title="开启hidpi">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+              
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/01/01/开启hidpi/#comment">
+            <span class="valine-comment-count" data-xid="/2018/01/01/开启hidpi/"></span>
+        </a>
+    </span>
+
+
+
+              
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+              
+              <p>当你顺利安装好黑果之后是否感觉系统字体太小，而当你更改更低的分辨率是又无法忍受字体发虚、界面模糊。开启hidpi能够让你在使用低分辨率的同时能够享受高清。<br><a id="more"></a></p>
+<h2 id="获取两个重要参数"><a href="#获取两个重要参数" class="headerlink" title="获取两个重要参数"></a>获取两个重要参数</h2><h3 id="获取DisplayVendorID和DisplayProductID"><a href="#获取DisplayVendorID和DisplayProductID" class="headerlink" title="获取DisplayVendorID和DisplayProductID"></a>获取DisplayVendorID和DisplayProductID</h3><p>在Terminal中键入这两条命令：   </p>
+<pre><code>ioreg -l|grep &quot;DisplayVendorID&quot;
+ioreg -l|grep &quot;DisplayProductID&quot;
+</code></pre><p><a rel="开启hidpi" href="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-2.png" title data-fancybox="images"><img src="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-2.png"></a></p>
+<p>此时屏幕上会输出两个十进制数，如图，我得到的两个十进制数分别是：<code>2533</code>和<code>1719</code><br>接下来就是将这两个十进制数转化为十六进制数，我们可以使用计算器来转化，打开<code>启动台</code>-<code>计算器</code><br>点击<code>显示</code>-<code>编程型</code><br><a rel="开启hidpi" href="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-1.png" title data-fancybox="images"><img src="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-1.png"></a><br>分别刚才获取的两个<code>ID</code>输入,然后点击16，就转化为十六进制了。  </p>
+<p><a rel="开启hidpi" href="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-3.png" title data-fancybox="images"><img src="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-3.png"></a><br><a rel="开启hidpi" href="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-4.png" title data-fancybox="images"><img src="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-4.png"></a><br>记住这两个16进制数。接下来需要用到。</p>
+<h2 id="生成配置显示器文件"><a href="#生成配置显示器文件" class="headerlink" title="生成配置显示器文件"></a>生成配置显示器文件</h2><p>在<code>Terminal</code>中键入以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Desktop</span><br><span class="line">mkdir DisplayVendorID-xxxx    //其中“xxxx”是DisplayVendorID的16进制值小写</span><br><span class="line"><span class="built_in">cd</span> DisplayVendorID-xxxx        //进入DisplayVendorID-xxxx目录</span><br><span class="line">touch DisplayProductID-xxxx     //其中“xxxx”是DisplayProductID的16进制值小写</span><br><span class="line">open .                          //Finder中打开</span><br></pre></td></tr></table></figure></p>
+<h3 id="添加分辨率"><a href="#添加分辨率" class="headerlink" title="添加分辨率"></a>添加分辨率</h3><p>在线生成配置文件，添加分辨率，<a href="https://comsysto.github.io/Display-Override-PropertyList-File-Parser-and-Generator-with-HiDPI-Support-For-Scaled-Resolutions/" target="_blank" rel="noopener">在线网址</a></p>
+<p><a rel="开启hidpi" href="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-5.png" title data-fancybox="images"><img src="https://file.ourfor.top/source/ourfor/%E5%BC%80%E5%90%AFHidpi-5.png"></a>   </p>
+<p>在右边填写配置信息，左边会生成相应的代码。   </p>
+<ul>
+<li><code>DisplayProductName</code>:可随意填写</li>
+<li><code>DisplayProductID</code>:之前获取的DisplayProductID的16进制数</li>
+<li><code>DisplayVendorID</code>:之前获取的DisplayVendorID的16进制数</li>
+<li><code>Scale Resolutions</code>:所有添加的分辨率</li>
+<li><code>hidpi</code>:勾选即开启该分辨率的hidpi</li>
+</ul>
+<p>添加完毕后，复制左边的代码，编辑之前创建的没有后缀名的<code>DisplayProductID-xxxx</code>的文件（用文本编辑器打开即可）粘贴复制的代码保存，显示器的配置文件就配置好了，接下来只需要将这个文件夹<code>DisplayVendorID-xxxx</code>复制到<code>/System/Library/Displays/Contents/Resources/Overrides/</code>下面（需要输入管理员密码）。     </p>
+<h3 id="打开hidpi"><a href="#打开hidpi" class="headerlink" title="打开hidpi"></a>打开hidpi</h3><p>在<code>Terminal</code>中键入以下命令开启Hidpi<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo defaults write /Library/Preferences/com.apple.windowserver.plist DisplayResolutionEnabled -bool <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="使用RDM切换"><a href="#使用RDM切换" class="headerlink" title="使用RDM切换"></a>使用RDM切换</h2><p>github项目地址 <a href="https://github.com/avibrazil/RDM" target="_blank" rel="noopener">RDM</a><br>下载安装后，重启系统打开RDM就可以在状态栏切换分辨率了。</p>
+
+          </div>
+          
+<blockquote class="post-copyright" style="border-left: 3px solid #ff1700;">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-05-19T06:24:08.575Z" itemprop="dateUpdated">2019-05-19 06:24:08</time>
+</span><br>
+
+
+        <p style="margin:unset"><strong>本文作者: </strong><a href="https://ourfor.top">ourfor</a></p>
+        <p style="margin:unset"><strong>版权声明: </strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+        
+        <strong>转载注明出处：</strong><a href="/2018/01/01/开启hidpi/" target="_blank" rel="external">https://blog.ourfor.top/2018/01/01/开启hidpi/</a>
+        
+    </div>
+    <footer>
+        <a href="https://blog.ourfor.top">
+            <img src="/img/sagit.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+          
+              <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+              
+          
+          <div class="post-footer">
+              
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hidpi/">hidpi</a></li></ul>
+
+              <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/01/01/开启hidpi/&title=《开启hidpi》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/01/01/开启hidpi/&title=《开启hidpi》 — Zip的小窝&source=当你顺利安装好黑果之后是否感觉系统字体太小，而当你更改更低的分辨率是又无法忍受字体发虚、界面模糊。开启hidpi能够让你在使用低分辨率的同时能够享受高清。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/01/01/开启hidpi/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《开启hidpi》 — Zip的小窝&url=https://blog.ourfor.top/2018/01/01/开启hidpi/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/01/01/开启hidpi/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+          </div>
+          
+              
+    <div id="comment"></div>
+
+
+
+          
+      </div>
+      
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/01/13/个性化clover启动项/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">个性化clover启动项</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2017/12/10/声卡AlC255/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">声卡AlC255</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+      
+      
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取两个重要参数"><span class="post-toc-number">1.</span> <span class="post-toc-text">获取两个重要参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取DisplayVendorID和DisplayProductID"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">获取DisplayVendorID和DisplayProductID</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成配置显示器文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">生成配置显示器文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加分辨率"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">添加分辨率</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#打开hidpi"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">打开hidpi</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用RDM切换"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用RDM切换</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </div></div></aside>
+    
+
+  </article>
+  
+      <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        给作者加个鸡腿🍗?
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat_pay.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat_pay.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+      
+  
+</div>
+
+        <footer class="footer">
+    
+    
+
+        
+    <div class="bottom">
+            <p>
+            
+            
+
+            <span>
+                Zip &copy; 2015 - 2019
+            </span>
+
+            
+
+            
+            </p><p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </p>
+    
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/01/01/开启hidpi/&title=《开启hidpi》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/01/01/开启hidpi/&title=《开启hidpi》 — Zip的小窝&source=当你顺利安装好黑果之后是否感觉系统字体太小，而当你更改更低的分辨率是又无法忍受字体发虚、界面模糊。开启hidpi能够让你在使用低分辨率的同时能够享受高清。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/01/01/开启hidpi/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《开启hidpi》 — Zip的小窝&url=https://blog.ourfor.top/2018/01/01/开启hidpi/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/01/01/开启hidpi/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIElEQVR42u3ay47CMAwFUP7/pztbRjMt13FBwjlZIVRKThZW/Hg84nU8retn/j6/9qvHOxYGBsbXMo7Ldb2tZBPXz+TvfHE0GBgYGzCSUNj53EFe7w0DAwOjs908cGNgYGDcy0jS0SQNrl4TMTAwMJJAWQ2yebr70VwcAwPjCxl51f3zn9/S38DAwPgqxlFcyXUtufD1d/LrnRgYGKMZ1QQ1L5Al+E7AxcDA2I2Rj3bdW+LPS2mLl0UMDIwRjOp1sBoi80DcGRfDwMCYzehf/vqNz3xELLoaYmBgjGPkiWUnEU0OKMefVg0xMDCGMtYywTxEdq6YVR4GBsZUxlo5LAmj1ctiflj/fI+BgbEBI9luHprXEuDqkZ1WDTEwMIYyqmlnXvQvp6DF4ytsCwMDYxBjbUiiP4rRCccYGBizGf3m4loSm7Dz92BgYMxmdIJptTFQLboVThoDA2M0I99uJ9GtNibXWgsYGBizGXellEkbsn9vjQbCMDAwRjPyJLPaqsxT1uplFAMDYx9GdcQh2cpaIF4cVsPAwNiYUU0s82JZtaD24s0YGBhDGUdx9ZuUSRsgD+IYGBg7MNaCXSfhzBuZd4V1DAyMGYx+UlptIeQNieQNGBgY+zA6ga86WNZJaE+RGBgYGEFZv9ParOJPi24YGBgYjT/Og/ViEMfAwNiAsTaqdW/ArbYcMDAw9mHkqePiNMdSKa2aTmNgYAxl/ACLjLJQM+wQXAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//view.ourfor.top/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>

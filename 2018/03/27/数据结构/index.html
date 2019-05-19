@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    
+    <title>数据结构-线性表 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="读书笔记,数据结构">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+
+    <!-- 添加图片替换脚本-->
+    <script>
+        let ImgReplace = ()=>{
+            let img = document.getElementsByTagName('img');
+            for(let i =0;i<img.length;i++){
+                let src = img[i].src;
+                src = src.replace("//index","/index");
+                img[i].src = src;
+            }
+            console.log("执行ImgReplace")
+        }
+
+        window.onload=ImgReplace;
+        
+        
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class>
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/about">
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/books">
+                <i class="icon icon-lg icon-bookmark"></i>
+                BOOK
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/movies">
+                <i class="icon icon-lg icon-video-camera"></i>
+                MOVIE
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/games">
+                <i class="icon icon-lg icon-gamepad"></i>
+                GAME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://github.com/ourfor" target="_blank">
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://play.ourfor.top">
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/links">
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>数据结构-线性表</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/headerBg.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">数据结构-线性表</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-27T19:20:05.000Z" itemprop="datePublished" class="page-time">
+  2018-03-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left">
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-数据结构" class="post-article article-type-post" itemprop="blogPost">
+      <div class="post-card">
+          <h1 class="post-card-title">数据结构-线性表</h1>
+          <div class="post-meta">
+              <time class="post-time" title="2018-03-27 19:20:05" datetime="2018-03-27T19:20:05.000Z" itemprop="datePublished">2018-03-27</time>
+
+              
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
+
+
+
+              
+	<span id="/2018/03/27/数据结构/" class="leancloud_visitors" data-flag-title="数据结构-线性表" title="数据结构-线性表">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+              
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/03/27/数据结构/#comment">
+            <span class="valine-comment-count" data-xid="/2018/03/27/数据结构/"></span>
+        </a>
+    </span>
+
+
+
+              
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+              
+              <p>又到周末了，第一天上机结果IDE都没有找到，感觉是不是自己命令行用习惯了，基本的编译器都不会用了，还好在下机前5分钟找到了IDE，每周总要做做笔记啥的，这周主要学了线性表，感觉线性表这东西老师讲的很清楚了，保持思考还是把它写下来吧，或许几个月以后我对它的理解又更进一步了。总之，这次上机的内容还算简单。<br><a id="more"></a><br>感觉这<strong><em>《数据结构》</em></strong>这门课还是挺有意思的，上课的时候不仅分析算法还补充下语法，我呢平时基本不做预习这东西，可能是以前高中自学高数留下来的坏毛病吧，不过老师上课讲的东西我的脑子里面记得还是很清楚的，回头看看书感觉更好了。我在枕头旁边放了两本数据结构，基本没翻，要是睡觉的时候会自动扩散到脑子里面就好了。平时没事会把代码输电脑里面进来，最后同步到仓库。其实我更喜欢在纸上写好代码之后再输进电脑，不知道为什么老是有这种感觉感觉只有一打开电脑又得浪费不少时间。</p>
+<details><summary>我在GitHub上面的主页</summary><br><br><a href="https://github.com/ourfor" target="_blank" rel="noopener">Ourfor</a><br><a href="https://github.com/ourfor/My-C-Learning" target="_blank" rel="noopener">我的C/C++学习</a><br></details>
+
+<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><p>有必要弄清以下几个概念：</p>
+<ul>
+<li>线性表</li>
+<li>顺序表</li>
+<li>链表</li>
+</ul>
+<details><summary>线性表</summary><br><br>目前我是这样理解的，线性表之所以叫线性表就是因为表中的数据元素之间存在一对一的关系，这就好比<strong><em>离散数学</em></strong>里面讲的序偶，除了表头元素和表尾元素外表中每个元素都有唯一的一个直接前驱和直接后继，这样就使得这些元素在表中元素的位置唯一确定，同时这个表就有了逻辑顺序，满足这种特性有数组、字串之类的。<br></details>
+
+
+
+<p>线性表根据存储方式不同可以分为<code>顺序表</code>和<code>链表</code>，其中以顺式存储的线性表叫做顺序表，以链式存储的线性表叫做链表。这两种表有各自的优缺点：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型（Type）</th>
+<th style="text-align:center">优点（Advantages）</th>
+<th style="text-align:center">缺点（Disadvantages）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">线性表（Sqlist）</td>
+<td style="text-align:center">可对表中元素随机存取</td>
+<td style="text-align:center">表中的元素个数必须是确定的，虽然可用增加空间，但是初始化时还是会占用一定的空间，删除和插入元素比较复杂</td>
+</tr>
+<tr>
+<td style="text-align:center">链表（Linklist）</td>
+<td style="text-align:center">可用按照需要临时分配空间，删除与插入元素比较简单</td>
+<td style="text-align:center">无法对表中元素随机存取，查找某个位置的元素也比较复杂。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>预定义状态代码.</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span>    OK      1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>    TRUE    1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>    ERROR   0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>    FALSE   0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>    INFEASIBLE    -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>    OVERFLOW      -2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> ElemType;</span><br></pre></td></tr></table></figure>
+<h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><ul>
+<li>顺式存储线性表的建立、初始化、元素的插入、查找、删除以及销毁。<h3 id="建立以及初始化"><a href="#建立以及初始化" class="headerlink" title="建立以及初始化"></a>建立以及初始化</h3>首先，该如何实现顺序表这种数据类型？使用结构体定义顺序表时需要定义哪些成员？顺序表中除了元素还有元素的位置顺序（通过物理相邻来反映逻辑顺序），同时还需要对顺序表分配空间。定义结构体<code>Sqlist</code>，它包含三个成员，基地址elem，和数组相同；当前顺序表的元素个数用length来表示，顺序表可以容纳的元素的大小可以用listsize来表示；也就是说只需要一个结构体Sqlist变量就可以表示顺序表，那么顺序表中的元素应该存放在哪个位置呢？通常我们使用数组来存放同一数据类型的多个数据，C编译系统在编译数组的时候将数组名作为该数组的首地址。<br>同样的在顺序表中，我们将数据存放在基地址elem后面，那么就要求elem的地址与length的地址之间有足够的空间来存放数据。因此，顺序表的结构体可以这样定义：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	ElemType *elem;      <span class="comment">//结构体的基地址</span></span><br><span class="line">	<span class="keyword">int</span> length;          <span class="comment">//顺序表中实际存放的元素个数</span></span><br><span class="line">	<span class="keyword">int</span> listsize;        <span class="comment">//顺序表中能够存放的元素个数</span></span><br><span class="line">&#125;Sqlist;<span class="comment">//结构体名</span></span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<hr>
+<details><summary>前方高能</summary><br><br>最近刷抖音小视频刷到几首好听的歌<br></details>
+
+
+<p><div id="app"></div><br><!-- 加载 cplayer 脚本 --></p>
+<script src="https://cdn.jsdelivr.net/gh/MoePlayer/cPlayer/dist/cplayer.js"></script>
+<script>
+  let player = new cplayer({
+    element: document.getElementById('app'),
+    autoplay: true,
+    showPlaylist: true,
+    playlist: [
+      {
+        src: 'https://file.ourfor.top/source/sagit/%E7%83%9F%E6%8A%8A%E5%84%BF%E4%B9%90%E9%98%9F-%E7%BA%B8%E7%9F%AD%E6%83%85%E9%95%BF.flac',
+        poster: 'https://file.ourfor.top/source/sagit/%E7%BA%B8%E7%9F%AD%E6%83%85%E9%95%BF.jpg',
+        name: '    纸短情长',
+        artist: '烟把儿乐队',
+      },
+      {
+        src: 'https://file.ourfor.top/source/sagit/%E6%9E%97%E4%BF%8A%E6%9D%B0-%E9%86%89%E8%B5%A4%E5%A3%81.flac',
+        poster: 'https://file.ourfor.top/source/sagit/nice.jpg',
+        name: '醉赤壁',
+        artist: '林俊杰',
+      },
+      {
+        src: 'https://file.ourfor.top/source/sagit/%E5%B9%BF%E4%B8%9C%E9%9B%A8%E7%A5%9E-%E5%B9%BF%E4%B8%9C%E7%88%B1%E6%83%85%E6%95%85%E4%BA%8B.mp3',
+        poster: 'https://file.ourfor.top/source/sagit/nice.jpg',
+        name: '广东爱情故事',
+        artist: '广东雨神',
+      },
+      {
+        src: 'https://file.ourfor.top/source/sagit/%E5%8D%97%E5%AE%AB%E5%98%89%E9%AA%8F,%E5%A7%9C%E7%8E%89%E9%98%B3-%E5%9B%9E%E5%BF%86%E6%80%BB%E6%83%B3%E5%93%AD.flac',
+        poster: 'https://file.ourfor.top/source/sagit/nice.jpg',
+        name: '回忆总想哭',
+        artist: '南宫嘉骏,姜玉阳',
+      }     
+    ]
+  })
+</script>
+
+
+
+<p><a rel="数据结构-线性表" href="https://file.ourfor.top/source/sagit/g++_-v.png" title="gcc/g++" data-fancybox="images"><img src="https://file.ourfor.top/source/sagit/g++_-v.png" alt="gcc/g++"></a></p>
+<p>这是我所使用的编译器版本，如果遇到<code>malloc</code>出错，可以在预处理指令中加上<code>#include&lt;stdlib.h&gt;</code></p>
+<p>顺序表基本操作</p>
+<ul>
+<li>初始化</li>
+<li>输入、输出、查找</li>
+<li>插入、删除</li>
+<li>就地逆置</li>
+</ul>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------------------线性表初始量-------------------</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LIST_INIT_SIZE 100</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LIST_ADD_SIZE 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------初始化线性表-------------------</span></span><br><span class="line"><span class="function">Status <span class="title">InitList</span><span class="params">(Sqlist &amp;T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//构造一个空的线性表L</span></span><br><span class="line">	T.elem=(ElemType *)<span class="built_in">malloc</span>(LIST_INIT_SIZE * <span class="keyword">sizeof</span>(ElemType));            </span><br><span class="line">	<span class="keyword">if</span>(!T.elem) <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">	T.length=<span class="number">0</span>;</span><br><span class="line">	T.listsize=LIST_INIT_SIZE;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"线性表初始化成功！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;<span class="comment">//InitList</span></span><br></pre></td></tr></table></figure>
+<h3 id="输入、输出、查找"><a href="#输入、输出、查找" class="headerlink" title="输入、输出、查找"></a>输入、输出、查找</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------------------线性表数据的输出-------------------</span></span><br><span class="line"><span class="function">Status <span class="title">DisplayList</span><span class="params">(Sqlist T)</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">	ElemType * q=T.elem;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=T.length<span class="number">-1</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		q=T.elem+i;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; * q &lt;&lt; <span class="string">" "</span> ;</span><br><span class="line">		 </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//-------------------线性表数据输入-------------------</span></span><br><span class="line"><span class="function">Status <span class="title">InputList</span><span class="params">(Sqlist &amp;T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"线性表中有多少个元素："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T.length;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入线性表中的各个元素："</span>;</span><br><span class="line">	ElemType * p;</span><br><span class="line">	p=T.elem;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=T.length<span class="number">-1</span>;i++,p++)</span><br><span class="line">	&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; * p;</span><br><span class="line">	&#125;</span><br><span class="line">	DisplayList(T);</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//-------------------查找-------------------</span></span><br><span class="line"><span class="function">Status <span class="title">LocalList</span><span class="params">(Sqlist &amp;T,ElemType find_elem)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ElemType *p;</span><br><span class="line">	<span class="keyword">int</span> elem_num=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(p=T.elem;p&lt;T.elem + T.length - <span class="number">1</span>;p++)</span><br><span class="line">	&#123;</span><br><span class="line">		num+=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(*p==find_elem)&#123;</span><br><span class="line">			elem_num=num;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"元素"</span> &lt;&lt; find_elem &lt;&lt; <span class="string">"在线性表中位于第"</span> &lt;&lt; elem_num &lt;&lt; <span class="string">"个位置"</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">			<span class="keyword">return</span> OK;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(elem_num==<span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"表中不存在元素"</span> &lt;&lt; find_elem;</span><br><span class="line">	<span class="keyword">return</span> ERROR;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="插入、删除"><a href="#插入、删除" class="headerlink" title="插入、删除"></a>插入、删除</h3><blockquote>
+<p>插入与删除的基本思路<br>顺序表插入元素主要操作应该是从输入流中获取用户输入的元素位置（插入位置）以及元素，插入位置后面的元素都要后移，如果空间不够，还应该重新申请空间，基本的算法应该是这样：</p>
+</blockquote>
+<ul>
+<li>判断用户输入的插入位置是否正确，即参数合法性的问题</li>
+<li>检查顺序表中是否还有足够的空间让用户插入元素，如果不够还得重新向系统申请空间</li>
+<li>插入元素的位置确定后，应从表尾元素开始直到插入位置原来的元素，每个元素后移一个单位，插入完成后，顺序表中表示表中元素个数的 length + 1 ，自此插入操作完成，最后还应将表中元素逐个输出，便于后续调试和测试。</li>
+</ul>
+<blockquote>
+<p>删除的思路与插入有所不同，首先你不需要考虑空间，正常的删除应该是输入待删除的位置，将删除的元素保存下来，从删除位置后的第一个元素开始逐个前移这样就自然完成了删除操作，最后 length - 1 。同时将表中元素逐个输出，以及删除的元素。</p>
+</blockquote>
+<ul>
+<li>判断用户输入的位置是否合法</li>
+<li>从删除位置后的第一个元素开始逐个前移，完成后更改成员<strong><em>length</em></strong>的值</li>
+<li>输出现在表中的元素以及删除的元素</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------------------线性表元素的插入-------------------</span></span><br><span class="line"><span class="function">Status <span class="title">InsertList</span><span class="params">(Sqlist &amp;T,<span class="keyword">int</span> i,ElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//在第i个元素之前插入，使其成为第i个元素，判断插入位置i的合法性</span></span><br><span class="line">	<span class="comment">//如果空间不够，重新分配空间</span></span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;T.length+<span class="number">1</span>) <span class="built_in">exit</span>(ERROR);</span><br><span class="line">	<span class="keyword">if</span>(T.length&gt;=T.listsize) </span><br><span class="line">	&#123;</span><br><span class="line">		ElemType * newbase=(ElemType *)<span class="built_in">malloc</span>((LIST_INIT_SIZE+LIST_ADD_SIZE)*<span class="keyword">sizeof</span>(ElemType));</span><br><span class="line">		T.elem=newbase;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!T.elem) <span class="keyword">return</span> ERROR;             <span class="comment">//分配失败</span></span><br><span class="line">	<span class="comment">//i后面的元素后移</span></span><br><span class="line">	<span class="keyword">int</span> j;</span><br><span class="line">	ElemType * p=T.elem;</span><br><span class="line">	<span class="keyword">for</span>(j=T.length - <span class="number">1</span>;j&gt;=i - <span class="number">1</span>;j--) *(p + j + <span class="number">1</span>)=*(p + j);</span><br><span class="line">	*(T.elem + i - <span class="number">1</span>)=e;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"已将第"</span> &lt;&lt; i &lt;&lt; <span class="string">"个位置插入元素"</span> &lt;&lt; e &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	T.length=T.length + <span class="number">1</span>;</span><br><span class="line">	DisplayList(T);</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//-------------------线性表元素的删除-------------------</span></span><br><span class="line"><span class="function">Status <span class="title">DeleteList</span><span class="params">(Sqlist &amp;T,<span class="keyword">int</span> i,ElemType &amp;f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//删除位置的取值范围1&lt;=i&lt;=T.length</span></span><br><span class="line">	<span class="comment">//删除第i个元素，其他元素往前移</span></span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;T.length) <span class="built_in">exit</span>(ERROR);</span><br><span class="line">	ElemType *p=T.elem + i;</span><br><span class="line">	f=*(p - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> j;</span><br><span class="line">	<span class="keyword">for</span>(j=i;j&lt;=T.length;*(p - <span class="number">2</span>)=*(p - <span class="number">1</span>),j++)</span><br><span class="line">		p++;</span><br><span class="line">	T.length=T.length<span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"删除的元素为"</span> &lt;&lt; f &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	DisplayList(T);</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>全部<a href="https://github.com/ourfor/My-C-Learning/blob/master/C%2B%2B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A%E6%9C%BA/SqList.cpp" target="_blank" rel="noopener">代码</a></p>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p>链表与顺序表不同</p>
+<p>链表的定义：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------------------------定义结构体-------------------------</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">	ElemType data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;LNode;</span><br><span class="line"></span><br><span class="line">LNode *head;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>初始化</li>
+<li>输入、输出、查找</li>
+<li>插入、删除</li>
+<li>就地逆置</li>
+</ul>
+<h3 id="初始化-1"><a href="#初始化-1" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------------------------初始化链表-------------------------</span></span><br><span class="line"><span class="function">Status <span class="title">InitList</span><span class="params">(LNode * &amp;head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	head=(LNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LNode));</span><br><span class="line">	head-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输入、输出、查找-1"><a href="#输入、输出、查找-1" class="headerlink" title="输入、输出、查找"></a>输入、输出、查找</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------------------------输入链表-------------------------</span></span><br><span class="line"><span class="function">Status <span class="title">InputList</span><span class="params">(LNode * &amp;head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LNode *p,*r;</span><br><span class="line">	p=r=(LNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LNode));	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入链表中的元素："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; p-&gt;data;</span><br><span class="line">	<span class="keyword">char</span> stop;</span><br><span class="line">	stop=<span class="built_in">cin</span>.get();</span><br><span class="line">	<span class="keyword">int</span> n=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(stop!=<span class="string">'\n'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		n=n+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">1</span>)head-&gt;next=p;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">		&#123;</span><br><span class="line">			r=p;</span><br><span class="line">			p=(struct LNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LNode));</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; p-&gt;data;</span><br><span class="line">			stop=<span class="built_in">cin</span>.get();</span><br><span class="line">			r-&gt;next=p;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	p-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------输出链表-------------------------</span></span><br><span class="line"><span class="function">Status <span class="title">DisplayList</span><span class="params">(LNode *head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LNode *p;</span><br><span class="line">	p=head-&gt;next;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; p-&gt;data &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">	&#125;<span class="keyword">while</span>(p-&gt;next!=<span class="literal">NULL</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; p-&gt;data &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------查找链表元素-------------------------</span></span><br><span class="line"><span class="function">Status <span class="title">LocateList</span><span class="params">(LNode *head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"你想查找链表中的哪个元素："</span>;</span><br><span class="line">	ElemType e;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; e;</span><br><span class="line">	LNode *p;</span><br><span class="line">	<span class="keyword">int</span> n=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(p=head-&gt;next;p-&gt;data!=e&amp;&amp;p-&gt;next!=<span class="literal">NULL</span>;p=p-&gt;next)</span><br><span class="line">	&#123;</span><br><span class="line">		n=n+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;data!=e&amp;&amp;p-&gt;next==<span class="literal">NULL</span>) &#123;<span class="built_in">cout</span> &lt;&lt; <span class="string">"链表中不存在元素"</span> &lt;&lt; e &lt;&lt; <span class="built_in">endl</span>;<span class="keyword">return</span> FALSE;&#125;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;data==e) &#123;n=n+<span class="number">1</span>;<span class="built_in">cout</span> &lt;&lt; e &lt;&lt; <span class="string">"是链表中的第"</span> &lt;&lt; n &lt;&lt; <span class="string">"个元素"</span> &lt;&lt; <span class="built_in">endl</span>;&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; e &lt;&lt; <span class="string">"是链表中的第"</span> &lt;&lt; n &lt;&lt; <span class="string">"个元素"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="插入、删除-1"><a href="#插入、删除-1" class="headerlink" title="插入、删除"></a>插入、删除</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------------------------链表元素的插入-------------------------</span></span><br><span class="line"><span class="function">Status <span class="title">InsertLNode</span><span class="params">(LNode * &amp;head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"你想将元素插入到链表的哪个位置："</span>;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; i;</span><br><span class="line">	ElemType e;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"插入位置不对，请输入有效的插入位置："</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"插入什么元素："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; e;</span><br><span class="line">	LNode *p=head-&gt;next;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> n=<span class="number">2</span>;n&lt;=i<span class="number">-1</span>;n++)</span><br><span class="line">	&#123;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">		<span class="keyword">if</span>(p==<span class="literal">NULL</span>) <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	LNode *r;</span><br><span class="line">	r=(LNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">	r-&gt;data=e;</span><br><span class="line">	r-&gt;next=p-&gt;next;</span><br><span class="line">	p-&gt;next=r;</span><br><span class="line">	DisplayList(head);</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------链表元素的删除-------------------------</span></span><br><span class="line"><span class="function">Status <span class="title">DeleteLNode</span><span class="params">(LNode * &amp;head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(head-&gt;next==<span class="literal">NULL</span>) &#123;<span class="built_in">cout</span> &lt;&lt; <span class="string">"链表为空"</span> &lt;&lt; <span class="built_in">endl</span>;<span class="keyword">return</span> ERROR;&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"你想删除哪个元素："</span>;</span><br><span class="line">	ElemType e;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; e;</span><br><span class="line">	LNode *p,*r;</span><br><span class="line">	<span class="keyword">for</span>(p=head;p-&gt;data!=e&amp;&amp;p-&gt;next!=<span class="literal">NULL</span>;)</span><br><span class="line">	&#123;</span><br><span class="line">                r=p;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;data==e)</span><br><span class="line">	&#123;</span><br><span class="line">		r-&gt;next=(p-&gt;next);</span><br><span class="line">                DisplayList(head);</span><br><span class="line">                <span class="keyword">return</span> OK;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;next==<span class="literal">NULL</span>)&#123;<span class="built_in">cout</span> &lt;&lt; <span class="string">"不存在要删除的元素"</span> &lt;&lt; e &lt;&lt; <span class="built_in">endl</span>;<span class="keyword">return</span> ERROR;&#125;</span><br><span class="line">	r-&gt;next=p-&gt;next;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"已将元素删除"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	DisplayList(head);</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="就地逆置"><a href="#就地逆置" class="headerlink" title="就地逆置"></a>就地逆置</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------------------------链表就地逆置-------------------------</span></span><br><span class="line"><span class="function">Status <span class="title">UnsLinklist</span><span class="params">(LNode * &amp;head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LNode *p,*r,*first=head-&gt;next;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"将链表就地转置为：\n"</span>;</span><br><span class="line">	<span class="keyword">for</span>(p=head-&gt;next;p-&gt;next!=<span class="literal">NULL</span>;)</span><br><span class="line">	&#123;</span><br><span class="line">		r=p-&gt;next;</span><br><span class="line">		p-&gt;next=head-&gt;next;</span><br><span class="line">		head-&gt;next=p;</span><br><span class="line">		p=r;</span><br><span class="line">	&#125;</span><br><span class="line">	p-&gt;next=head-&gt;next;</span><br><span class="line">	head-&gt;next=p;</span><br><span class="line">	first-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	</span><br><span class="line">	DisplayList(head);</span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>全部<a href="https://github.com/ourfor/My-C-Learning/blob/master/C%2B%2B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A%E6%9C%BA/LinkList.cpp" target="_blank" rel="noopener">代码</a></p>
+<blockquote>
+<p>代码已经全部同步到<a href="https://github.com/ourfor/My-C-Learning" target="_blank" rel="noopener">GitHub-ourfor</a></p>
+</blockquote>
+
+          </div>
+          
+<blockquote class="post-copyright" style="border-left: 3px solid #ff1700;">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-05-19T06:24:08.575Z" itemprop="dateUpdated">2019-05-19 06:24:08</time>
+</span><br>
+
+
+        <p style="margin:unset"><strong>本文作者: </strong><a href="https://ourfor.top">ourfor</a></p>
+        <p style="margin:unset"><strong>版权声明: </strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+        
+        <strong>转载注明出处：</strong><a href="/2018/03/27/数据结构/" target="_blank" rel="external">https://blog.ourfor.top/2018/03/27/数据结构/</a>
+        
+    </div>
+    <footer>
+        <a href="https://blog.ourfor.top">
+            <img src="/img/sagit.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+          
+              <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+              
+          
+          <div class="post-footer">
+              
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+
+              <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/03/27/数据结构/&title=《数据结构-线性表》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/03/27/数据结构/&title=《数据结构-线性表》 — Zip的小窝&source=又到周末了，第一天上机结果IDE都没有找到，感觉是不是自己命令行用习惯了，基本的编译器都不会用了，还好在下机前5分钟找到了IDE，每周总要做做笔记啥的，这..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/03/27/数据结构/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据结构-线性表》 — Zip的小窝&url=https://blog.ourfor.top/2018/03/27/数据结构/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/03/27/数据结构/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+          </div>
+          
+              
+    <div id="comment"></div>
+
+
+
+          
+      </div>
+      
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/04/07/Theme/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">MIUI Theme</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2018/03/24/3/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">编辑器推荐Sublime Text 3</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+      
+      
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线性表"><span class="post-toc-number">1.</span> <span class="post-toc-text">线性表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#顺序表"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">顺序表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#建立以及初始化"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">建立以及初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输入、输出、查找"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">输入、输出、查找</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入、删除"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">插入、删除</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#链表"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">链表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输入、输出、查找-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">输入、输出、查找</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入、删除-1"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">插入、删除</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#就地逆置"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">就地逆置</span></a></li></ol></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </div></div></aside>
+    
+
+  </article>
+  
+      <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        给作者加个鸡腿🍗?
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat_pay.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat_pay.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+      
+  
+</div>
+
+        <footer class="footer">
+    
+    
+
+        
+    <div class="bottom">
+            <p>
+            
+            
+
+            <span>
+                Zip &copy; 2015 - 2019
+            </span>
+
+            
+
+            
+            </p><p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </p>
+    
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/03/27/数据结构/&title=《数据结构-线性表》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/03/27/数据结构/&title=《数据结构-线性表》 — Zip的小窝&source=又到周末了，第一天上机结果IDE都没有找到，感觉是不是自己命令行用习惯了，基本的编译器都不会用了，还好在下机前5分钟找到了IDE，每周总要做做笔记啥的，这..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/03/27/数据结构/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据结构-线性表》 — Zip的小窝&url=https://blog.ourfor.top/2018/03/27/数据结构/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/03/27/数据结构/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aO3LkMAwFQN//0uN0E8nvEfSWRTUjl0cftgIUCODrK16fi/Xvr1fXJ09u71pcGBgYj2V8bteu75R/iKv3Xt2LgYHxHkYSCq9IOTh5zn0ov/w/BgYGxkXy18Lun5O8FwMDA6MNuG24TEgYGBgYk0NsfkxNfs0Zm8/iGBgYD2TkxbL///ev9DcwMDAexfiUKw+Lk3BZ7woDA+NoxlraN29GzgMuBgbG2xhtYWsyJDF/Y5HDYmBgHMHYNULRDk+0V/6wHwwMjBcw2se1IbVtWNYtTAwMjKMZSRCcXJMkhfNiHAYGxtmMXaleW6prBywWz98YGBhHMJLkb22AbFehrWghYGBgHMq4v21to2tBuY2lUWqIgYFxBGPS+UzSynpUogz3Gxq4GBgYf54xKZattQqSFHDbsAUGBsahjPkhc1fRLf/oGBgY72HkEawtz61FyLolgIGB8QJGPkjRNhrbwtw95odTOAYGxnGMeQSbNEHXNro4S4KBgfFwRtQgHLcn24Cbj8xiYGC8k9G2EvND7yQBjRqZGBgYRzPawlyyrXm3sWiRYmBgHMr4lKt9Qd62TEJqlBRiYGAcx8jX2rjY2lbyBmeNwcDAeCyjPWruGgXbexcGBsYbGLuGw9rW5jYkBgYGxmBErE0oF3NYDAwMjCBo5puYkLYFXAwMjAcykkPsb7Qnk3BcdGIxMDAOZazlXW0wnQfcPBvEwMA4iPENi8PbGbtfQRAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//view.ourfor.top/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>

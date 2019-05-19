@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    
+    <title>Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	false,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+
+    <!-- 添加图片替换脚本-->
+    <script>
+        let ImgReplace = ()=>{
+            let img = document.getElementsByTagName('img');
+            for(let i =0;i<img.length;i++){
+                let src = img[i].src;
+                src = src.replace("//index","/index");
+                img[i].src = src;
+            }
+            console.log("执行ImgReplace")
+        }
+
+        window.onload=ImgReplace;
+        
+        
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class>
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/about">
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/books">
+                <i class="icon icon-lg icon-bookmark"></i>
+                BOOK
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/movies">
+                <i class="icon icon-lg icon-video-camera"></i>
+                MOVIE
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/games">
+                <i class="icon icon-lg icon-gamepad"></i>
+                GAME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://github.com/ourfor" target="_blank">
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://play.ourfor.top">
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/links">
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        
+    <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>Zip的小窝</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+    <img src="/img/headerBg.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">Zip的小窝</h1>
+        <h5 class="subtitle">
+            
+
+            <p>
+            <a href="javascript:;" style="color: #d50000; margin-right: 10px;">
+                <i class="icon icon-github-alt"> Ourfor</i>
+            </a>
+            <a href="javascript:;" style="color: #33691e; margin-right: 10px;">
+                <i class="icon icon-location-arrow"> Changsha </i>
+            </a>
+
+            <a href="https://file.ourfor.top" style="color: #311b92; margin-right: 10px;">
+                <i class="icon icon-folder-open-o"> File </i>
+            </a>
+            </p><p>
+            <font size="4" color="#3e2723">你选择遗忘的,是我最不舍得.</font>
+            </p><p>
+            </p><p>
+            <a href="https://github.com/ourfor/diary" align="center">🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅</a> 
+
+
+                
+
+            
+        </p></h5>
+        
+    </div>
+    
+
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left">
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+
+    <div class="container body-wrap">
+        <ul class="post-list">
+        
+            <li class="post-list-item fade">
+                <article id="post-fedora安装美化" class="article-card article-type-post" itemprop="blogPost">
+  
+    
+        
+<div class="item-thumb">
+    <a class="thumb-link" href="/2018/10/07/fedora安装美化/"></a>
+    <div class="thumb-hover">
+        <span class="icon icon-eye"></span>
+    </div>
+    <img src="//i.loli.net/2018/10/07/5bba1390d7003.jpg" alt="图片路径不正确">
+    
+
+
+  
+    <h3 class="post-title ab-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/07/fedora安装美化/">Fedora安装美化</a>
+    </h3>
+  
+
+
+
+</div>
+
+        
+    
+    <div class="top" data-title="7">
+    <div class="top-wrap">
+        <p></p>
+    </div>
+</div>
+    
+    
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-07 21:24:56" datetime="2018-10-07T21:24:56.000Z" itemprop="datePublished">2018-10-07</time>
+
+        
+
+
+        
+	<span id="/2018/10/07/fedora安装美化/" class="leancloud_visitors" data-flag-title="Fedora安装美化" title="Fedora安装美化">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+        
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/10/07/fedora安装美化/#comment">
+            <span class="valine-comment-count" data-xid="/2018/10/07/fedora安装美化/"></span>
+        </a>
+    </span>
+
+
+
+        
+        
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent">
+    
+    
+        <p><a id="mainKeywords">上操作系统</a>的课，这老师非得装Linux，说起Linux,从初三那年我有一台笔记本开始，那笔记本安装Windows，真是没意思😞️，我就装了ubuntu，那时候Linux的distribution都玩遍了，那时候觉得deepin和elementory os的ui还可以，后来我才明白那时候是真的傻啊。不过玩了这么久的linux，还是只喜欢RPM系的和gnome这个桌面。好久没用没在笔记本💻️上面装linux了，是觉得OS X和Windows以及一台Fedora的服务器已经够用了。</p>
+    
+
+    
+   
+    </div>
+</article>
+
+<div class="post-footer">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+</div>
+
+
+            </li>
+        
+            <li class="post-list-item fade">
+                <article id="post-Audrey-Hepburn" class="article-card article-type-post" itemprop="blogPost">
+  
+    
+        
+<div class="item-thumb">
+    <a class="thumb-link" href="/2018/10/03/Audrey-Hepburn/"></a>
+    <div class="thumb-hover">
+        <span class="icon icon-eye"></span>
+    </div>
+    <img src="//i.loli.net/2018/10/03/5bb4a08830193.png" alt="图片路径不正确">
+    
+
+
+  
+    <h3 class="post-title ab-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/03/Audrey-Hepburn/">Audrey Hepburn</a>
+    </h3>
+  
+
+
+
+</div>
+
+        
+    
+    <div class="top" data-title="7">
+    <div class="top-wrap">
+        <p></p>
+    </div>
+</div>
+    
+    
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-03 10:30:36" datetime="2018-10-03T10:30:36.000Z" itemprop="datePublished">2018-10-03</time>
+
+        
+
+
+        
+	<span id="/2018/10/03/Audrey-Hepburn/" class="leancloud_visitors" data-flag-title="Audrey Hepburn" title="Audrey Hepburn">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+        
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/10/03/Audrey-Hepburn/#comment">
+            <span class="valine-comment-count" data-xid="/2018/10/03/Audrey-Hepburn/"></span>
+        </a>
+    </span>
+
+
+
+        
+        
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent">
+    
+    
+        <p></p><h1 align="center"> 不朽的经典, 永远的女神<p></p>
+<h1 id="罗马假日"><a href="#罗马假日" class="headerlink" title="罗马假日"></a>罗马假日</h1><p><strong>安</strong>（<code>奥黛丽·赫本</code>饰）是一位皇室的公主。她正在对欧洲的一些首都进行公开的访问，包括罗马。<br>一天夜晚，她对她第二天将要进行的非常紧张的公务感到难以承受而变得<code>情绪失控</code>。她的医生给她注射了一针镇静剂来帮助睡眠，<br>
+    
+
+    
+   
+    </p></h1></div>
+</article>
+
+<div class="post-footer">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/classic/">classic</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/film/">film</a></li></ul>
+
+</div>
+
+
+            </li>
+        
+            <li class="post-list-item fade">
+                <article id="post-初尝Typecho" class="article-card article-type-post" itemprop="blogPost">
+  
+    
+        
+<div class="item-thumb">
+    <a class="thumb-link" href="/2018/07/20/初尝Typecho/"></a>
+    <div class="thumb-hover">
+        <span class="icon icon-eye"></span>
+    </div>
+    <img src="//i.loli.net/2018/12/10/5c0e809e0b264.jpg" alt="图片路径不正确">
+    
+
+
+  
+    <h3 class="post-title ab-title" itemprop="name">
+      <a class="post-title-link" href="/2018/07/20/初尝Typecho/">初尝Typecho</a>
+    </h3>
+  
+
+
+
+</div>
+
+        
+    
+    <div class="top" data-title="7">
+    <div class="top-wrap">
+        <p></p>
+    </div>
+</div>
+    
+    
+    <div class="post-meta">
+        <time class="post-time" title="2018-07-20 16:34:37" datetime="2018-07-20T16:34:37.000Z" itemprop="datePublished">2018-07-20</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Blog/">Blog</a></li></ul>
+
+
+
+        
+	<span id="/2018/07/20/初尝Typecho/" class="leancloud_visitors" data-flag-title="初尝Typecho" title="初尝Typecho">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+        
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/07/20/初尝Typecho/#comment">
+            <span class="valine-comment-count" data-xid="/2018/07/20/初尝Typecho/"></span>
+        </a>
+    </span>
+
+
+
+        
+        
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent">
+    
+    
+        <p>昨天笔记本重装10.13不小心把博客的源代码删了，虽然我有保存有多个副本，但是最近的一次副本保存在机械硬盘里面的，而这机械硬盘我放在宿舍没拿回家，所以我就暂时没有去碰服务器和Coding上面的<code>HTML源码</code>，但是我也不能闲着啊，毕竟有两个月的时间在家，除了平时的笔记push到<code>Github</code>仓库之外，我还会把一些东西记录下来，也是一个偶然的机会发现了 <strong><em>Typecho</em></strong>，原本是在应用商店里面看<code>Rime输入法</code>，无意中点进去一个博客，发现底部的博客框架是<code>Typecho</code>，点进去就来到了<a href="http://typecho.org/" target="_blank" rel="noopener">Typecho官网</a>,反正我也闲来无事，就搭一个耍耍，顺便记录下来，可能会帮到搭建遇到问题的人。<br>
+    
+
+    
+   
+    </p></div>
+</article>
+
+<div class="post-footer">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typoche/">Typoche</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPS/">VPS</a></li></ul>
+
+</div>
+
+
+            </li>
+        
+            <li class="post-list-item fade">
+                <article id="post-beYoung" class="article-card article-type-post" itemprop="blogPost">
+  
+        
+<div class="item-thumb">
+    <a class="thumb-link" href="/2019/02/27/beYoung/"></a>
+    <div class="thumb-hover">
+        <span class="icon icon-eye"></span>
+    </div>
+    <img src="/img/thumb/2.jpg" alt="图片路径不正确">
+    
+
+
+  
+    <h3 class="post-title ab-title" itemprop="name">
+      <a class="post-title-link" href="/2019/02/27/beYoung/">年轻真好</a>
+    </h3>
+  
+
+
+
+</div>
+
+        
+    
+    
+    
+    <div class="post-meta">
+        <time class="post-time" title="2019-02-27 16:29:37" datetime="2019-02-27T16:29:37.000Z" itemprop="datePublished">2019-02-27</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/生活/">生活</a></li></ul>
+
+
+
+        
+	<span id="/2019/02/27/beYoung/" class="leancloud_visitors" data-flag-title="年轻真好" title="年轻真好">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+        
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2019/02/27/beYoung/#comment">
+            <span class="valine-comment-count" data-xid="/2019/02/27/beYoung/"></span>
+        </a>
+    </span>
+
+
+
+        
+        
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent">
+    
+    
+        <p>告别初中母校已经有4年多了，初中的学校给我留下的印象并不多，但也是从初二开始我从学渣变成了学霸(在那时的那个班可以这样说吧)，这也成就了我能以优异的成绩考上县里面为数不多能够看得下去的高中，之所以<br>从初中开始算起，是因为在高中的重点班里面的学生都是初中母校同一个年级的，高中大家在一起成了同学，在初中那会都路人。也就彼此认识而已。<br>
+    
+
+    
+   
+    </p></div>
+</article>
+
+<div class="post-footer">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/感悟/">感悟</a></li></ul>
+
+</div>
+
+
+            </li>
+        
+            <li class="post-list-item fade">
+                <article id="post-life-enjoy" class="article-card article-type-post" itemprop="blogPost">
+  
+    
+        
+<div class="item-thumb">
+    <a class="thumb-link" href="/2019/02/13/life-enjoy/"></a>
+    <div class="thumb-hover">
+        <span class="icon icon-eye"></span>
+    </div>
+    <img src="//ww1.sinaimg.cn/large/005GQrpLgy1g04tg35ogdj30c0087afx.jpg" alt="图片路径不正确">
+    
+
+
+  
+    <h3 class="post-title ab-title" itemprop="name">
+      <a class="post-title-link" href="/2019/02/13/life-enjoy/">风景这边独好</a>
+    </h3>
+  
+
+
+
+</div>
+
+        
+    
+    
+    <div class="post-meta">
+        <time class="post-time" title="2019-02-13 13:33:44" datetime="2019-02-13T13:33:44.000Z" itemprop="datePublished">2019-02-13</time>
+
+        
+
+
+        
+	<span id="/2019/02/13/life-enjoy/" class="leancloud_visitors" data-flag-title="风景这边独好" title="风景这边独好">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+        
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2019/02/13/life-enjoy/#comment">
+            <span class="valine-comment-count" data-xid="/2019/02/13/life-enjoy/"></span>
+        </a>
+    </span>
+
+
+
+        
+        
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent">
+    
+    
+        <p>转眼间，大学已经过去一年半了，这一年半里似乎我自己都说不出自己干了什么，没有什么事在我的脑海里留下深刻的影响，看在<a id="mainKeywords">窗外的风景</a>，在看看整理久坐在电脑💻前的我，整日与手机📱为伍，书桌上的依旧是这3本书
+    
+
+    
+   
+    </p></div>
+</article>
+
+<div class="post-footer">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/感悟/">感悟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
+
+</div>
+
+
+            </li>
+        
+        </ul>
+        
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">下一页</a>
+    </div>
+</nav>
+
+    </div>
+    
+
+        <footer class="footer">
+    
+    
+    <div class="bottom">
+            <p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            <br>
+            </p><p>
+            
+            
+            <span>
+                Hosted by <a href="https://coding.net/pages" target="_blank">Coding Pages</a>
+            </span>
+            
+
+            <span>
+                Zip &copy; 2015 - 2019
+            </span>
+
+            
+            <span>
+                Theme is <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">Mellow</a>
+            </span>
+            
+
+            
+                
+
+            
+        </p>
+    
+
+        
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/page/4/&title=Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/page/4/&title=Zip的小窝&source=岁月静好,现世安稳." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/page/4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Zip的小窝&url=https://blog.ourfor.top/page/4/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/page/4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzElEQVR42u3aS5LCMAwFQO5/6cwFcOZJwiZUtVcUSXCHhUofv17xuhZrdU/+/WvHwsXFHXOv27W6Z/I7q8/Jn4KLi3uSu9p+dc9qs+TZ3j24uLhP5t4nMffBLnk9XFzcX+TmBUx+FRcX95ncvGjpNTWqxdUHajVcXNwBN99s3+ct/V1cXNwW9yquXmLUC15vnsLFxT3CzQNKb8SSN1XzBgouLu4ZbjUY5S+Tb1ndERcXdx/3PjBNXmkS+KKMDBcXdxu32ouopj6Tbk3zF3BxcT/EnZQu80KonB7h4uIe4VYbndXDE9UBbZTc4OLibuNOQHlx0gt2b14YFxf3OLd6ziEZkORPRaUULi7uEe6k/ZGHobxYKhc/uLi427iTkUYenu5Tn0JZhYuLe5DbK37yYJc3WP/5C3BxcQ9yq42MXgl0H5Gi4gcXF/cB3PxYRhLIqgcvosu4uLgf5V7FNR+y5mMVXFzcb3GrByiT1+gdwqge4MDFxd3NzYepeXo0H6lGMx9cXNzN3HykMT9gkRc/uLi4v8hNkqG8Fds8foGLi/sYbj5GzYcrUQsVFxf3ILd3eKLXUslLIFxc3G9xq6EkT2J6Y91JyMPFxR1z/wDOnSn4FznU6QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//view.ourfor.top/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>

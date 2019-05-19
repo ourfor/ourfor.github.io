@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    
+    <title>VPS搭建Shadowsocks实现科学上网 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="SSR">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+
+    <!-- 添加图片替换脚本-->
+    <script>
+        let ImgReplace = ()=>{
+            let img = document.getElementsByTagName('img');
+            for(let i =0;i<img.length;i++){
+                let src = img[i].src;
+                src = src.replace("//index","/index");
+                img[i].src = src;
+            }
+            console.log("执行ImgReplace")
+        }
+
+        window.onload=ImgReplace;
+        
+        
+    </script>
+<link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
+<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class>
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/about">
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/books">
+                <i class="icon icon-lg icon-bookmark"></i>
+                BOOK
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/movies">
+                <i class="icon icon-lg icon-video-camera"></i>
+                MOVIE
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/games">
+                <i class="icon icon-lg icon-gamepad"></i>
+                GAME
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://github.com/ourfor" target="_blank">
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class>
+              <a href="https://play.ourfor.top">
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class>
+              <a href="/links">
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>VPS搭建Shadowsocks实现科学上网</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/headerBg.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">VPS搭建Shadowsocks实现科学上网</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-02-22T10:53:20.000Z" itemprop="datePublished" class="page-time">
+  2018-02-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/VPS/">VPS</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left">
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-VPS搭建Shadowsocks实现科学上网" class="post-article article-type-post" itemprop="blogPost">
+      <div class="post-card">
+          <h1 class="post-card-title">VPS搭建Shadowsocks实现科学上网</h1>
+          <div class="post-meta">
+              <time class="post-time" title="2018-02-22 10:53:20" datetime="2018-02-22T10:53:20.000Z" itemprop="datePublished">2018-02-22</time>
+
+              
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/VPS/">VPS</a></li></ul>
+
+
+
+              
+	<span id="/2018/02/22/VPS搭建Shadowsocks实现科学上网/" class="leancloud_visitors" data-flag-title="VPS搭建Shadowsocks实现科学上网" title="VPS搭建Shadowsocks实现科学上网">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+              
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/02/22/VPS搭建Shadowsocks实现科学上网/#comment">
+            <span class="valine-comment-count" data-xid="/2018/02/22/VPS搭建Shadowsocks实现科学上网/"></span>
+        </a>
+    </span>
+
+
+
+              
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+              
+              <p>最近很多免费的vpn软件都失效了，之前有用过蓝灯、FreeVPN之类的科学上网的软件，这类软件虽然免费，但是安全性较低、连接速度比较慢。油管视频基本看不了，有时还连接失败。好在最近亚马逊云（AWS）、谷歌云（Google Cloud）等虚拟主机厂商都推出了免费VPS的活动，如果你有信用卡你可以去AWS和Google Cloud上面去看看，AWS提供一年的免费云主机，Google Clou赠送的金额足够你的VPS跑半年，然而由于信用卡的缘故，这两个我都没用，想想也不现实天底下哪有这么大免费午餐，不然别人还不得亏死，还是老老实实买个VPS吧，推荐搬瓦工和Vultr他家的VPS，这两家现在都支持支付宝付款，并且都比较便宜。<br><a id="more"></a>  </p>
+<h2 id="选购云主机（VPS）"><a href="#选购云主机（VPS）" class="headerlink" title="选购云主机（VPS）"></a>选购云主机（VPS）</h2><ul>
+<li><a href="https://bandwagonhost.com/" target="_blank" rel="noopener">搬瓦工</a></li>
+<li><a href="https://www.vultr.com/?ref=7812582-4F" target="_blank" rel="noopener">Vultr</a><br>目前<code>搬瓦工</code>最低的套餐-<code>$19.9/年 10G VPS</code>已经售坠了，<code>Vultr</code>最低套餐为<code>$2.50/月</code>目前还有，通过我的邀请码注册<code>Vultr</code>应该会额外赠送$3,<a href="https://www.vultr.com/?ref=7812582-4F" target="_blank" rel="noopener">Vultr</a>。如果你在搬瓦工上面购买VPS的话，它那里有KVM和OpenVZ两种类型的主机，选KVM，还是OpenVZ？这个问题对新手来说没有太大意义。一句话来说：想折腾的选KVM，想买便宜货的选OpenVZ，但从业界大趋势来看，建议购买虚拟化程度更高的KVM方案，而<code>Vultr</code>上面只有<code>KVM</code>类型的。 </li>
+</ul>
+<h3 id="OpenVZ的优势："><a href="#OpenVZ的优势：" class="headerlink" title="OpenVZ的优势："></a>OpenVZ的优势：</h3><ul>
+<li>IPv6支持</li>
+<li>更好的CPU性能</li>
+</ul>
+<h3 id="KVM的优势："><a href="#KVM的优势：" class="headerlink" title="KVM的优势："></a>KVM的优势：</h3><ul>
+<li>完全虚拟化</li>
+<li>自定义内核支持（BBR等）</li>
+<li>Docker支持</li>
+<li>更好的隔离</li>
+<li>提高网络吞吐量</li>
+</ul>
+<p>（SSR加速可以使用BBR，迅雷远程下载等需要Docker）</p>
+<p>都以最低配置进行比较：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">SSD</th>
+<th style="text-align:center">ECC RAM</th>
+<th style="text-align:center">带宽</th>
+<th style="text-align:center">中央处理器</th>
+<th style="text-align:center">价钱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Vultr</td>
+<td style="text-align:center">20 GB固态硬盘</td>
+<td style="text-align:center">512 MB</td>
+<td style="text-align:center">500 GB</td>
+<td style="text-align:center">1x Intel Xeon</td>
+<td style="text-align:center">$2.50/月</td>
+</tr>
+<tr>
+<td style="text-align:center">搬瓦工</td>
+<td style="text-align:center">10 GB固态硬盘</td>
+<td style="text-align:center">512 MB</td>
+<td style="text-align:center">500 GB</td>
+<td style="text-align:center">1x Intel Xeon</td>
+<td style="text-align:center">$19.9/年</td>
+</tr>
+</tbody>
+</table>
+<p>其中<code>Vultr</code>是以每小时收费的，<code>搬瓦工</code>支持30天退款，</p>
+<p><a rel="VPS搭建Shadowsocks实现科学上网" href="https://file.ourfor.top/source/ourfor/VPS%E6%90%AD%E5%BB%BAShadowsocks%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-1.png" title data-fancybox="images"><img src="https://file.ourfor.top/source/ourfor/VPS%E6%90%AD%E5%BB%BAShadowsocks%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-1.png"></a></p>
+<p>我是在<code>Vultr</code>上面的配置的主机，注册$10,关注官方<code>Twtter</code>获得<code>$3</code>。  </p>
+<p><a rel="VPS搭建Shadowsocks实现科学上网" href="https://www.vultr.com/media/banner_1.png" title data-fancybox="images"><img src="https://www.vultr.com/media/banner_1.png"></a>    </p>
+<p>选一个你认为合适的厂商购买云主机，部署地点最好选择美国西海岸距离中国近的，这样延迟比较低，比如<code>洛杉矶</code>这些地方，系统最好选择<code>CentOS</code> 、<code>Ubuntu</code>这两种，<code>CentOS</code>最好选择<code>6</code>，因为<code>7</code>有防火墙需要额外设置。下面我以<code>Vultr</code>上面的<code>CentOS 6 x64</code>为例搭<code>Shadowsocks</code>.</p>
+<h2 id="开始搭建SSR"><a href="#开始搭建SSR" class="headerlink" title="开始搭建SSR"></a>开始搭建SSR</h2><h3 id="ssh连接VPS"><a href="#ssh连接VPS" class="headerlink" title="ssh连接VPS"></a>ssh连接VPS</h3><ul>
+<li>Windows下使用<code>xshell</code>或者<code>putty</code>来连接</li>
+<li>Linux和macOS下直接在终端连接，用法：<code>ssh root@ip_address</code>其中<code>root</code>是用户名，一般是<code>root</code>,端口不更改就是<code>22</code>,<code>ip_address</code>是主机的<code>外网ip</code></li>
+</ul>
+<p>首先，更改<code>root</code>密码，ssh连接主机后输入以下命令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure>
+<p>改好密码后下载<code>doub.io</code>的一键安装脚本，键入以下指令即可，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</span><br></pre></td></tr></table></figure>
+<p>它会下载<code>ssr.sh</code>这个一键安装脚本，按照提示输入即可，之后如果你想查看用户信息，直接输入<code>bash ssr.sh</code>如果提示没有权限<code>chmod +x ssr.sh</code>加上运行权限就行了，你填写好参数后会在屏幕上面打印出<code>ss</code>和<code>ssr</code>链接地址。  </p>
+<h3 id="SSR客户端下载"><a href="#SSR客户端下载" class="headerlink" title="SSR客户端下载"></a>SSR客户端下载</h3><p>无法到官网下载<code>Shadowsocks</code>(被墙)，可以去<code>github</code>上面下载。  </p>
+<p>客户端下载：</p>
+<ul>
+<li><a href="https://file.ourfor.top/source/ourfor/ssr-win.zip" target="_blank" rel="noopener">Windows</a></li>
+<li><a href="https://letsgofree.net/ssr-download/ssr-android.apk" target="_blank" rel="noopener">Android</a></li>
+<li><a href="https://file.ourfor.top/source/ourfor/ssr-mac.dmg" target="_blank" rel="noopener">macOS</a></li>
+<li>IOS 需要在<code>App Store</code>购买<code>Potatso</code>或者<code>Shadowrocket</code>或者<code>Surge</code></li>
+</ul>
+<p>将之前的<code>ss</code>或者<code>ssr</code>地址复制，打开<code>shadowsocks</code>，点击<code>添加</code>选择<code>从剪粘板导入</code>即可。    </p>
+<h3 id="免费SSR分享"><a href="#免费SSR分享" class="headerlink" title="免费SSR分享"></a>免费SSR分享</h3><p>当然也不是每个人都需要经常用到<code>google</code>,尽管<code>百度</code>在做<code>外卖</code>，<code>google</code>在做<code>AI</code>,抛开<code>安全性</code>和<code>稳定性</code>不提,免费的<code>SSR</code>还是有很多人分享的，只不过速度没有那么快罢了。</p>
+<ul>
+<li><a href="https://www.letsgofree.net（需要注册，且每个月只有2G）" target="_blank" rel="noopener">https://www.letsgofree.net（需要注册，且每个月只有2G）</a></li>
+<li><a href="https://doub.bid/sszhfx/" target="_blank" rel="noopener">https://doub.bid/sszhfx/</a></li>
+</ul>
+
+        <div id="aplayer-AIsmajBK" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-AIsmajBK"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "没离开过",
+              author: "张韶涵",
+              url: "https://file.ourfor.top/source/ourfor/%E5%BC%A0%E9%9F%B6%E6%B6%B5-%E6%BC%AB%E6%AD%A5%E4%BA%91%E7%AB%AF.flac",
+              pic: "https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike272%2C5%2C5%2C272%2C90/sign=6ed5142a95510fb36c147fc5b85aa3f0/8326cffc1e178a8231192533fd03738da977e878.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+          </div>
+          
+<blockquote class="post-copyright" style="border-left: 3px solid #ff1700;">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-05-19T06:24:08.523Z" itemprop="dateUpdated">2019-05-19 06:24:08</time>
+</span><br>
+
+
+        <p style="margin:unset"><strong>本文作者: </strong><a href="https://ourfor.top">ourfor</a></p>
+        <p style="margin:unset"><strong>版权声明: </strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+        
+        <strong>转载注明出处：</strong><a href="/2018/02/22/VPS搭建Shadowsocks实现科学上网/" target="_blank" rel="external">https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/</a>
+        
+    </div>
+    <footer>
+        <a href="https://blog.ourfor.top">
+            <img src="/img/sagit.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+          
+              <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+              
+          
+          <div class="post-footer">
+              
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSR/">SSR</a></li></ul>
+
+              <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/&title=《VPS搭建Shadowsocks实现科学上网》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/&title=《VPS搭建Shadowsocks实现科学上网》 — Zip的小窝&source=最近很多免费的vpn软件都失效了，之前有用过蓝灯、FreeVPN之类的科学上网的软件，这类软件虽然免费，但是安全性较低、连接速度比较慢。油管视频基本看不了..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《VPS搭建Shadowsocks实现科学上网》 — Zip的小窝&url=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+          </div>
+          
+              
+    <div id="comment"></div>
+
+
+
+          
+      </div>
+      
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/03/01/VPS-树莓派实现云点播/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">VPS/树莓派实现云点播</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2018/02/20/Markdown插入视频音频/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Markdown插入视频音频</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+      
+      
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选购云主机（VPS）"><span class="post-toc-number">1.</span> <span class="post-toc-text">选购云主机（VPS）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OpenVZ的优势："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">OpenVZ的优势：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#KVM的优势："><span class="post-toc-number">1.2.</span> <span class="post-toc-text">KVM的优势：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始搭建SSR"><span class="post-toc-number">2.</span> <span class="post-toc-text">开始搭建SSR</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ssh连接VPS"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">ssh连接VPS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SSR客户端下载"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">SSR客户端下载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#免费SSR分享"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">免费SSR分享</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </div></div></aside>
+    
+
+  </article>
+  
+      <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        给作者加个鸡腿🍗?
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat_pay.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat_pay.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+      
+  
+</div>
+
+        <footer class="footer">
+    
+    
+
+        
+    <div class="bottom">
+            <p>
+            
+            
+
+            <span>
+                Zip &copy; 2015 - 2019
+            </span>
+
+            
+
+            
+            </p><p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </p>
+    
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/&title=《VPS搭建Shadowsocks实现科学上网》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/&title=《VPS搭建Shadowsocks实现科学上网》 — Zip的小窝&source=最近很多免费的vpn软件都失效了，之前有用过蓝灯、FreeVPN之类的科学上网的软件，这类软件虽然免费，但是安全性较低、连接速度比较慢。油管视频基本看不了..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《VPS搭建Shadowsocks实现科学上网》 — Zip的小窝&url=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/02/22/VPS搭建Shadowsocks实现科学上网/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACv0lEQVR42u3awa7iMAwFUP7/p2e2IzHl3Ws3fSxOV6hAkxOk2Nh5veLrzz/X+/3kW+9PuHpafv+2Cw8PD28x9c9TuXr3fbr5M68A+ec/zwoPDw/vHO9qR82Hvxo4eTdf3HzOeHh4eN/DmwWANoHOX+Ph4eF9Py8Bf64MJJ+cfRcPDw/vSd6scBCVA0ZT3xc78PDw8M7xNpvyb70+0t/Dw8PDW3fV8213VoRtE/F6nnh4eHgHePlg+8LE/tjBMLHGw8PDO8BLEtm7Akay9SfJdN5mw8PDwzvBS/7kbxpdbWI9S8pf+VTw8PDwFrxNADh3Z3Zc4LLWgoeHh3eANytG5Al0G1TalLo4E4GHh4d3Ey8/AJp8Jt/u88CTPOc/d/Dw8PAO8/I21SYAzMJD2zx75fEEDw8Pr+QlW3nbGGsT5c2hgbqki4eHh3eAl2zo+6LtphSS/Bh1YQIPDw8v5uUNsLyA2x5NaJtweTqOh4eHd4LXXrOS7r6ssEqm8fDw8G7l5UMmg7WJcptA57zLQ1d4eHh4a17xofjOvUFlFh7w8PDwzvHaQkDbDMuPUt1byBjWOfDw8PDif+5J+z8voebJdzJ6vkyXz8HDw8O7lTc7EJA3wNqDBZtF+eE0BB4eHt6DvLyY2x5E2CTTSVqPh4eH9wyvpeZnE/K6cv78H8bFw8PDO8CL+mNxwr1Jl1tw8YPh4eHh3crLN/28rTVr/LfhoWh94eHh4d3Km7W4ktx1tunPZlL/knh4eHgL3iYM7BPldinrcjAeHh7eAd5s029LugkvmW7+nJqKh4eHV/JmwWB/uqld6bwlhoeHh/cM7xua/XVxNlhQPDw8vN/lzYLBXQl68q3oAAEeHh7eg7x8WrMlSGD1suLh4eEd4+WbchIANu9uSrerWgseHh5ezJsN0zbv24CRB48hCQ8PD2/C+wv28mnO/2OvwQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//view.ourfor.top/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>
