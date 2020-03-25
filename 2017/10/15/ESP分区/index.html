@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>ESP分区 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Hackintosh,引导,系统">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+
+    <!-- 添加图片替换脚本-->
+    <script>
+        let ImgReplace = ()=>{
+            let img = document.getElementsByTagName('img');
+            for(let i =0;i<img.length;i++){
+                let src = img[i].src;
+                src = src.replace("//index","/index");
+                img[i].src = src;
+            }
+            console.log("执行ImgReplace")
+        }
+
+        window.onload=ImgReplace;
+        
+        
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-bookmark"></i>
+                BOOK
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-video-camera"></i>
+                MOVIE
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/games"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                GAME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor" target="_blank" >
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://play.ourfor.top"  >
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>ESP分区</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/headerBg.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">ESP分区</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-10-15T16:01:10.000Z" itemprop="datePublished" class="page-time">
+  2017-10-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/PC/">PC</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-ESP分区"
+    class="post-article article-type-post" itemprop="blogPost">
+      <div class="post-card">
+          <h1 class="post-card-title">ESP分区</h1>
+          <div class="post-meta">
+              <time class="post-time" title="2017-10-15 16:01:10" datetime="2017-10-15T16:01:10.000Z"  itemprop="datePublished">2017-10-15</time>
+
+              
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/PC/">PC</a></li></ul>
+
+
+
+              
+	<span id="/2017/10/15/ESP分区/" class="leancloud_visitors" data-flag-title="ESP分区" title="ESP分区">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+              
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2017/10/15/ESP分区/#comment">
+            <span class="valine-comment-count" data-xid="/2017/10/15/ESP分区/"></span>
+        </a>
+    </span>
+
+
+
+              
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+              
+              <p>不少安装黑果的小白应该都遇到一个问题，在抹除磁盘时系统提示空间不足，这时候不少有经验的人会告诉你ESP分区的大小要大于200m，然而ESP分区到底是做什么用的呢？<br><a id="more"></a></p>
+<h2 id="挂载并修改ESP分区"><a href="#挂载并修改ESP分区" class="headerlink" title="挂载并修改ESP分区"></a>挂载并修改ESP分区</h2><p>##挂载系统ESP分区</p>
+<p>###写在前面：<br>众所周知，在绝大部分个人PC中预装的都是Windows系列的操作系统，苹果公司的个人电脑预装的是Mac OS，无论是哪种操作系统都有都有它们的系统分区，其中系统分区中包含保证系统正常运转的必要系统文件，因此一般情况下用户在系统分区中只拥有可读的权限，其实这样是为了防止用户误删文件导致系统崩溃，正常情况下我们没有必要动这些文件，那么什么是ESP分区，ESP分区究竟在开机到正常进入系统用户界面起着什么作用呢？  </p>
+<p>###常见的系统启动方式：<br>以win7为分界线，在win7之前的绝大部分PC都是以传统引导，win7以后一般是uefi引导，究竟支持哪些引导，是由主板决定的，以下是根据uefi引导操作。</p>
+<p>###windows系统下使用命令行挂载<br>首先使用Windows命令挂载ESP分区<br>Windows徽键＋r，在运行框里输入cmd，点击运行即可<br>在命令行中输入以下命令：    </p>
+<pre><code>list disk  //列出当前设备挂载磁盘  
+select disk 0  //选中磁盘0，注意这里的磁盘是安装系统所在的硬盘  
+list partition //列出选中磁盘0下的分区  
+select partition n //n表示esp分区的数字代号  
+assign letter＝z  //为esp分区分配盘符标识z，这个字母可以根据自己的喜好  
+exit  //退出命令行  
+</code></pre><p>此时打开Windows的资源管理器，在我的电脑下面你就可以看见出现了一个z盘，就是我们的系统引导分区，此时你发现你无法用<br>Windows的资源管理器打开esp分区，因为这个分区是受系统保护的，接下来我们就要使用这个软件了explore++；<br>右键explore++，选择以管理员身份运行，这时候将优盘efi文件夹覆盖到系统的esp分区，并且跳过重复文件，接下来利用软件bootice给我们的四叶草添加启动引导，打开bootice，选择uefi，点击修改启动序列，在系统的esp分区中的clover的文件夹下面的CLOVERX64.efi（\EFI\CLOVER\CLOVERX64.efi），并将这个启动项上移到第一启动项，保存好之后，重新开机你就可以看见四叶草的启动界面了。<br><a rel=ESP分区 href="http://img04.sogoucdn.com/app/a/100520146/2c6edb8f7ab62a46b5aa07e62ad14aaa" title="" data-fancybox="images"><img src="http://img04.sogoucdn.com/app/a/100520146/2c6edb8f7ab62a46b5aa07e62ad14aaa"></a>  </p>
+
+          </div>
+          
+<blockquote class="post-copyright" style="border-left: 3px solid #ff1700;">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-03-25T05:12:59.783Z" itemprop="dateUpdated">2020-03-25 05:12:59</time>
+</span><br>
+
+
+        <p style="margin:unset"><strong>本文作者: </strong><a href="https://ourfor.top">ourfor</a></p>
+        <p style="margin:unset"><strong>版权声明: </strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+        
+        <strong>转载注明出处：</strong><a href="/2017/10/15/ESP分区/" target="_blank" rel="external">https://blog.ourfor.top/2017/10/15/ESP分区/</a>
+        
+    </div>
+    <footer>
+        <a href="https://blog.ourfor.top">
+            <img src="/img/sagit.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+          
+              <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+              
+          
+          <div class="post-footer">
+              
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackintosh/">Hackintosh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/引导/">引导</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/系统/">系统</a></li></ul>
+
+              <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2017/10/15/ESP分区/&title=《ESP分区》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2017/10/15/ESP分区/&title=《ESP分区》 — Zip的小窝&source=不少安装黑果的小白应该都遇到一个问题，在抹除磁盘时系统提示空间不足，这时候不少有经验的人会告诉你ESP分区的大小要大于200m，然而ESP分区到底是做什么..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2017/10/15/ESP分区/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ESP分区》 — Zip的小窝&url=https://blog.ourfor.top/2017/10/15/ESP分区/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2017/10/15/ESP分区/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+          </div>
+          
+              
+    <div id="comment"></div>
+
+
+
+          
+      </div>
+      
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2017/12/10/声卡AlC255/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">声卡AlC255</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2017/10/12/Hackintosh（2）/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hackintosh(2)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+      
+      
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#挂载并修改ESP分区"><span class="post-toc-number">1.</span> <span class="post-toc-text">挂载并修改ESP分区</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+
+  </article>
+  
+      <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        给作者加个鸡腿🍗?
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat_pay.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat_pay.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+      
+  
+</div>
+
+        <footer class="footer">
+    
+    
+
+        
+    <div class="bottom">
+            <p>
+            
+            
+
+            <span>
+                Zip &copy; 2015 - 2020
+            </span>
+
+            
+
+            
+            <p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </p>
+    
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2017/10/15/ESP分区/&title=《ESP分区》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2017/10/15/ESP分区/&title=《ESP分区》 — Zip的小窝&source=不少安装黑果的小白应该都遇到一个问题，在抹除磁盘时系统提示空间不足，这时候不少有经验的人会告诉你ESP分区的大小要大于200m，然而ESP分区到底是做什么..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2017/10/15/ESP分区/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ESP分区》 — Zip的小窝&url=https://blog.ourfor.top/2017/10/15/ESP分区/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2017/10/15/ESP分区/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aS27DMAwFQN//0u4BCiuPlBLA0mgVGP5oumBJkdcVr/th/b/n6f7xO5+uLF4YGBivZdzDNd7WKt74d/IVDAyMExhPEWz86vGVPPgm7/mwZwwMDIwggasG7qevY2BgYHybUQ2mGBgYGDkjCZS9gJsnlz+qxTEwMF7IyE/df//7K/0NDAyMVzHu4po/3P/KrjAwMLZm5AFuLbJcoAYlMQYGxq6M/KCtmq6tZXz4OgYGxtaM8WPVhkEvZM8PcGBgYJzASDAzI2K9oJyPkWFgYOzN6G2uuvV8Q807MTAwtmYkgXX8gWSoK0/4qqQr//+AgYHxWkYy4FVN5lYVvYWDOQwMjAMYeeBLkr9eiVtNLqMMFwMDYwtGryeYbGhVsbos88XAwNiOUT16Gwfo6phFc9gCAwNjU0YSUqsNyJkDuOqQx+MAKwYGxnaMagk6fml+fSZxvPJqGwMD4+WM6oF+Ne2baWHm92NgYJzAyOvBmYKzl/Y1WwIYGBjbMWYK1zwczxzYRbvFwMA4gJEPgeUjGtVBil4Qx8DAOIextjGQlJrV0rSQ1WJgYGzEuItrPuwmbYA8ucTAwDiBUe0P9kYrqkf81aYpBgbGCYzeYVmePs4f3kXPYmBgHMDoFZnNT1br7OSLGBgYGK3jsLwATp79wMbAwMBoJXAz76z+gTAwME5g5M2AVW3OvD2wuBbHwMB4IWMmUPYGLKrpYCFBxMDA2I3xBzEWk2H1HSk6AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <script type="text/javascript" src="/js/earth.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>

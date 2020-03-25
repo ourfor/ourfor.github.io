@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>刷机、解锁-送给小白的教程 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="刷机,解锁,twrp,root">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+
+    <!-- 添加图片替换脚本-->
+    <script>
+        let ImgReplace = ()=>{
+            let img = document.getElementsByTagName('img');
+            for(let i =0;i<img.length;i++){
+                let src = img[i].src;
+                src = src.replace("//index","/index");
+                img[i].src = src;
+            }
+            console.log("执行ImgReplace")
+        }
+
+        window.onload=ImgReplace;
+        
+        
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-bookmark"></i>
+                BOOK
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-video-camera"></i>
+                MOVIE
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/games"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                GAME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor" target="_blank" >
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://play.ourfor.top"  >
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>刷机、解锁-送给小白的教程</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/headerBg.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">刷机、解锁-送给小白的教程</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-16T16:58:16.000Z" itemprop="datePublished" class="page-time">
+  2018-09-16
+</time>
+
+
+            
+        </h5>
+        
+    </div>
+    
+
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-刷机、解锁-送给小白的教程"
+    class="post-article article-type-post" itemprop="blogPost">
+      <div class="post-card">
+          <h1 class="post-card-title">刷机、解锁-送给小白的教程</h1>
+          <div class="post-meta">
+              <time class="post-time" title="2018-09-16 16:58:16" datetime="2018-09-16T16:58:16.000Z"  itemprop="datePublished">2018-09-16</time>
+
+              
+
+
+              
+	<span id="/2018/09/16/刷机、解锁-送给小白的教程/" class="leancloud_visitors" data-flag-title="刷机、解锁-送给小白的教程" title="刷机、解锁-送给小白的教程">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+              
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/09/16/刷机、解锁-送给小白的教程/#comment">
+            <span class="valine-comment-count" data-xid="/2018/09/16/刷机、解锁-送给小白的教程/"></span>
+        </a>
+    </span>
+
+
+
+              
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+              
+              <p>酷安上一直有酷友问我我的手机上的那些个性化的东西是怎么弄得，以及我制作的magisk模块该怎么使用？说来话长，要使用magisk模块，你需要做以下几件事：1.首先有bl🔒️，要解锁bootloader 2.输入第三方recovery 3.刷入<a href="//github.com/topjohnwu/Magisk">topjohnwu</a>的 <em>magisk</em> 环境 4.刷入制作好的magisk模块。必要时还要备份基带。就这么简单的几步，看似简单，却<strong><em>very important</em></strong></p>
+<a id="more"></a>
+<p>本教程涉及设备及环境：</p>
+<ul>
+<li>小米6 </li>
+<li>Windows环境下解锁bootloader</li>
+<li>Windows或OS X下都可以刷入第三方recovery</li>
+</ul>
+<h1 id="解锁bootloader"><a href="#解锁bootloader" class="headerlink" title="解锁bootloader"></a>解锁bootloader</h1><blockquote>
+<p>如果你的手机没有bl锁，可以忽略这一步</p>
+</blockquote>
+<ul>
+<li><a href="//www.miui.com/unlock/index.html">小米手机解锁</a><br>点击<code>立即解锁</code>之后登录<code>小米帐号</code>再次点击<strong><em>立即解锁</em></strong>就会跳转到解锁工具的下载页面。这个解锁工具只有windows版本的下载，所以需要一台联网的windows环境的电脑。需要登录自己的小米帐号才能解锁。</li>
+</ul>
+<hr>
+<figure class="image-box">
+                <a rel=刷机、解锁-送给小白的教程 href="https://i.imgur.com/vZQRgUn.png" title="TWRP" data-fancybox="images"><img src="https://i.imgur.com/vZQRgUn.png" alt="TWRP" title class></a>
+                <p>TWRP</p>
+            </figure>
+<h1 id="刷入第三方recovery"><a href="#刷入第三方recovery" class="headerlink" title="刷入第三方recovery"></a>刷入第三方recovery</h1><p>推荐使用<a href="//twrp.me">twrp</a>适配的recovery，点击右侧的menu，选择device，找到你的设备，在你的设备详情页面里面的<code>Downlink Links</code>里面有两个镜像站，可以点击<code>Americas</code>或者<code>Europe</code>下载。</p>
+<h3 id="刷入recovery"><a href="#刷入recovery" class="headerlink" title="刷入recovery"></a>刷入recovery</h3><p>下面有几种方法刷入recovery：</p>
+<ol>
+<li>Install Android SDK </li>
+</ol>
+<p>以OS X为例(假定你已经安装了brew)，在<code>Terminal</code>中输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install android-platform-tools</span><br></pre></td></tr></table></figure>
+<p>安装完毕后，数据线连接电脑，执行下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader  <span class="comment">#或者关机后，按下电源键和音量减进入fastboot模式</span></span><br><span class="line">fastboot flash recovery twrp.img     <span class="comment">#twrp.img替换成你下载的recovery的绝对路径，或者之间将recovery文件拖进Terminal窗口</span></span><br><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
+<p>2.如果你之前root了手机，手机安装Terminal之后，可以使用dd刷入recovery，在Terminal里面输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su  <span class="comment">#将root权限授予Terminal</span></span><br><span class="line">dd <span class="keyword">if</span>=/sdcard/twrp.img of=/dev/block/bootdevice/by-name/recovery       <span class="comment">#将下载的recovery改名为twrp.img,放在sdcard目录下，或者input file填写你下载的recovery的绝对路径</span></span><br></pre></td></tr></table></figure>
+<p>再刷入第三方ROM前，一些必要的备份就特别重要</p>
+<ul>
+<li>备份EFS(基带)</li>
+<li>备份所有分区(非必须,类似于Windows下面的一键ghost)</li>
+</ul>
+<figure class="image-box">
+                <a rel=刷机、解锁-送给小白的教程 href="https://i.imgur.com/ii80ddI.png" title="Backup" data-fancybox="images"><img src="https://i.imgur.com/ii80ddI.png" alt="Backup" title class></a>
+                <p>Backup</p>
+            </figure>
+<figure class="image-box">
+                <a rel=刷机、解锁-送给小白的教程 href="https://i.imgur.com/dP6q47X.png" title="Backuo Complete" data-fancybox="images"><img src="https://i.imgur.com/dP6q47X.png" alt="Backuo Complete" title class></a>
+                <p>Backuo Complete</p>
+            </figure>
+<h2 id="刷入第三方ROM"><a href="#刷入第三方ROM" class="headerlink" title="刷入第三方ROM"></a>刷入第三方ROM</h2><ul>
+<li>刷入第三方ROM前需要在twrp里面清除部分Data分区、Cache分区以及虚拟机Dalvik缓存，俗称<code>三清</code></li>
+</ul>
+<figure class="image-box">
+                <a rel=刷机、解锁-送给小白的教程 href="https://i.imgur.com/8J9vXGq.png" title="Wipe" data-fancybox="images"><img src="https://i.imgur.com/8J9vXGq.png" alt="Wipe" title class></a>
+                <p>Wipe</p>
+            </figure>
+<blockquote>
+<p>如果原系统是miui，在刷入原生ROM之后，可能还好格式化内部存储，因为miui对内部存储加密了，不格式化，原生rom无法开机和使用内部存储空间</p>
+</blockquote>
+<p>在TWRP主界面，在Wipe之后，点击Install选择刷机包：<br><figure class="image-box">
+                <a rel=刷机、解锁-送给小白的教程 href="https://i.imgur.com/a6bhzgV.png" title="Install" data-fancybox="images"><img src="https://i.imgur.com/a6bhzgV.png" alt="Install" title class></a>
+                <p>Install</p>
+            </figure></p>
+<h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><p>刷入PE的小米6:<br><figure class="image-box">
+                <a rel=刷机、解锁-送给小白的教程 href="https://i.imgur.com/faweJ0T.png" title="Setting" data-fancybox="images"><img src="https://i.imgur.com/faweJ0T.png" alt="Setting" title class></a>
+                <p>Setting</p>
+            </figure><br><figure class="image-box">
+                <a rel=刷机、解锁-送给小白的教程 href="https://i.imgur.com/aBsSayO.png" title="酷安" data-fancybox="images"><img src="https://i.imgur.com/aBsSayO.png" alt="酷安" title class></a>
+                <p>酷安</p>
+            </figure><br><figure class="image-box">
+                <a rel=刷机、解锁-送给小白的教程 href="https://i.imgur.com/AqJw18B.png" title="Lancher" data-fancybox="images"><img src="https://i.imgur.com/AqJw18B.png" alt="Lancher" title class></a>
+                <p>Lancher</p>
+            </figure><br><figure class="image-box">
+                <a rel=刷机、解锁-送给小白的教程 href="https://i.imgur.com/JukJAIC.png" title="开关" data-fancybox="images"><img src="https://i.imgur.com/JukJAIC.png" alt="开关" title class></a>
+                <p>开关</p>
+            </figure></p>
+
+          </div>
+          
+<blockquote class="post-copyright" style="border-left: 3px solid #ff1700;">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-03-25T05:13:00.003Z" itemprop="dateUpdated">2020-03-25 05:13:00</time>
+</span><br>
+
+
+        <p style="margin:unset"><strong>本文作者: </strong><a href="https://ourfor.top">ourfor</a></p>
+        <p style="margin:unset"><strong>版权声明: </strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+        
+        <strong>转载注明出处：</strong><a href="/2018/09/16/刷机、解锁-送给小白的教程/" target="_blank" rel="external">https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/</a>
+        
+    </div>
+    <footer>
+        <a href="https://blog.ourfor.top">
+            <img src="/img/sagit.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+          
+              <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+              
+          
+          <div class="post-footer">
+              
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/root/">root</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/twrp/">twrp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/刷机/">刷机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/解锁/">解锁</a></li></ul>
+
+              <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/&title=《刷机、解锁-送给小白的教程》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/&title=《刷机、解锁-送给小白的教程》 — Zip的小窝&source=酷安上一直有酷友问我我的手机上的那些个性化的东西是怎么弄得，以及我制作的magisk模块该怎么使用？说来话长，要使用magisk模块，你需要做以下几件事：..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《刷机、解锁-送给小白的教程》 — Zip的小窝&url=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+          </div>
+          
+              
+    <div id="comment"></div>
+
+
+
+          
+      </div>
+      
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/10/03/Audrey-Hepburn/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Audrey Hepburn</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2018/09/08/ShadowsocksR使用教程/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ShadowsocksR使用教程</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+      
+          <div id="repo">
+    <div class="loading active"></div>
+    <div class="top clearfix">
+        <div class="avatar pull-left"></div>
+        <div class="content pull-left">
+            <p class="name"></p>
+            <p class="description"></p>
+        </div>
+    </div>
+    <ul class="bottom">
+        <li class="star">
+            <span class="icon icon-star"></span>
+            <span class="val">0</span>
+        </li>
+        <li class="fork">
+            <span class="icon icon-code-fork"></span>
+            <span class="val">0</span>
+        </li>
+        <li class="date">
+            <span class="icon icon-clock-o"></span>
+            <span class="val">0000-00-00</span>
+        </li>
+    </ul>
+    <a class="link" href=""></a>
+</div>
+      
+      
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解锁bootloader"><span class="post-toc-number">1.</span> <span class="post-toc-text">解锁bootloader</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#刷入第三方recovery"><span class="post-toc-number">2.</span> <span class="post-toc-text">刷入第三方recovery</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#刷入recovery"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">刷入recovery</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷入第三方ROM"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">刷入第三方ROM</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Other"><span class="post-toc-number">3.</span> <span class="post-toc-text">Other</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+
+  </article>
+  
+      <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        给作者加个鸡腿🍗?
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat_pay.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat_pay.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+      
+  
+</div>
+
+        <footer class="footer">
+    
+    
+
+        
+    <div class="bottom">
+            <p>
+            
+            
+
+            <span>
+                Zip &copy; 2015 - 2020
+            </span>
+
+            
+
+            
+            <p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </p>
+    
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/&title=《刷机、解锁-送给小白的教程》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/&title=《刷机、解锁-送给小白的教程》 — Zip的小窝&source=酷安上一直有酷友问我我的手机上的那些个性化的东西是怎么弄得，以及我制作的magisk模块该怎么使用？说来话长，要使用magisk模块，你需要做以下几件事：..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《刷机、解锁-送给小白的教程》 — Zip的小窝&url=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/09/16/刷机、解锁-送给小白的教程/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3a0W7jMAwEwPz/T/eeD23sXdLq5YDxU9C4MkcBRJrS6xVfX9+uzd/fjf/u8/dxHr7w8PDw1qEn4b575HWgedDXU5PHg4eHh3eOly/WbUq4XtBzdptg8PDw8D6H9y6gZMwkIeUTgYeHh/e/8NpAW3wyDh4eHt4n8NoQrxsHswW9Lakf7rXg4eHhxbx8F+lzPh/Z38PDw8Nb76pvjgvk428axzcj4+Hh4R3gPdVy3Ry6umYkJftNcY+Hh4d3gJdsZeWv/Xm7YT+JyQsAHh4e3mleTp1tX802w5KkcsPGw8PDO8BLNplm2/w5u21/5GkJDw8P7wSv3YbftCfa6at/JTw8PLxf5G1Cn5Xd+T2zpIKHh4f3LK9NBpt27abBkdz5w3Tj4eHhHeDl/7ZpUsxatLNjDcNZwcPDw4ufVW8gBSV1UmQnI+Rt5ZuUgIeHh3eAd73Q54POGMmRgrwNUb8x4OHh4S147cOSlJC3ffOWR9EyxsPDwzvASwJq8U91Ax6LBA8PD+8YLy98Z9+2ZfpmQm82wPDw8PDWvBPlbwvOn96mCjw8PLxnee1G1J6XhL55+l934uHh4R3gtceq8pL3+sFt8Z1PfdGMwMPDw1vwnl2I98cR2m/rZjEeHh7emrdv4LZlcR7iLEX9UFLj4eHhHePlCSNf9JOw8slKYnglPWM8PDy8Na9tvLYL96z5u0lFeHh4eL/Py0vberFeHC+o2yh4eHh4j/K+yqt9/KbFMGuLFL8bHh4e3oi3yifl/Ulq2RzYWiHx8PDwSt7mxEG7QLfpZ7MVh4eHh3eatymI27Dyja5ZIzja38PDw8P7R7xZIT47WDD8Ox4eHt7H8JIyN2lP5AX6sBzHw8PDO8abFb77CcrL9FlzBA8PD+8Eb/PCny/0ScN3VlKvDg3g4eHhdbw/i5q7YOcQHPIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+    <script type="text/javascript">
+    (function() {
+
+        const origin = "ourfor | MI6_Optimization"
+        let user, repo;
+        origin.replace(/(\S+)\s{0,1}\|\s{0,1}(\S+)/g, (...rest) => {
+            [user, repo] = [ rest[1], rest[2] ];
+        });
+        if (user && repo) {
+            const url = `//api.github.com/repos/${user}/${repo}?callback=?`;
+            $.getJSON(url, (data) => {
+                updateRepoInPage(data.data);
+            });
+        }
+
+        function updateRepoInPage(data) {
+            const {name, description, html_url: url, stargazers_count: stars, forks, owner: owner, updated_at: update} = data;
+            _loadAvatar(owner.avatar_url).then(avatarUrl => {
+                const avatarBg = `url(${avatarUrl})`;
+                const container = $('#repo');
+                container.click(() => {
+                    window.open(url);
+                });
+
+                //init
+                const loadingItem = container.find('.loading').hide();
+                const topItem = container.find('.top').addClass('active');
+                const bottomItem = container.find('.bottom').addClass('active');
+
+                //avatar
+                const avatarItem = container.find('.avatar');
+                const oldBg = avatarItem.css('background-image');
+                avatarItem.hover(() => {
+                    avatarItem.css('background-image', avatarBg);
+                }, () => {
+                    avatarItem.css('background-image', oldBg);
+                });
+
+                //repo-name
+                const nameItem = container.find('.name').html(name);
+
+                //description
+                const descriptionItem = container.find('.description').html(description);
+
+                //stars
+                const starItem = container.find('.star>.val').html(stars);
+
+                //forks
+                const forkItem = container.find('.fork>.val').html(forks);
+
+                //date
+                const formatDate = update.replace(/T.+/g, '');
+                const dateItem = container.find('.date>.val').html(formatDate);
+            });
+
+            function _loadAvatar(url) {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        resolve(url);
+                    };
+                    img.src = url;
+                });
+            }
+
+        }
+
+    })();
+</script>
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <script type="text/javascript" src="/js/earth.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>jsp学习小计 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="tomcat,jsp,idea">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+
+    <!-- 添加图片替换脚本-->
+    <script>
+        let ImgReplace = ()=>{
+            let img = document.getElementsByTagName('img');
+            for(let i =0;i<img.length;i++){
+                let src = img[i].src;
+                src = src.replace("//index","/index");
+                img[i].src = src;
+            }
+            console.log("执行ImgReplace")
+        }
+
+        window.onload=ImgReplace;
+        
+        
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-bookmark"></i>
+                BOOK
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-video-camera"></i>
+                MOVIE
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/games"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                GAME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor" target="_blank" >
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://play.ourfor.top"  >
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>jsp学习小计</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/headerBg.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">jsp学习小计</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-27T09:54:37.000Z" itemprop="datePublished" class="page-time">
+  2019-02-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JSP/">JSP</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-jsp_learning"
+    class="post-article article-type-post" itemprop="blogPost">
+      <div class="post-card">
+          <h1 class="post-card-title">jsp学习小计</h1>
+          <div class="post-meta">
+              <time class="post-time" title="2019-02-27 09:54:37" datetime="2019-02-27T09:54:37.000Z"  itemprop="datePublished">2019-02-27</time>
+
+              
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JSP/">JSP</a></li></ul>
+
+
+
+              
+	<span id="/2019/02/27/jsp_learning/" class="leancloud_visitors" data-flag-title="jsp学习小计" title="jsp学习小计">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+              
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2019/02/27/jsp_learning/#comment">
+            <span class="valine-comment-count" data-xid="/2019/02/27/jsp_learning/"></span>
+        </a>
+    </span>
+
+
+
+              
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+              
+              <p>初学jsp，遇到不少问题，顺带记录📝一下，以免下次再遇到不知道怎么解决。jsp的功能真的是强大啊，我也想写出整套网站来，做一条龙服务里的一条龙。<br><a id="more"></a></p>
+<ul>
+<li>Windows下面安装<code>Tomcat</code>出现控制台乱码<blockquote>
+<p>Tomcat: 9.0.16<br>根本原因，tomcat 输出的东西，与cmd控制台或者IDE控制台编码不一致。</p>
+</blockquote>
+</li>
+</ul>
+<p>误区： 修改 <code>JAVA_OPTS   -Dfile.encoding=GBK</code>。 原因：影响范围太大。<br>应修改tomcat输出内容的编码，<code>%CATALINA_HOME%/conf/logging.properties</code><br>9.0.14版本比9.0.12版本多了如下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.util.logging.ConsoleHandler.encoding = UTF-8</span><br></pre></td></tr></table></figure></p>
+<p>删除：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#java.util.logging.ConsoleHandler.encoding = UTF-8</span><br></pre></td></tr></table></figure></p>
+<p>或者改成和控制台一致的编码比如GBK<br>参考<a href="https://blog.csdn.net/colcool/article/details/85180935" target="_blank" rel="noopener">原文</a></p>
+<hr>
+<ul>
+<li>网页中文乱码：<br>在jsp文件head标签中贴上:<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> contentType=<span class="string">"text/html"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;% request.setCharacterEncoding (<span class="string">"UTF-8"</span>);%&gt;</span><br><span class="line">&lt;% response.setCharacterEncoding (<span class="string">"UTF-8"</span>); %&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>同时最好将<code>tomcat配置文件目录下的server.xml</code>内修改对应字段为:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8080"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">URIEncoding</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<ul>
+<li>IDEA部署到远程tomcat<br>需要在<code>catalina.sh</code>里面添加:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># IDEA Tomcat</span></span><br><span class="line">CATALINA_OPTS=<span class="string">"-Dcom.sun.management.jmxremote</span></span><br><span class="line"><span class="string">-Dcom.sun.management.jmxremote.port=1099</span></span><br><span class="line"><span class="string">-Dcom.sun.management.jmxremote.rmi.port=1099</span></span><br><span class="line"><span class="string">-Dcom.sun.management.jmxremote.ssl=false</span></span><br><span class="line"><span class="string">-Dcom.sun.management.jmxremote.authenticate=false</span></span><br><span class="line"><span class="string">-Djava.rmi.server.hostname=ip.ourfor.top</span></span><br><span class="line"><span class="string">-agentlib:jdwp=transport=dt_socket,address=15833,suspend=n,server=y"</span></span><br><span class="line"><span class="built_in">export</span> CATALINA_OPTS</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果出现:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">15:41	Error running &apos;Tomcat remote&apos;</span><br><span class="line">			Unable to connect to the ip.ourfor.top:1099, reason:</span><br><span class="line">			java.rmi.ConnectException: Connection refused to host: ip.ourfor.top; nested exception is: </span><br><span class="line">			java.net.ConnectException: Connection refused (Connection refused)</span><br></pre></td></tr></table></figure></p>
+<p>注意添加:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dcom.sun.management.jmxremote.rmi.port=1099</span><br></pre></td></tr></table></figure></p>
+<p>如果使用<code>yum</code>或者<code>dnf</code>安装<code>tomcat</code>，则没有<code>catalina.sh</code>这个文件，所以我们可以编辑<code>/etc/tomcat/conf.d</code>里面的文件.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch jmx.conf    <span class="comment">#只有.conf文件会被tomcat读取</span></span><br><span class="line">vim jmx.conf    <span class="comment">#编辑文件</span></span><br></pre></td></tr></table></figure>
+<p>由于这个文件被当做shell命令参数执行，所以我们需要转义回车字符，那么我们添加的配置文件为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CATALINA_OPTS=<span class="string">"-Dcom.sun.management.jmxremote \</span></span><br><span class="line"><span class="string">-Dcom.sun.management.jmxremote.port=1099 \</span></span><br><span class="line"><span class="string">-Dcom.sun.management.jmxremote.rmi.port=1099 \</span></span><br><span class="line"><span class="string">-Dcom.sun.management.jmxremote.ssl=false \</span></span><br><span class="line"><span class="string">-Dcom.sun.management.jmxremote.authenticate=false \</span></span><br><span class="line"><span class="string">-Djava.rmi.server.hostname=ip.ourfor.top \</span></span><br><span class="line"><span class="string">-agentlib:jdwp=transport=dt_socket,address=15833,suspend=n,server=y"</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>fedora安装完整tomcat:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install tomcat-webapps tomcat-admin-webapps tomcat -y</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>查看安装路径:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ql tomcat |more</span><br></pre></td></tr></table></figure></p>
+<p>安装路径及其映射:<br><a rel=jsp学习小计 href="https://user-images.githubusercontent.com/33711476/54082238-1677bf00-434d-11e9-8609-2c4b1fb1c956.png" title="屏幕快照 2019-03-10 下午3 56 09" data-fancybox="images"><img width="1562" alt="屏幕快照 2019-03-10 下午3 56 09" src="https://user-images.githubusercontent.com/33711476/54082238-1677bf00-434d-11e9-8609-2c4b1fb1c956.png"></a></p>
+<ul>
+<li><p>开启Tomcat热加载<br>修改<code>context.xml</code> 设置<code>autoDeploy=true</code>, <code>reloadable=true</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">19 &lt;Context reloadable=<span class="string">"true"</span> autoDeploy=<span class="string">"true"</span>&gt;</span><br><span class="line">20</span><br><span class="line">21     &lt;!-- Default <span class="built_in">set</span> of monitored resources. If one of these changes, the    --&gt;</span><br><span class="line">22     &lt;!-- web application will be reloaded.                                   --&gt;</span><br><span class="line">23     &lt;WatchedResource&gt;WEB-INF/web.xml&lt;/WatchedResource&gt;</span><br><span class="line">24     &lt;WatchedResource&gt;WEB-INF/tomcat-web.xml&lt;/WatchedResource&gt;</span><br><span class="line">25     &lt;WatchedResource&gt;<span class="variable">$&#123;catalina.base&#125;</span>/conf/web.xml&lt;/WatchedResource&gt;</span><br><span class="line">26</span><br><span class="line">27     &lt;!-- Uncomment this to <span class="built_in">disable</span> session persistence across Tomcat restarts --&gt;</span><br><span class="line">28     &lt;!--</span><br><span class="line">29     &lt;Manager pathname=<span class="string">""</span> /&gt;</span><br><span class="line">30     --&gt;</span><br><span class="line">31 &lt;/Context&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用JavaMail发送邮件是注意</p>
+</li>
+</ul>
+<ol>
+<li>使用网易邮箱遇到以下错误<code>553 Mail from must equal authorized user</code></li>
+</ol>
+<p>解决: 发信人地址必须是当前登录邮箱的认证用户地址<br>message.setFrom(new InternetAddress(sender));</p>
+<ol start="2">
+<li>一般的mail<br>设置</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String mailServer = <span class="string">"smtp.126.com"</span>;</span><br><span class="line">Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">pro.put(<span class="string">"mail.smtp.host"</span>,mailServer);</span><br><span class="line">pro.put(<span class="string">"mail.smtp.auth"</span>,<span class="string">"true"</span>);</span><br><span class="line">pro.put(<span class="string">"mail.smtp.ssl.enable"</span>,<span class="keyword">true</span>);</span><br><span class="line">pro.put(<span class="string">"mail.smtp.port"</span>,<span class="string">"465"</span>);</span><br></pre></td></tr></table></figure>
+
+          </div>
+          
+<blockquote class="post-copyright" style="border-left: 3px solid #ff1700;">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-03-25T05:12:59.975Z" itemprop="dateUpdated">2020-03-25 05:12:59</time>
+</span><br>
+
+
+        <p style="margin:unset"><strong>本文作者: </strong><a href="https://ourfor.top">ourfor</a></p>
+        <p style="margin:unset"><strong>版权声明: </strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+        
+        <strong>转载注明出处：</strong><a href="/2019/02/27/jsp_learning/" target="_blank" rel="external">https://blog.ourfor.top/2019/02/27/jsp_learning/</a>
+        
+    </div>
+    <footer>
+        <a href="https://blog.ourfor.top">
+            <img src="/img/sagit.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+          
+              <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+              
+          
+          <div class="post-footer">
+              
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tomcat/">tomcat</a></li></ul>
+
+              <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2019/02/27/jsp_learning/&title=《jsp学习小计》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2019/02/27/jsp_learning/&title=《jsp学习小计》 — Zip的小窝&source=初学jsp，遇到不少问题，顺带记录📝一下，以免下次再遇到不知道怎么解决。jsp的功能真的是强大啊，我也想写出整套网站来，做一条龙服务里的一条龙。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2019/02/27/jsp_learning/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《jsp学习小计》 — Zip的小窝&url=https://blog.ourfor.top/2019/02/27/jsp_learning/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2019/02/27/jsp_learning/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+          </div>
+          
+              
+    <div id="comment"></div>
+
+
+
+          
+      </div>
+      
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2019/02/27/beYoung/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">年轻真好</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2019/02/13/life-enjoy/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">风景这边独好</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+      
+          <div id="repo">
+    <div class="loading active"></div>
+    <div class="top clearfix">
+        <div class="avatar pull-left"></div>
+        <div class="content pull-left">
+            <p class="name"></p>
+            <p class="description"></p>
+        </div>
+    </div>
+    <ul class="bottom">
+        <li class="star">
+            <span class="icon icon-star"></span>
+            <span class="val">0</span>
+        </li>
+        <li class="fork">
+            <span class="icon icon-code-fork"></span>
+            <span class="val">0</span>
+        </li>
+        <li class="date">
+            <span class="icon icon-clock-o"></span>
+            <span class="val">0000-00-00</span>
+        </li>
+    </ul>
+    <a class="link" href=""></a>
+</div>
+      
+      
+
+  </article>
+  
+      <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        给作者加个鸡腿🍗?
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat_pay.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat_pay.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+      
+  
+</div>
+
+        <footer class="footer">
+    
+    
+
+        
+    <div class="bottom">
+            <p>
+            
+            
+
+            <span>
+                Zip &copy; 2015 - 2020
+            </span>
+
+            
+
+            
+            <p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </p>
+    
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2019/02/27/jsp_learning/&title=《jsp学习小计》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2019/02/27/jsp_learning/&title=《jsp学习小计》 — Zip的小窝&source=初学jsp，遇到不少问题，顺带记录📝一下，以免下次再遇到不知道怎么解决。jsp的功能真的是强大啊，我也想写出整套网站来，做一条龙服务里的一条龙。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2019/02/27/jsp_learning/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《jsp学习小计》 — Zip的小窝&url=https://blog.ourfor.top/2019/02/27/jsp_learning/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2019/02/27/jsp_learning/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACO0lEQVR42u3a22rDMBCEYb//S6vQq0CRPDMrh3r168o0caLPge0edF3yGr/r8/pzzd4/e3X2HuWu0oIBA8ZrGWO5/jLWX7m+d73p9V9uHh8MGDAOYOhBVnkEa4DymfreYMCAAUNJDRWAEsRhwIABY1fA3ZvSuWEaBgwYJzP0jeoJn9I4c793Qy0OAwaMFzKywcB3rh+fb8CAAePfM4a5skI3exzGrmDAgNGasU7v3FFBlrplQ81LqWthwIDRjrHeul6+KqWp20qTHgoMGDCaMvSvcY9N6EcrlEB88zkwYMBozcgGkHq7P2urZQfFYMCA0ZuRtc+U4WV2wEJJSW8eKAwYMNox9CLWbei700a3kQcDBowzGevEK+vnjWhtrshhwIDxWoaSuuk8t1jNzn3BgAHjNIbbxK8cp3CbdOH/DRgwYLRjuG16pUDNEkQXNv0dYMCA0ZRR/7hKo00PylKGCwMGjNaMSgHpNtGyAxnTUhkGDBitGZXQueFkR9S8m6ahMGDAOIBhtODNwtUdIYT7gQEDRlPGEy3+bKP6MKA0eYABA8ZrGfq1khrqG1XCulT6woABozWjPlysN/eVFFMZLcCAAaMrY5hLL1PdAxzr7d68CgMGjNYMt1mvh85Kw65SAMOAAaMro16I7h1kZoEeBgwYJzCyQxX1AxMuDwYMGDDccnRX0NQDNwwYMGC4xeT6XvdVvcU2nW/AgAGjNcMtR91h5OPFLQwYMFozsgLSPVKmP4J6QIcBA0Yjxg8tYUHP1+iWhQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+    <script type="text/javascript">
+    (function() {
+
+        const origin = "ourfor|Blog"
+        let user, repo;
+        origin.replace(/(\S+)\s{0,1}\|\s{0,1}(\S+)/g, (...rest) => {
+            [user, repo] = [ rest[1], rest[2] ];
+        });
+        if (user && repo) {
+            const url = `//api.github.com/repos/${user}/${repo}?callback=?`;
+            $.getJSON(url, (data) => {
+                updateRepoInPage(data.data);
+            });
+        }
+
+        function updateRepoInPage(data) {
+            const {name, description, html_url: url, stargazers_count: stars, forks, owner: owner, updated_at: update} = data;
+            _loadAvatar(owner.avatar_url).then(avatarUrl => {
+                const avatarBg = `url(${avatarUrl})`;
+                const container = $('#repo');
+                container.click(() => {
+                    window.open(url);
+                });
+
+                //init
+                const loadingItem = container.find('.loading').hide();
+                const topItem = container.find('.top').addClass('active');
+                const bottomItem = container.find('.bottom').addClass('active');
+
+                //avatar
+                const avatarItem = container.find('.avatar');
+                const oldBg = avatarItem.css('background-image');
+                avatarItem.hover(() => {
+                    avatarItem.css('background-image', avatarBg);
+                }, () => {
+                    avatarItem.css('background-image', oldBg);
+                });
+
+                //repo-name
+                const nameItem = container.find('.name').html(name);
+
+                //description
+                const descriptionItem = container.find('.description').html(description);
+
+                //stars
+                const starItem = container.find('.star>.val').html(stars);
+
+                //forks
+                const forkItem = container.find('.fork>.val').html(forks);
+
+                //date
+                const formatDate = update.replace(/T.+/g, '');
+                const dateItem = container.find('.date>.val').html(formatDate);
+            });
+
+            function _loadAvatar(url) {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        resolve(url);
+                    };
+                    img.src = url;
+                });
+            }
+
+        }
+
+    })();
+</script>
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <script type="text/javascript" src="/js/earth.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>

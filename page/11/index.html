@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	false,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+
+    <!-- 添加图片替换脚本-->
+    <script>
+        let ImgReplace = ()=>{
+            let img = document.getElementsByTagName('img');
+            for(let i =0;i<img.length;i++){
+                let src = img[i].src;
+                src = src.replace("//index","/index");
+                img[i].src = src;
+            }
+            console.log("执行ImgReplace")
+        }
+
+        window.onload=ImgReplace;
+        
+        
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-bookmark"></i>
+                BOOK
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-video-camera"></i>
+                MOVIE
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/games"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                GAME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor" target="_blank" >
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://play.ourfor.top"  >
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        
+    <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>Zip的小窝</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+    <img src="/img/headerBg.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">Zip的小窝</h1>
+        <h5 class="subtitle">
+            
+
+            <p>
+            <a href="javascript:;" style="color: #d50000; margin-right: 10px;">
+                <i class="icon icon-github-alt"> Ourfor</i>
+            </a>
+            <a href="javascript:;" style="color: #33691e; margin-right: 10px;">
+                <i class="icon icon-location-arrow"> Changsha </i>
+            </a>
+
+            <a href="https://file.ourfor.top" style="color: #311b92; margin-right: 10px;">
+                <i class="icon icon-folder-open-o"> File </i>
+            </a>
+            <p>
+            <font size=4 color=#3e2723>你选择遗忘的,是我最不舍得.</font>
+            <p>
+            <p>
+            <a href="https://github.com/ourfor/diary" align=center>🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅</a> 
+
+
+                
+
+            
+        </h5>
+        
+    </div>
+    
+
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+
+    <div class="container body-wrap">
+        <ul class="post-list">
+        
+            <li class="post-list-item fade">
+                <article id="post-Hackintosh（2）"
+  class="article-card article-type-post" itemprop="blogPost">
+  
+        
+<div class="item-thumb">
+    <a class="thumb-link" href="/2017/10/12/Hackintosh（2）/"></a>
+    <div class="thumb-hover">
+        <span class="icon icon-eye"></span>
+    </div>
+    <img src="/img/thumb/4.jpg" alt="图片路径不正确">
+    
+
+
+  
+    <h3 class="post-title ab-title" itemprop="name">
+      <a class="post-title-link" href="/2017/10/12/Hackintosh（2）/">Hackintosh(2)</a>
+    </h3>
+  
+
+
+
+</div>
+
+        
+    
+    
+    
+    <div class="post-meta">
+        <time class="post-time" title="2017-10-12 16:01:10" datetime="2017-10-12T16:01:10.000Z"  itemprop="datePublished">2017-10-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/PC/">PC</a></li></ul>
+
+
+
+        
+	<span id="/2017/10/12/Hackintosh（2）/" class="leancloud_visitors" data-flag-title="Hackintosh(2)" title="Hackintosh(2)">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+        
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2017/10/12/Hackintosh（2）/#comment">
+            <span class="valine-comment-count" data-xid="/2017/10/12/Hackintosh（2）/"></span>
+        </a>
+    </span>
+
+
+
+        
+        
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent">
+    
+    
+        <h2 id="黑苹果安装教程之开始安装"><a href="#黑苹果安装教程之开始安装" class="headerlink" title="黑苹果安装教程之开始安装"></a>黑苹果安装教程之开始安装</h2><h2 id="已经制作好的安装优盘"><a href="#已经制作好的安装优盘" class="headerlink" title="已经制作好的安装优盘"></a>已经制作好的安装优盘</h2><p>如果你按照之前的教程成功制作了黑苹果原版系统安装优盘，那么你会发现你进入Mac安装界面无法格式化Mac安装分区，如果没有制作好安装优盘，那么分区和调整系统esp引导分区依旧是很有必要的，这不仅有利于我们安装Mac，同时也为我们启动多系统提供了便利，相信有不少读者都安装了我们喜爱的Linux的发行版Ubuntu.<br>
+    
+
+    
+   
+    </div>
+</article>
+
+<div class="post-footer">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackintosh/">Hackintosh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/系统/">系统</a></li></ul>
+
+</div>
+
+
+            </li>
+        
+            <li class="post-list-item fade">
+                <article id="post-Hackintosh（1）"
+  class="article-card article-type-post" itemprop="blogPost">
+  
+        
+<div class="item-thumb">
+    <a class="thumb-link" href="/2017/10/10/Hackintosh（1）/"></a>
+    <div class="thumb-hover">
+        <span class="icon icon-eye"></span>
+    </div>
+    <img src="/img/thumb/3.jpg" alt="图片路径不正确">
+    
+
+
+  
+    <h3 class="post-title ab-title" itemprop="name">
+      <a class="post-title-link" href="/2017/10/10/Hackintosh（1）/">Hackintosh(1)</a>
+    </h3>
+  
+
+
+
+</div>
+
+        
+    
+    
+    
+    <div class="post-meta">
+        <time class="post-time" title="2017-10-10 16:01:10" datetime="2017-10-10T16:01:10.000Z"  itemprop="datePublished">2017-10-10</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/PC/">PC</a></li></ul>
+
+
+
+        
+	<span id="/2017/10/10/Hackintosh（1）/" class="leancloud_visitors" data-flag-title="Hackintosh(1)" title="Hackintosh(1)">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+        
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2017/10/10/Hackintosh（1）/#comment">
+            <span class="valine-comment-count" data-xid="/2017/10/10/Hackintosh（1）/"></span>
+        </a>
+    </span>
+
+
+
+        
+        
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent">
+    
+    
+        <p>这笔记本还是可以的，目前论坛上还没有适配这款新出的笔记本的黑苹果安装教程，不过在我的不懈折腾下总算让我的小米笔记本吃上了黑苹果</p>
+<ul>
+<li><p>需要的工具包括：<strong><em>1</em></strong>.写盘工具  <strong><em>2</em></strong>.原版镜像</p>
+</li>
+<li><p>小米笔记本AIR i7 指纹版安装黑苹果10.13  </p>
+    
+
+    
+   
+    </div>
+</article>
+
+<div class="post-footer">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackintosh/">Hackintosh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/系统/">系统</a></li></ul>
+
+</div>
+
+
+            </li>
+        
+            <li class="post-list-item fade">
+                <article id="post-Excel进阶教程"
+  class="article-card article-type-post" itemprop="blogPost">
+  
+        
+<div class="item-thumb">
+    <a class="thumb-link" href="/2017/09/10/Excel进阶教程/"></a>
+    <div class="thumb-hover">
+        <span class="icon icon-eye"></span>
+    </div>
+    <img src="/img/thumb/2.jpg" alt="图片路径不正确">
+    
+
+
+  
+    <h3 class="post-title ab-title" itemprop="name">
+      <a class="post-title-link" href="/2017/09/10/Excel进阶教程/">Excel进阶教程</a>
+    </h3>
+  
+
+
+
+</div>
+
+        
+    
+    
+    
+    <div class="post-meta">
+        <time class="post-time" title="2017-09-10 16:01:10" datetime="2017-09-10T16:01:10.000Z"  itemprop="datePublished">2017-09-10</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/APP/">APP</a></li></ul>
+
+
+
+        
+	<span id="/2017/09/10/Excel进阶教程/" class="leancloud_visitors" data-flag-title="Excel进阶教程" title="Excel进阶教程">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+        
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2017/09/10/Excel进阶教程/#comment">
+            <span class="valine-comment-count" data-xid="/2017/09/10/Excel进阶教程/"></span>
+        </a>
+    </span>
+
+
+
+        
+        
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent">
+    
+    
+        <p>同一文件下如何合并相同类型的表格，相信大家对这个问题困惑了很久，如何如何合并这些表格呢？合并之后是否会得到我们想要的表格呢？<br>通常情况下我们如果要使用Excel来合并同一类型的表格，我们一般将每个表格文件打开剪切我们需要的单元格，并一一粘贴到目标表格中，你会发现其中有很多重复的步骤，特别是当表格文件数量相当多的时候，这工作量就很大了，既然重复相同的步骤是麻烦的根源，那么我们为何不把这项工作交给计算机做呢？其实微软公司出品的办公软件Excel中就有这个功能，不过要实现这个功能，我们就要用到“宏”这个东西，简单的说“宏”就是帮你完成重复的操作，如何打开，使用宏呢？<br>
+    
+
+    
+   
+    </div>
+</article>
+
+<div class="post-footer">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/office/">office</a></li></ul>
+
+</div>
+
+
+            </li>
+        
+            <li class="post-list-item fade">
+                <article id="post-读《红楼梦》有感"
+  class="article-card article-type-post" itemprop="blogPost">
+  
+        
+<div class="item-thumb">
+    <a class="thumb-link" href="/2017/08/17/读《红楼梦》有感/"></a>
+    <div class="thumb-hover">
+        <span class="icon icon-eye"></span>
+    </div>
+    <img src="/img/thumb/1.jpg" alt="图片路径不正确">
+    
+
+
+  
+    <h3 class="post-title ab-title" itemprop="name">
+      <a class="post-title-link" href="/2017/08/17/读《红楼梦》有感/">读《红楼梦》有感</a>
+    </h3>
+  
+
+
+
+</div>
+
+        
+    
+    
+    
+    <div class="post-meta">
+        <time class="post-time" title="2017-08-17 16:01:10" datetime="2017-08-17T16:01:10.000Z"  itemprop="datePublished">2017-08-17</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/文学/">文学</a></li></ul>
+
+
+
+        
+	<span id="/2017/08/17/读《红楼梦》有感/" class="leancloud_visitors" data-flag-title="读《红楼梦》有感" title="读《红楼梦》有感">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+        
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2017/08/17/读《红楼梦》有感/#comment">
+            <span class="valine-comment-count" data-xid="/2017/08/17/读《红楼梦》有感/"></span>
+        </a>
+    </span>
+
+
+
+        
+        
+  <span class="music"><i class="icon icon-music"></i></span>
+
+    </div>
+    
+    <div class="post-content" id="post-content" itemprop="postContent">
+    
+    
+        <p>红楼梦是中国古典小说，作者曹雪芹和高鹗，以贾宝玉和林黛玉的爱情故事以及封建四大家族贾、史、王、薛的兴衰为主线，初读红楼梦，有些难度，先不说情节如何，单是复杂的人物关系以及宏大的场景就会让你眼花缭乱，因此先不说读懂红楼梦，要想耐心的读完这部小说，你就必须掌握两张地图，首先是人物关系图，其次是贾府地图。<br>
+    
+
+    
+   
+    </div>
+</article>
+
+<div class="post-footer">
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文学/">文学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读后感/">读后感</a></li></ul>
+
+</div>
+
+
+            </li>
+        
+        </ul>
+        
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/page/10/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span>
+    </div>
+</nav>
+
+    </div>
+    
+
+        <footer class="footer">
+    
+    
+    <div class="bottom">
+            <p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            <br>
+            <p>
+            
+            
+            <span>
+                Hosted by <a href="https://coding.net/pages" target="_blank">Coding Pages</a>
+            </span>
+            
+
+            <span>
+                Zip &copy; 2015 - 2020
+            </span>
+
+            
+            <span>
+                Theme is <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">Mellow</a>
+            </span>
+            
+
+            
+                
+
+            
+        </p>
+    
+
+        
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/page/11/&title=Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/page/11/&title=Zip的小窝&source=岁月静好,现世安稳." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/page/11/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Zip的小窝&url=https://blog.ourfor.top/page/11/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/page/11/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwUlEQVR42u3ay3HDMAwFQPfftFKAI+kBoGgnszx5rA+XOmAIEK9XPI638X511VMLBi4u7ph7XI7re5KJz+5M3v/Lm3FxcTdyJ9NcP1V9/40NFxf3K7mTf86WgYuL+5+4edj6ikCGi4tb5ObpTZ4aVdOnxbkaLi7ugDsJOqt+P1LfxcXFbXGP4kgKndV7CrPj4uJu4eYBJdl85Fd78+Li4u7kVjc31ePVZMok8OHi4u7nJselqxKnPBQWmjBwcXEf5hZSkaDw0VvqzcfCxcV9jJu3YPYOROcNmjdVHFxc3Me4vcaIPGzlDVs32yBcXNwt3FUFzUkTRrKwm54RXFzcpdxJKbPaopGHvNMPh4uLu4Vb3XbkQSchlpMfXFzc7dxeaWPSPDFPvXBxcZ/jzlswe/TqXLi4uJ/i9poh5qlOIfnBxcX9EDdvmKiWQqrvbOZhuLi4A+5RHNWCSHWrFK0DFxf3YW4+egvL2zKSbRYuLu5Obi8A5aDekepN8oOLi7uFWz3S6G1Wqs1euLi4f5GbB6NVRzK4uLjfzK3mUsliIiEuLu5G7jww5cWUPAXCxcX9FLd3mNpbQJ5KLajv4uLidrg/LvUz0jOMp+MAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <script type="text/javascript" src="/js/earth.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>

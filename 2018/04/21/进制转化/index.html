@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>进制转化 | Zip的小窝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="读书笔记,栈">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.0">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":true,"app_id":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","app_key":"zAMFPgKrAh09qqQDGHvdU0Uq","icon":true}'),
+            v: JSON.parse('{"enable":true,"appid":"LQcg6cueG8cMcLf9gSrAhF6d-gzGzoHsz","appkey":"zAMFPgKrAh09qqQDGHvdU0Uq","notify":false,"verify":true,"placeholder":"等一个人，还是等一个故事？\\n🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"ourfor","repo":"comments","oauth":{"client_id":"9b9deae708b1f154468b","client_secret":"081f266d40be3c096596315129d8594d2ef37138"},"perPage":5}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+
+    <!-- 添加图片替换脚本-->
+    <script>
+        let ImgReplace = ()=>{
+            let img = document.getElementsByTagName('img');
+            for(let i =0;i<img.length;i++){
+                let src = img[i].src;
+                src = src.replace("//index","/index");
+                img[i].src = src;
+            }
+            console.log("执行ImgReplace")
+        }
+
+        window.onload=ImgReplace;
+        
+        
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sagit.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zip</h5>
+          <a href="mailto:世纪末的无聊消遣" title="世纪末的无聊消遣" class="mail">
+            
+              <span>世</span>
+            
+              <span>纪</span>
+            
+              <span>末</span>
+            
+              <span>的</span>
+            
+              <span>无</span>
+            
+              <span>聊</span>
+            
+              <span>消</span>
+            
+              <span>遣</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/ourfor" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://weibo.com/u/5213768713?refer_flag=1001030201_&amp;is_all=1" target="_blank">
+                  <i class="icon icon-lg icon-weibo"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.youtube.com/channel/UC82vnpLsmIiiTYQD7wRcWwQ?view_as=subscriber" target="_blank">
+                  <i class="icon icon-lg icon-youtube"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/sagit.zxw/" target="_blank">
+                  <i class="icon icon-lg icon-instagram"></i>
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://plus.google.com/110846201925313557708" target="_blank">
+                  <i class="icon icon-lg icon-google-plus-square"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-address-book"></i>
+                ABOUT
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-bookmark"></i>
+                BOOK
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-video-camera"></i>
+                MOVIE
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/games"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                GAME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/ourfor" target="_blank" >
+                <i class="icon icon-lg icon-github-alt"></i>
+                GITHUB
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://play.ourfor.top"  >
+                <i class="icon icon-lg icon-random"></i>
+                MUSIC
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-external-link-square"></i>
+                LINKS
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>进制转化</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/headerBg.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">进制转化</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-04-21T23:41:59.000Z" itemprop="datePublished" class="page-time">
+  2018-04-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-进制转化"
+    class="post-article article-type-post" itemprop="blogPost">
+      <div class="post-card">
+          <h1 class="post-card-title">进制转化</h1>
+          <div class="post-meta">
+              <time class="post-time" title="2018-04-21 23:41:59" datetime="2018-04-21T23:41:59.000Z"  itemprop="datePublished">2018-04-21</time>
+
+              
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习笔记/">学习笔记</a></li></ul>
+
+
+
+              
+	<span id="/2018/04/21/进制转化/" class="leancloud_visitors" data-flag-title="进制转化" title="进制转化">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+              
+    <span class="leancloud-comment">
+        <i class="icon icon-comment-o"></i>
+        <a href="/2018/04/21/进制转化/#comment">
+            <span class="valine-comment-count" data-xid="/2018/04/21/进制转化/"></span>
+        </a>
+    </span>
+
+
+
+              
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+              
+              <p>上个星期学了栈和队列，正好下个星期的上机作业是“进制转换”,一般进制转换是通过短除法（除k取余法）来转化，除完之后由下往上将这些数组合在一起,这不这好和栈的特点一样吗？嗯，顿时我的手就有点痒了，于是中午就敲了敲，下午Debug了一下，感觉这问题要考虑全面有点难啊，写个简单的得了。这大于10进制的还涉及字母，还是简单的考虑吧。<br><a id="more"></a></p>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><ul>
+<li>首先你得把用户输入的数转化为10进制(暂时不要考虑输入大于10进制)</li>
+<li>将十进制的数转化为其他进制(同样只考虑不大于10进制的)</li>
+</ul>
+<div class="timeline">
+<h5 id="输入数-eg-1998-类型为int，以及对应的进制k"><a href="#输入数-eg-1998-类型为int，以及对应的进制k" class="headerlink" title="输入数(eg:1998),类型为int，以及对应的进制k"></a>输入数(eg:1998),类型为<strong><em>int</em></strong>，以及对应的进制<code>k</code></h5><div class="item">
+<h6 id="将组成这个数的这些数字分开，1-9-9-8"><a href="#将组成这个数的这些数字分开，1-9-9-8" class="headerlink" title="将组成这个数的这些数字分开，1 9 9 8"></a>将组成这个数的这些数字分开，1 9 9 8</h6><p>这里并不能用<code>char</code> 来分开它们，因为<code>数据类型</code> 不仅仅包含一个取值集合，同时也包含了定义在这个取值集合上的一组 <code>操作</code> ,可以通过<code>除10</code> 取余来分离</p>
+</div>
+<div class="item">
+<h6 id="转化为10进制"><a href="#转化为10进制" class="headerlink" title="转化为10进制"></a>转化为10进制</h6><p>将分离出来的数字依次与对应的<code>k</code> 的幂相乘，最后求和</p>
+</div>
+<div class="item">
+<h6 id="除m取余，转化为m进制"><a href="#除m取余，转化为m进制" class="headerlink" title="除m取余，转化为m进制"></a>除m取余，转化为m进制</h6><p>这里使用<code>%</code> 求模，<code>int</code> 强制类型转化求商</p>
+</div>
+<h5 id="输出计算后的结果"><a href="#输出计算后的结果" class="headerlink" title="输出计算后的结果"></a>输出计算后的结果</h5></div>
+<h2 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h2><h2 id="k进制转化为10进制-k-lt-10"><a href="#k进制转化为10进制-k-lt-10" class="headerlink" title="k进制转化为10进制(k&lt;=10)"></a>k进制转化为10进制(k&lt;=10)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//--------------------------------------其他进制转化为十进制--------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">SwitchNum_10</span><span class="params">(Stack &amp;S)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//输入的数、对应进制、待转化进制</span></span><br><span class="line">	<span class="keyword">int</span> data,n,i,num,num_input;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入待转化的数："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; data;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"它为几进制："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; num_input;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//转化为10进制</span></span><br><span class="line">	num=<span class="number">10</span>;</span><br><span class="line">	InitStack(S);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//记录有多少个数字</span></span><br><span class="line">    <span class="keyword">int</span> record_num_total=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//除10取余</span></span><br><span class="line">	<span class="keyword">for</span>(i=data;i!=<span class="number">0</span>;data=i)</span><br><span class="line">	&#123;</span><br><span class="line">		i=data / num;	 <span class="comment">//取商</span></span><br><span class="line">		j=data % num;    <span class="comment">//取余</span></span><br><span class="line">        record_num_total++;</span><br><span class="line">		Pop(S,j);</span><br><span class="line">		</span><br><span class="line">	&#125;<span class="comment">//入栈</span></span><br><span class="line"></span><br><span class="line">	SElemType *r=S.base + <span class="number">1</span>;</span><br><span class="line">	n=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//转化为10进制</span></span><br><span class="line">	<span class="keyword">for</span>(data=<span class="number">0</span>;r!=S.top;r++)</span><br><span class="line">	&#123;</span><br><span class="line">        data=data + (*r) * <span class="built_in">pow</span>(num_input,n);</span><br><span class="line">        n++;</span><br><span class="line">	&#125;</span><br><span class="line">    data=data + (*r) * <span class="built_in">pow</span>(num_input,n);</span><br><span class="line">    <span class="comment">//cout &lt;&lt; data;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回10进制数</span></span><br><span class="line">	<span class="keyword">return</span> data;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="10进制转化为m进制-m-lt-10"><a href="#10进制转化为m进制-m-lt-10" class="headerlink" title="10进制转化为m进制(m&lt;=10)"></a>10进制转化为m进制(m&lt;=10)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//--------------------------------------十进制转化为其他进制--------------------------------------</span></span><br><span class="line"><span class="function">Status <span class="title">SwitchNum</span><span class="params">(Stack &amp;S)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> data,i,num;</span><br><span class="line">	<span class="comment">//cout &lt;&lt; "输入待转化的数：";</span></span><br><span class="line">	data=SwitchNum_10(S);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"你想把它转化为几进制："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; num;</span><br><span class="line">	InitStack(S);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//除k取余</span></span><br><span class="line">	<span class="keyword">for</span>(i=data;i!=<span class="number">0</span>;data=i)</span><br><span class="line">	&#123;</span><br><span class="line">		i=data / num;</span><br><span class="line">		j=data % num;</span><br><span class="line">		Pop(S,j);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"转化为"</span> &lt;&lt; num &lt;&lt; <span class="string">"进制后为：\n"</span>;</span><br><span class="line">    <span class="comment">//出栈后即为k进制</span></span><br><span class="line">	Push(S);</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(未完待续。。。。)</p>
+<p>代码已经同步到仓库：<a href="https://github.com/ourfor/My-C-Learning/blob/master/C%2B%2B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A%E6%9C%BA/Stack.cpp" target="_blank" rel="noopener">Stuck</a></p>
+<figure class="image-box">
+                <a rel=进制转化 href="https://file.ourfor.top/source/sagit/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-22%20%E4%B8%8A%E5%8D%8812.12.30.png" title="花了我一个小时才配置好powerline&airline" data-fancybox="images"><img src="https://file.ourfor.top/source/sagit/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-22%20%E4%B8%8A%E5%8D%8812.12.30.png" alt="花了我一个小时才配置好powerline&airline" title class></a>
+                <p>花了我一个小时才配置好powerline&airline</p>
+            </figure>
+<p>又到了毕业季🎓，回首高中的日子，满满的回忆。</p>
+<p><div id="app"></div><br><!-- 加载 cplayer 脚本 --></p>
+<script src="https://cdn.jsdelivr.net/gh/MoePlayer/cPlayer/dist/cplayer.js"></script>
+<script>
+  let player = new cplayer({
+    element: document.getElementById('app'),
+    autoplay: true,
+    showPlaylist: true,
+    playlist: [
+      {
+        src: 'https://file.ourfor.top/source/sagit/%E5%A5%BD%E5%A6%B9%E5%A6%B9%E4%B9%90%E9%98%9F-%E4%B8%8D%E8%AF%B4%E5%86%8D%E8%A7%81.mp3',
+        poster: 'https://file.ourfor.top/source/sagit/%E5%A5%BD%E5%A6%B9%E5%A6%B9%E4%B9%90%E9%98%9F.jpg',
+        name: '不说再见',
+        artist: '好妹妹乐队'
+      }
+    ]
+  })
+</script>
+
+          </div>
+          
+<blockquote class="post-copyright" style="border-left: 3px solid #ff1700;">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-03-25T05:13:00.007Z" itemprop="dateUpdated">2020-03-25 05:13:00</time>
+</span><br>
+
+
+        <p style="margin:unset"><strong>本文作者: </strong><a href="https://ourfor.top">ourfor</a></p>
+        <p style="margin:unset"><strong>版权声明: </strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+        
+        <strong>转载注明出处：</strong><a href="/2018/04/21/进制转化/" target="_blank" rel="external">https://blog.ourfor.top/2018/04/21/进制转化/</a>
+        
+    </div>
+    <footer>
+        <a href="https://blog.ourfor.top">
+            <img src="/img/sagit.jpg" alt="Zip">
+            Zip
+        </a>
+    </footer>
+</blockquote>
+
+          
+              <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+              
+          
+          <div class="post-footer">
+              
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+
+              <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/04/21/进制转化/&title=《进制转化》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/04/21/进制转化/&title=《进制转化》 — Zip的小窝&source=上个星期学了栈和队列，正好下个星期的上机作业是“进制转换”,一般进制转换是通过短除法（除k取余法）来转化，除完之后由下往上将这些数组合在一起,这不这好和栈..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/04/21/进制转化/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《进制转化》 — Zip的小窝&url=https://blog.ourfor.top/2018/04/21/进制转化/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/04/21/进制转化/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+          </div>
+          
+              
+    <div id="comment"></div>
+
+
+
+          
+      </div>
+      
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/04/28/Nginx以及私有云搭建/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Nginx以及私有云搭建</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2018/04/07/Theme/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MIUI Theme</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+      
+      
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本思路"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#栈的实现"><span class="post-toc-number">2.</span> <span class="post-toc-text">栈的实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#k进制转化为10进制-k-lt-10"><span class="post-toc-number">3.</span> <span class="post-toc-text">k进制转化为10进制(k&lt;=10)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10进制转化为m进制-m-lt-10"><span class="post-toc-number">4.</span> <span class="post-toc-text">10进制转化为m进制(m&lt;=10)</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+
+  </article>
+  
+      <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        给作者加个鸡腿🍗?
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat_pay.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat_pay.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+      
+  
+</div>
+
+        <footer class="footer">
+    
+    
+
+        
+    <div class="bottom">
+            <p>
+            
+            
+
+            <span>
+                Zip &copy; 2015 - 2020
+            </span>
+
+            
+
+            
+            <p>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </p>
+    
+
+        <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("08/13/2016 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+           if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+           document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+           document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒 ";
+        }
+    setInterval("createtime()",250);
+   </script>
+
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ourfor.top/2018/04/21/进制转化/&title=《进制转化》 — Zip的小窝&pic=https://blog.ourfor.top/img/sagit.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ourfor.top/2018/04/21/进制转化/&title=《进制转化》 — Zip的小窝&source=上个星期学了栈和队列，正好下个星期的上机作业是“进制转换”,一般进制转换是通过短除法（除k取余法）来转化，除完之后由下往上将这些数组合在一起,这不这好和栈..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.ourfor.top/2018/04/21/进制转化/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《进制转化》 — Zip的小窝&url=https://blog.ourfor.top/2018/04/21/进制转化/&via=https://blog.ourfor.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.ourfor.top/2018/04/21/进制转化/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3aO3LCQBAFQO5/aZw6sOC9HeEqdnsjlxFIrWBqfo9HfJ4X5/enV9cnv9x+a/FgYGB8LeP58lzdoL3Z1S9fYfJnw8DAOIeRhMLX4TUJmm2YTn4HAwMDIw+vedB8fXcMDAyMuwLuWri8KwHFwMA4k9E21JLHmqd9H6nFMTAwvpCRN8v+/++PzDcwMDC+ivEsz1pqmITL5+BgYGDszWhbaUnimJe+RYEaJJoYGBh7MyaJWrsk0bb56mQRAwNjO0YbRtcaavO08k34xsDA2JrRdq7mpWk+KsjXyzAwMM5hrK1B1E2xQXEbhX4MDIztGEm5mAMW3198/Zsgi4GBsSlj7WtrieMnGm1/zDcwMDC2Y8yXHvKm2+JIMkkoMTAwtmZMJp+Trl770EUVjoGBsR1jbdyY36ZFtqkkBgbGmYw8EE+Sv6T0XcxwMTAwtmbk5ei8WTZZPnvk8RsDA2M7RrukNR9hTv6DgYFxDqNt6+cP1K5uPOIThWMMDIztGMnNilHiONFsl18xMDDOYUwGAAmyTRAXB5kYGBhbM9rG3NqQ4K6kEAMD4xzGfF11LcjmJXH0sjAwMLZmTIJdm0Tmj5JcX485MTAwvpyRl5rtasXa8kT+yjAwME5jtAVnu2YxHy3U8w0MDIyDGUnJ2g4S8rTyEoyBgYERJILtusbNJAwMjAMY7UpEG5TbkjUZGGBgYJzDaEvHJExPitu7FjswMDC2YPwA5IhLqe9iAOEAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+     
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+   
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.0"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.0"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.0"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.0"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+        <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript" src="/js/plugins/valine.js?v=1.4.0"></script>
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.4.0"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '我想你了！';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)咦!又好了!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+
+    <script type="text/javascript" src="/js/earth.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script></body>
+</html>
